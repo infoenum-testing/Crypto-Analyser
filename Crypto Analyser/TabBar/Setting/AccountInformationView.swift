@@ -59,23 +59,27 @@ struct AccountInformationView: View {
                             CommonCell(title: "Edit Profile",action: {
                                 router.navigateToAuth(.editProfile)
                             })
+                            
+                            CommonCell(title: "Subscriptions",action: {
+                                router.navigateToAuth(.subscriptionView)
+                            })
                            
                         }
                         .padding(.top,5)
                         
                 
-                        VStack(alignment: .leading,spacing:5) {
-                            Text("Subscriptions")
-                                .font(.system(size: 25, weight: .semibold))
-                            CommonCell(title: "Monthly",action: {
-                                //
-                            })
+                       // VStack(alignment: .leading,spacing:5) {
+//                            Text("Subscriptions")
+//                                .font(.system(size: 25, weight: .semibold))
+//                            CommonCell(title: "Subscriptions",action: {
+//                                //
+//                            })
                             
-                            CommonCell(title: "Yearly",action: {
-                                //
-                            })
-                        }
-                        .padding(.top)
+//                            CommonCell(title: "Yearly",action: {
+//                                //
+//                            })
+                       // }
+                        //.padding(.top)
                         
                     }
                     .padding(.horizontal,20)

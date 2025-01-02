@@ -68,8 +68,7 @@ struct newsCellView: View {
         .cornerRadius(8)
         .sheet(isPresented: $showWebView) {
             if let url = URL(string: newsUrl) {
-                WebViewContainer(url: url)
-
+                WebViewContainer(url: url, title: "")
                     .edgesIgnoringSafeArea(.all)
             } else {
                 Text("Invalid URL")
@@ -78,72 +77,72 @@ struct newsCellView: View {
     }
 }
 
-struct WebView: UIViewRepresentable {
-    let url: URL
-    @Binding var canGoBack: Bool
-    @Binding var canGoForward: Bool
-    
-    class Coordinator: NSObject, WKNavigationDelegate {
-        var parent: WebView
-        
-        init(parent: WebView) {
-            self.parent = parent
-        }
-        
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            parent.canGoBack = webView.canGoBack
-            parent.canGoForward = webView.canGoForward
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-
-    func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        webView.navigationDelegate = context.coordinator
-        webView.load(URLRequest(url: url))
-        return webView
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        // No need to update here since navigation is handled by the user
-    }
-}
-
-struct WebViewContainer: View {
-    let url: URL
-    @State private var canGoBack = false
-    @State private var canGoForward = false
-    @State private var webView: WKWebView?
-
-    var body: some View {
-        VStack {
-            // WebView instance
-            WebView(url: url, canGoBack: $canGoBack, canGoForward: $canGoForward)
-                .onAppear {
-                    // Capture the web view instance when it is created
-                    webView = WKWebView()
-                }
-
-            // Navigation controls
-            HStack {
-                Button(action: {
-                    webView?.goBack()
-                }) {
-                    Label("Back", systemImage: "arrow.backward")
-                }
-                .disabled(!canGoBack)
-
-                Button(action: {
-                    webView?.goForward()
-                }) {
-                    Label("Forward", systemImage: "arrow.forward")
-                }
-                .disabled(!canGoForward)
-            }
-            .padding()
-        }
-    }
-}
+//struct WebView: UIViewRepresentable {
+//    let url: URL
+//    @Binding var canGoBack: Bool
+//    @Binding var canGoForward: Bool
+//    
+//    class Coordinator: NSObject, WKNavigationDelegate {
+//        var parent: WebView
+//        
+//        init(parent: WebView) {
+//            self.parent = parent
+//        }
+//        
+//        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//            parent.canGoBack = webView.canGoBack
+//            parent.canGoForward = webView.canGoForward
+//        }
+//    }
+//    
+//    func makeCoordinator() -> Coordinator {
+//        Coordinator(parent: self)
+//    }
+//
+//    func makeUIView(context: Context) -> WKWebView {
+//        let webView = WKWebView()
+//        webView.navigationDelegate = context.coordinator
+//        webView.load(URLRequest(url: url))
+//        return webView
+//    }
+//
+//    func updateUIView(_ uiView: WKWebView, context: Context) {
+//        // No need to update here since navigation is handled by the user
+//    }
+//}
+//
+//struct WebViewContainer: View {
+//    let url: URL
+//    @State private var canGoBack = false
+//    @State private var canGoForward = false
+//    @State private var webView: WKWebView?
+//
+//    var body: some View {
+//        VStack {
+//            // WebView instance
+//            WebView(url: url, canGoBack: $canGoBack, canGoForward: $canGoForward)
+//                .onAppear {
+//                    // Capture the web view instance when it is created
+//                    webView = WKWebView()
+//                }
+//
+//            // Navigation controls
+//            HStack {
+//                Button(action: {
+//                    webView?.goBack()
+//                }) {
+//                    Label("Back", systemImage: "arrow.backward")
+//                }
+//                .disabled(!canGoBack)
+//
+//                Button(action: {
+//                    webView?.goForward()
+//                }) {
+//                    Label("Forward", systemImage: "arrow.forward")
+//                }
+//                .disabled(!canGoForward)
+//            }
+//            .padding()
+//        }
+//    }
+//}

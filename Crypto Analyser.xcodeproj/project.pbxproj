@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023CC1E92D26959100BC13A6 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1E82D26959100BC13A6 /* SubscriptionsManager.swift */; };
+		023CC1EB2D2695B300BC13A6 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EA2D2695B300BC13A6 /* EntitlementManager.swift */; };
+		023CC1ED2D26963400BC13A6 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EC2D26963400BC13A6 /* IAP Constants.swift */; };
+		023CC1EF2D26A9B200BC13A6 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EE2D26A9B200BC13A6 /* SubscriptionsView.swift */; };
+		023CC1F02D26A9B200BC13A6 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EE2D26A9B200BC13A6 /* SubscriptionsView.swift */; };
+		023CC1F12D26A9B900BC13A6 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1E82D26959100BC13A6 /* SubscriptionsManager.swift */; };
+		023CC1F22D26A9BC00BC13A6 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EA2D2695B300BC13A6 /* EntitlementManager.swift */; };
+		023CC1F32D26A9BE00BC13A6 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1EC2D26963400BC13A6 /* IAP Constants.swift */; };
+		023CC1F42D26A9C400BC13A6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E2102D23E4E600304CA6 /* KeychainService.swift */; };
+		023CC1F62D26D4E600BC13A6 /* WebContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */; };
+		023CC1F72D26D4E600BC13A6 /* WebContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */; };
 		16612F1AE15F31D42F0804E3 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6DBFA4237E21E0FAAA641 /* Pods_Crypto_Analyser_Dev.framework */; };
 		CC18856E0AED3E858D78581C /* Pods_Crypto_Analyser_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A5FFF841158D935F3A5A9D /* Pods_Crypto_Analyser_Pro.framework */; };
 		E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDC62D1D1C420028FE6D /* FireBaseResentSearches.swift */; };
@@ -125,6 +136,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023CC1E82D26959100BC13A6 /* SubscriptionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsManager.swift; sourceTree = "<group>"; };
+		023CC1EA2D2695B300BC13A6 /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		023CC1EC2D26963400BC13A6 /* IAP Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IAP Constants.swift"; sourceTree = "<group>"; };
+		023CC1EE2D26A9B200BC13A6 /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
+		023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContainerView.swift; sourceTree = "<group>"; };
 		29A6218ABFEA86ADF280ABE2 /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		35989BF2BA1E9417B1FDA34B /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
 		58EDB3420BD0161D92B829F0 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +256,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023CC1E72D26958000BC13A6 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				023CC1E82D26959100BC13A6 /* SubscriptionsManager.swift */,
+				023CC1EA2D2695B300BC13A6 /* EntitlementManager.swift */,
+				023CC1EC2D26963400BC13A6 /* IAP Constants.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		36C1C8FB85D47BA3A4B91092 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +319,7 @@
 		E97259332D155B3D00D498CC /* Crypto Analyser */ = {
 			isa = PBXGroup;
 			children = (
+				023CC1E72D26958000BC13A6 /* IAP */,
 				E971E20F2D23E4D300304CA6 /* Storage */,
 				E9868E5F2D16E848007ACB26 /* GoogleService-Info.plist */,
 				E97259342D155B3D00D498CC /* Crypto_AnalyserApp.swift */,
@@ -394,6 +421,8 @@
 				E9868E512D16A8BF007ACB26 /* SettingView.swift */,
 				E97E806E2D19963A003D6CC6 /* AccountInformationView.swift */,
 				E97E80712D199652003D6CC6 /* EditProfileView.swift */,
+				023CC1EE2D26A9B200BC13A6 /* SubscriptionsView.swift */,
+				023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -616,9 +645,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023CC1E92D26959100BC13A6 /* SubscriptionsManager.swift in Sources */,
 				E9868E4C2D16A5C4007ACB26 /* HomeView.swift in Sources */,
 				E97E80722D199652003D6CC6 /* EditProfileView.swift in Sources */,
+				023CC1EB2D2695B300BC13A6 /* EntitlementManager.swift in Sources */,
 				E97259602D158E8500D498CC /* Router.swift in Sources */,
+				023CC1ED2D26963400BC13A6 /* IAP Constants.swift in Sources */,
 				E971E2112D23E4E600304CA6 /* KeychainService.swift in Sources */,
 				E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E972595D2D1587CC00D498CC /* LoginView.swift in Sources */,
@@ -627,6 +659,7 @@
 				E97E806F2D19963A003D6CC6 /* AccountInformationView.swift in Sources */,
 				E9868E9A2D16F75F007ACB26 /* GoogleSignInManager.swift in Sources */,
 				E97259642D15A3D500D498CC /* StringConstants.swift in Sources */,
+				023CC1EF2D26A9B200BC13A6 /* SubscriptionsView.swift in Sources */,
 				E91DEDCA2D1D5E210028FE6D /* SearchView.swift in Sources */,
 				E97259562D15626800D498CC /* SignUpView.swift in Sources */,
 				E9868E5E2D16BBBF007ACB26 /* FirebaseAuthentication.swift in Sources */,
@@ -637,6 +670,7 @@
 				E91DEDCE2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */,
 				E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E97259632D15955600D498CC /* ForgotPassword.swift in Sources */,
+				023CC1F62D26D4E600BC13A6 /* WebContainerView.swift in Sources */,
 				E97D15AD2D1AD0C0005A9A3F /* GalleryView.swift in Sources */,
 				E9868E522D16A8BF007ACB26 /* SettingView.swift in Sources */,
 				E9868E9E2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
@@ -648,11 +682,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023CC1F12D26A9B900BC13A6 /* SubscriptionsManager.swift in Sources */,
 				E9868E4D2D16A5C4007ACB26 /* HomeView.swift in Sources */,
 				E97E80732D199652003D6CC6 /* EditProfileView.swift in Sources */,
+				023CC1F22D26A9BC00BC13A6 /* EntitlementManager.swift in Sources */,
 				E9868E9F2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
+				023CC1F32D26A9BE00BC13A6 /* IAP Constants.swift in Sources */,
 				E97D15AB2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E9868E342D168ED6007ACB26 /* Router.swift in Sources */,
+				023CC1F42D26A9C400BC13A6 /* KeychainService.swift in Sources */,
 				E9868E352D168ED6007ACB26 /* LoginView.swift in Sources */,
 				E97E806C2D193EDF003D6CC6 /* AppleSignInManager.swift in Sources */,
 				E97E80702D19963A003D6CC6 /* AccountInformationView.swift in Sources */,
@@ -666,8 +704,10 @@
 				E9868E382D168ED6007ACB26 /* Crypto_AnalyserApp.swift in Sources */,
 				E9868ED52D170555007ACB26 /* GoogleSignInManager.swift in Sources */,
 				E91DEDCF2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */,
+				023CC1F02D26A9B200BC13A6 /* SubscriptionsView.swift in Sources */,
 				E91DEDC82D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E9868ED42D170552007ACB26 /* FirebaseAuthentication.swift in Sources */,
+				023CC1F72D26D4E600BC13A6 /* WebContainerView.swift in Sources */,
 				E97D15AE2D1AD0C0005A9A3F /* GalleryView.swift in Sources */,
 				E9868E392D168ED6007ACB26 /* ForgotPassword.swift in Sources */,
 				E9868E532D16A8BF007ACB26 /* SettingView.swift in Sources */,

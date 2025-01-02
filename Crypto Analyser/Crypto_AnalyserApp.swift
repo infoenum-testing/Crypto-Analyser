@@ -13,13 +13,23 @@ struct Crypto_AnalyserApp: App {
     @ObservedObject var router = Router()
     @State var isUserLoggedIn = UserSessionManager.isUserLoggedIn()
     @State private var isLoggedIn = true
+    @StateObject private var entitlementManager: EntitlementManager
+    @StateObject private var subscriptionsManager: SubscriptionsManager
+    
+    init() {
+        let entitlementManager = EntitlementManager()
+        let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)
+        
+        self._entitlementManager = StateObject(wrappedValue: entitlementManager)
+        self._subscriptionsManager = StateObject(wrappedValue: subscriptionsManager)
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.authNavigationPath) {
                 ZStack {
                     if !isLoggedIn || !isUserLoggedIn {
                         LoginView()
-                        
                     } else {
                         TabbarView()
                     }
@@ -49,11 +59,16 @@ struct Crypto_AnalyserApp: App {
                     case .imageAnalyser(let image):
                          ImageAnalyserView(image: image)
                             .navigationBarBackButtonHidden()
+                    case .subscriptionView:
+                        SubscriptionsView()
+                            .navigationBarBackButtonHidden()
                     }
                 }
             }
             .navigationBarBackButtonHidden()
             .environmentObject(router)
+            .environmentObject(entitlementManager)
+                .environmentObject(subscriptionsManager)
             .onAppear {
 #if Pro
                 print("Production")
@@ -65,6 +80,9 @@ struct Crypto_AnalyserApp: App {
                 NotificationCenter.default.addObserver(forName: .userDidLogout, object: nil, queue: .main) { _ in
                     isLoggedIn = false
                 }
+            }
+            .task {
+                await subscriptionsManager.updatePurchasedProducts()
             }
         }
     }
