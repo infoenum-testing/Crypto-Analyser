@@ -1,0 +1,1691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "120F49BB-993C-46BE-9CDE-9DDBE64EE735"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAA17FFE-71A3-409C-9C3D-BEF4A2BC4721"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/FirebaseAuthentication.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "loginUser(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DAA17FFE-71A3-409C-9C3D-BEF4A2BC4721 - 8471642420987382"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1574">
+               </Location>
+               <Location
+                  uuid = "DAA17FFE-71A3-409C-9C3D-BEF4A2BC4721 - 84716424209873e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1492">
+               </Location>
+               <Location
+                  uuid = "DAA17FFE-71A3-409C-9C3D-BEF4A2BC4721 - 8471642420987382"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "1492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF27C9C7-F356-4445-B98D-77170F391B12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/FirebaseAuthentication.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "loginUser(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF27C9C7-F356-4445-B98D-77170F391B12 - 8471642420987267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "765">
+               </Location>
+               <Location
+                  uuid = "CF27C9C7-F356-4445-B98D-77170F391B12 - 8471642420987267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "CF27C9C7-F356-4445-B98D-77170F391B12 - 8471642420987206"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "320">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9557053-DAB8-423F-B1A4-361298A3790A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "loginButton"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C9557053-DAB8-423F-B1A4-361298A3790A - 64042b2a3f7115c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "460">
+               </Location>
+               <Location
+                  uuid = "C9557053-DAB8-423F-B1A4-361298A3790A - 64042b2a3f7115c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "384">
+               </Location>
+               <Location
+                  uuid = "C9557053-DAB8-423F-B1A4-361298A3790A - 64042b2a3f7115c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "475">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43601D76-0E56-4875-AD44-AC374457BC16"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "loginButton"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "43601D76-0E56-4875-AD44-AC374457BC16 - 64042b2a3f71152c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+               <Location
+                  uuid = "43601D76-0E56-4875-AD44-AC374457BC16 - 64042b2a3f71152c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "43601D76-0E56-4875-AD44-AC374457BC16 - 64042b2a3f71152c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "1235">
+               </Location>
+               <Location
+                  uuid = "43601D76-0E56-4875-AD44-AC374457BC16 - 64042b2a3f71152c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.LoginView.loginButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/FirebaseAuthentication.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "loginUser(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495d8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495d8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "765">
+               </Location>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495dae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "872">
+               </Location>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495dae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495d6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "2EE4ECA7-1BC8-4550-AF50-89473EEDB028 - 8e8b8a922b495d6c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAuthentication.loginUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/FirebaseAuthentication.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "872">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F796CF0-9CA0-469C-A0CC-F3BB86446C12"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0F796CF0-9CA0-469C-A0CC-F3BB86446C12 - 45b59f0d2bc2053d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Swift.String, Swift.String), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #3 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0&gt;)&gt; in Crypto_Analyser_Dev.LoginView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "451">
+               </Location>
+               <Location
+                  uuid = "0F796CF0-9CA0-469C-A0CC-F3BB86446C12 - 45b59f0d2bc2053d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Swift.String, Swift.String), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #3 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0&gt;)&gt; in Crypto_Analyser_Dev.LoginView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2502845-ECA7-4CDB-B379-FAD5A8CF0DBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B2502845-ECA7-4CDB-B379-FAD5A8CF0DBD - 45b59f0d2bc20441"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Swift.String, Swift.String), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #3 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0&gt;)&gt; in Crypto_Analyser_Dev.LoginView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  uuid = "B2502845-ECA7-4CDB-B379-FAD5A8CF0DBD - 45b59f0d2bc20441"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;(Swift.String, Swift.String), Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #3 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;)&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ShapeStyle&gt;(_: &#x3c4;_1_0, ignoresSafeAreaEdges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0&gt;)&gt; in Crypto_Analyser_Dev.LoginView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B492E93D-722F-43F3-A924-BCE6CF90394E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/ForgotPassword.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "sendButton"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B492E93D-722F-43F3-A924-BCE6CF90394E - 58255c6803b621d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.ForgotPassword.sendButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1301">
+               </Location>
+               <Location
+                  uuid = "B492E93D-722F-43F3-A924-BCE6CF90394E - 58255c6803b622df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.ForgotPassword.sendButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1301">
+               </Location>
+               <Location
+                  uuid = "B492E93D-722F-43F3-A924-BCE6CF90394E - 58255c6803b622df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.ForgotPassword.sendButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1293">
+               </Location>
+               <Location
+                  uuid = "B492E93D-722F-43F3-A924-BCE6CF90394E - 58255c6803b622df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Crypto_Analyser_Dev.ForgotPassword.sendButton.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "908">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "385D3AA2-EE0C-49E2-B476-B107DC6E8322"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/TabBar/Setting/SettingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "385D3AA2-EE0C-49E2-B476-B107DC6E8322 - ce1ef251021c67ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #2 () -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.alert&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2 where &#x3c4;_1_0: Swift.StringProtocol, &#x3c4;_1_1: SwiftUI.View, &#x3c4;_1_2: SwiftUI.View&gt;(_: &#x3c4;_1_0, isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, actions: () -&gt; &#x3c4;_1_1, message: () -&gt; &#x3c4;_1_2) -&gt; some&gt;&gt;.0 in Crypto_Analyser_Dev.SettingView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/TabBar/Setting/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  uuid = "385D3AA2-EE0C-49E2-B476-B107DC6E8322 - ce1ef251021c67ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #2 () -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.alert&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2 where &#x3c4;_1_0: Swift.StringProtocol, &#x3c4;_1_1: SwiftUI.View, &#x3c4;_1_2: SwiftUI.View&gt;(_: &#x3c4;_1_0, isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, actions: () -&gt; &#x3c4;_1_1, message: () -&gt; &#x3c4;_1_2) -&gt; some&gt;&gt;.0 in Crypto_Analyser_Dev.SettingView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/TabBar/Setting/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "385D3AA2-EE0C-49E2-B476-B107DC6E8322 - ce1ef251021c67ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #2 () -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;, SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.Text&gt;, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt;&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.alert&lt;&#x3c4;_0_0, &#x3c4;_0_1, &#x3c4;_0_2 where &#x3c4;_1_0: Swift.StringProtocol, &#x3c4;_1_1: SwiftUI.View, &#x3c4;_1_2: SwiftUI.View&gt;(_: &#x3c4;_1_0, isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, actions: () -&gt; &#x3c4;_1_1, message: () -&gt; &#x3c4;_1_2) -&gt; some&gt;&gt;.0 in Crypto_Analyser_Dev.SettingView.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/TabBar/Setting/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/Helper/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E - 562fef2d9ab0ea85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuthRoot() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E - 562fef2d9ab0ea85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuthRoot() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E - 562fef2d9ab0ea85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuthRoot() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E - 562fef2d9ab0d562"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuthRoot() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "037AFD5A-327C-4BBA-84C8-4380CA26448E - 562fef2d9ab0d562"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuthRoot() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "429C6F47-E17C-4C52-959E-9C7505F9ED13"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/Helper/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "429C6F47-E17C-4C52-959E-9C7505F9ED13 - fdb3c1ce1c13231a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateBackInAuth() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "429C6F47-E17C-4C52-959E-9C7505F9ED13 - fdb3c1ce1c13231a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateBackInAuth() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "429C6F47-E17C-4C52-959E-9C7505F9ED13 - fdb3c1ce1c132379"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateBackInAuth() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "429C6F47-E17C-4C52-959E-9C7505F9ED13 - fdb3c1ce1c132379"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateBackInAuth() -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59641B9C-B09A-4610-BDBA-B4ABFB469D08"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/Helper/Router.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "59641B9C-B09A-4610-BDBA-B4ABFB469D08 - 1ce8a349bb5040cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuth(Crypto_Analyser_Dev.Router.AuthDestination) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "59641B9C-B09A-4610-BDBA-B4ABFB469D08 - 1ce8a349bb5040cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuth(Crypto_Analyser_Dev.Router.AuthDestination) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "59641B9C-B09A-4610-BDBA-B4ABFB469D08 - 1ce8a349bb5040ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuth(Crypto_Analyser_Dev.Router.AuthDestination) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "59641B9C-B09A-4610-BDBA-B4ABFB469D08 - 1ce8a349bb5040ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.Router.navigateToAuth(Crypto_Analyser_Dev.Router.AuthDestination) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/Helper/Router.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09E0E2CC-4A46-42A9-BB9C-7554A87AD06F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "09E0E2CC-4A46-42A9-BB9C-7554A87AD06F - 74594ace4fc28494"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1001">
+               </Location>
+               <Location
+                  uuid = "09E0E2CC-4A46-42A9-BB9C-7554A87AD06F - 74594ace4fc28433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1216">
+               </Location>
+               <Location
+                  uuid = "09E0E2CC-4A46-42A9-BB9C-7554A87AD06F - 74594ace4fc28433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1611">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10B9ADC4-3B31-4507-ACD3-5D9B514C1C3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "10B9ADC4-3B31-4507-ACD3-5D9B514C1C3C - 7b20f82e6389bc38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.authorizationController(controller: __C.ASAuthorizationController, didCompleteWithAuthorization: __C.ASAuthorization) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "6347">
+               </Location>
+               <Location
+                  uuid = "10B9ADC4-3B31-4507-ACD3-5D9B514C1C3C - 7b20f82e6389bc38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.authorizationController(controller: __C.ASAuthorizationController, didCompleteWithAuthorization: __C.ASAuthorization) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "244"
+                  endingLineNumber = "244"
+                  offsetFromSymbolStart = "6481">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EFDB4F8-593C-4514-8623-A10F13445623"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "signIn(credential:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4EFDB4F8-593C-4514-8623-A10F13445623 - 50530d98893be2af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "4EFDB4F8-593C-4514-8623-A10F13445623 - 16213b91c885a426"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "231">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60A95F34-F681-4455-AD1F-C5DE2F9E07CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "signIn(credential:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "60A95F34-F681-4455-AD1F-C5DE2F9E07CB - 16213b91c885a72e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "60A95F34-F681-4455-AD1F-C5DE2F9E07CB - 16213b91c885a7ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "704">
+               </Location>
+               <Location
+                  uuid = "60A95F34-F681-4455-AD1F-C5DE2F9E07CB - 16213b91c885a7ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "617">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2BC9A8B-E3C4-4EBD-A1EA-F17E1ED10AD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "signIn(credential:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E2BC9A8B-E3C4-4EBD-A1EA-F17E1ED10AD5 - 16213b91c885a7ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "704">
+               </Location>
+               <Location
+                  uuid = "E2BC9A8B-E3C4-4EBD-A1EA-F17E1ED10AD5 - 16213b91c885a449"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "231">
+               </Location>
+               <Location
+                  uuid = "E2BC9A8B-E3C4-4EBD-A1EA-F17E1ED10AD5 - 16213b91c885a449"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.signIn(credential: FirebaseAuth.AuthCredential, completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "704">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "263">
+               </Location>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "298">
+               </Location>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "295">
+               </Location>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "267">
+               </Location>
+               <Location
+                  uuid = "FA63FAAC-A24D-4229-8506-1EB611ABF30B - a8da0aab3402a9e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.login(completion: (Swift.Result&lt;FirebaseAuth.AuthDataResult, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "302">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CF76A23-C0E2-42C4-84E8-898C1562CA43"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4CF76A23-C0E2-42C4-84E8-898C1562CA43 - 137fc7ca7a980754"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "305">
+               </Location>
+               <Location
+                  uuid = "4CF76A23-C0E2-42C4-84E8-898C1562CA43 - 137fc7ca7a98048a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "351">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0448406-2D08-49AF-B102-85DE9CEA2090"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0448406-2D08-49AF-B102-85DE9CEA2090 - fb387de0858b43d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "2227">
+               </Location>
+               <Location
+                  uuid = "A0448406-2D08-49AF-B102-85DE9CEA2090 - 7d47499790f86d5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "665">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1ABADEEB-63C9-4DD3-BB5F-6C854154B31C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1ABADEEB-63C9-4DD3-BB5F-6C854154B31C - 7d47499790f86cb7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "203">
+               </Location>
+               <Location
+                  uuid = "1ABADEEB-63C9-4DD3-BB5F-6C854154B31C - 7d47499790f86cf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "665">
+               </Location>
+               <Location
+                  uuid = "1ABADEEB-63C9-4DD3-BB5F-6C854154B31C - 7d47499790f86cf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "606">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E60B57A-7786-4DC9-9834-4FA9F6BBC590"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E60B57A-7786-4DC9-9834-4FA9F6BBC590 - fb387de0858b440b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "6E60B57A-7786-4DC9-9834-4FA9F6BBC590 - fb387de0858b440b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "633">
+               </Location>
+               <Location
+                  uuid = "6E60B57A-7786-4DC9-9834-4FA9F6BBC590 - fb387de0858b440b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "1252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5A8B378-256B-4BE8-AD6A-E1A88E545EC0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5A8B378-256B-4BE8-AD6A-E1A88E545EC0 - fb387de0858b45a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "395">
+               </Location>
+               <Location
+                  uuid = "C5A8B378-256B-4BE8-AD6A-E1A88E545EC0 - 137fc7ca7a9807d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "778">
+               </Location>
+               <Location
+                  uuid = "C5A8B378-256B-4BE8-AD6A-E1A88E545EC0 - fb387de0858b45e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "506">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "922C9B20-4BD3-4749-B898-E35EF03F293B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F0B2612-E373-40A9-A15C-F19F0F341FA3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F81A17C-77CF-4FCC-82C6-5A85AA7CFC5B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "checkAndSaveUserToFirestore(email:name:uid:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F81A17C-77CF-4FCC-82C6-5A85AA7CFC5B - 137fc7ca7a98040e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  uuid = "0F81A17C-77CF-4FCC-82C6-5A85AA7CFC5B - 137fc7ca7a98044c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_Analyser_Dev.FirebaseAppleLoginViewModel.checkAndSaveUserToFirestore(email: Swift.String, name: Swift.String, uid: Swift.String, completion: (Swift.Result&lt;(exists: Swift.Bool, existingName: Swift.Optional&lt;Swift.String&gt;), Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/IE-Projects/Crypto%20Analyser/Crypto%20Analyser/FireBase%20Manager/Auth/AppleSignInManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "984">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0047DDFD-7E83-421D-9C41-B5BA60F328BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03531F13-166A-437A-BFFF-82EF7D6B2CA7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60FFF4E0-CB96-495F-8863-F8EDFB281C13"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2DFAE57-0E6B-42F7-ABC3-857273064D22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/FireBase Manager/Auth/AppleSignInManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "login(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

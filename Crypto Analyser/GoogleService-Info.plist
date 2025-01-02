@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>443080796198-ajuh1io6qnpmrh71ibafi23raj9ecfek.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.443080796198-ajuh1io6qnpmrh71ibafi23raj9ecfek</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAHgbP8dgfc9rtb3zDhItAhYxSDVYxOoo0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>443080796198</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.infoenum.Crypto-Analyser</string>
+	<key>PROJECT_ID</key>
+	<string>crypto-anaylser-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>crypto-anaylser-dev.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:443080796198:ios:cd561d098ee6c4d8eb1ee7</string>
+</dict>
+</plist>

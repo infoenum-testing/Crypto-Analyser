@@ -1,0 +1,6 @@
+framework module Pods_Crypto_Analyser_Pro {
+  umbrella header "Pods-Crypto Analyser Pro-umbrella.h"
+
+  export *
+  module * { export * }
+}

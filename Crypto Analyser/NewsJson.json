@@ -1,0 +1,123 @@
+
+[
+  {
+    "news_url": "https://crypto.news/matrixport-outlines-new-risks-that-could-challenge-bitcoins-rally-in-2025/",
+    "image_url": "https://crypto.snapi.dev/images/v1/j/g/e/btc64-571668-618173.jpg",
+    "title": "Matrixport outlines new risks that could challenge Bitcoin's rally in 2025",
+    "text": "Bitcoin's next bull run could face headwinds from quantum computing advancements and shifting inflation dynamics, analysts warn. Singapore-based web3 firm Matrixport says there are still many risks that could disrupt Bitcoin's (BTC) bull market in 2025.",
+    "source_name": "Crypto news",
+    "date": "Fri, 27 Dec 2024 04:34:58 -0500",
+    "topics": ["pricemovement"],
+    "sentiment": "Negative",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://coinradar.news/article/12gknX7W1jt79Y25Gd3TvW-bitwise-files-for-bitcoin-standard-etf-focused-on-firms-holding-large-btc-reserves?utm_source=snapi",
+    "image_url": "https://crypto.snapi.dev/images/v1/q/u/h/50cd8804-238c-4dc1-9dd4-84218a-618174.webp",
+    "title": "Bitwise Files for Bitcoin Standard ETF Focused on Firms Holding Large BTC Reserves",
+    "text": "The proposed ETF targets companies with substantial Bitcoin holdings, as the trend of corporate BTC adoption grows.",
+    "source_name": "Coinradar",
+    "date": "Fri, 27 Dec 2024 04:30:32 -0500",
+    "topics": [],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://cryptopotato.com/vivek-ramaswamys-strive-asset-management-files-for-bitcoin-bond-etf-with-sec/",
+    "image_url": "https://crypto.snapi.dev/images/v1/z/a/k/btc17-571786-618168.jpg",
+    "title": "Vivek Ramaswamy's Strive Asset Management Files for Bitcoin Bond ETF with SEC",
+    "text": "The ETF will target securities from companies like MicroStrategy, which has invested approximately $27 billion in Bitcoin since 2020.",
+    "source_name": "CryptoPotato",
+    "date": "Fri, 27 Dec 2024 04:26:31 -0500",
+    "topics": ["regulations"],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://coinpaper.com/6727/strive-aims-to-launch-bitcoin-bond-etf-amid-rising-crypto-adoption?utm_source=snapi",
+    "image_url": "https://crypto.snapi.dev/images/v1/y/u/n/cp6225-bitcoin-on-a-rocket-lau-618161.jpg",
+    "title": "Strive Aims to Launch Bitcoin Bond ETF Amid Rising Crypto Adoption",
+    "text": "Strive Asset Management seeks regulatory approval for a Bitcoin Bond ETF, offering exposure to convertible securities tied to Bitcoin.",
+    "source_name": "Coinpaper",
+    "date": "Fri, 27 Dec 2024 04:00:00 -0500",
+    "topics": [],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://cryptoticker.io/en/bitcoin-price-prediction-is-a-rebound-around-the-corner/",
+    "image_url": "https://crypto.snapi.dev/images/v1/s/w/o/r323er-582253-618163.jpg",
+    "title": "Bitcoin Price Prediction – Is a Rebound Around the Corner?",
+    "text": "Is Bitcoin gearing up for a comeback? Discover the key factors driving its price and whether a rebound is on the horizon.",
+    "source_name": "CryptoTicker",
+    "date": "Fri, 27 Dec 2024 04:00:00 -0500",
+    "topics": ["priceforecast", "pricemovement"],
+    "sentiment": "Neutral",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://cointelegraph.com/news/bitcoin-head-and-shoulders-pattern-risks-80k-btc-price-dip?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "image_url": "https://crypto.snapi.dev/images/v1/g/m/a/btc67-571665-618158.jpg",
+    "title": "Bitcoin 'head and shoulders' pattern risks $80K BTC price dip — Analyst",
+    "text": "BTC price targets calling for new local lows gain an $80,000 warning from longtime trader and analyst Aksel Kibar.",
+    "source_name": "Cointelegraph",
+    "date": "Fri, 27 Dec 2024 03:58:34 -0500",
+    "topics": ["pricemovement"],
+    "sentiment": "Negative",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://www.coinspeaker.com/kulr-technology-launches-major-bitcoin-strategy-secures-217-btc-for-21m/",
+    "image_url": "https://crypto.snapi.dev/images/v1/6/3/d/btc31-571709-618157.jpg",
+    "title": "KULR Technology Launches Major Bitcoin Strategy, Secures 217 BTC for $21M",
+    "text": "Bitcoin is now a major reserve asset for KULR Technology after a $21 million purchase.",
+    "source_name": "Coinspeaker",
+    "date": "Fri, 27 Dec 2024 03:47:44 -0500",
+    "topics": ["pricemovement"],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://www.coinspeaker.com/bitwise-and-strive-file-new-etfs-bitcoin-adoption-grows/",
+    "image_url": "https://crypto.snapi.dev/images/v1/x/r/d/btc4-571821-618156.jpg",
+    "title": "Bitwise and Strive File New ETFs as Bitcoin Adoption Grows",
+    "text": "The rise in corporate Bitcoin holdings shows no signs of slowing.",
+    "source_name": "Coinspeaker",
+    "date": "Fri, 27 Dec 2024 03:47:00 -0500",
+    "topics": [],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://www.cryptopolitan.com/bitcoin-dominance-zero-tradingview-glitch/",
+    "image_url": "https://crypto.snapi.dev/images/v1/y/0/7/bitcoin-dominance-collapses-to-618150.webp",
+    "title": "Bitcoin dominance collapses to zero on TradingView, debunked as glitch",
+    "text": "Bitcoin faced significant price turbulence on December 26, disrupting the typically calm trading conditions seen during the holiday period. A glitch in TradingView's chart erroneously displayed Bitcoin crypto market dominance as 0%, triggering panic among traders and market participants.",
+    "source_name": "Cryptopolitan",
+    "date": "Fri, 27 Dec 2024 03:38:14 -0500",
+    "topics": [],
+    "sentiment": "Negative",
+    "type": "Article",
+    "tickers": ["BTC"]
+  },
+  {
+    "news_url": "https://coincu.com/299067-bitcoin-spot-etf-inflows-reach-475m/?utm_source=snapi",
+    "image_url": "https://crypto.snapi.dev/images/v1/g/o/9/image-259-22-618147.jpg",
+    "title": "Bitcoin Spot ETF Inflows Reach $475M After Recent Outflows",
+    "text": "Key Points:",
+    "source_name": "Coincu",
+    "date": "Fri, 27 Dec 2024 03:33:27 -0500",
+    "topics": ["pricemovement"],
+    "sentiment": "Positive",
+    "type": "Article",
+    "tickers": ["BTC"]
+  }
+]
