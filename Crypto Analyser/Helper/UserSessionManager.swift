@@ -12,6 +12,7 @@ class UserSessionManager {
         static let userName = "userName"
         static let userEmail = "userEmail"
         static let isLoggedIn = "isLoggedIn"
+        static let userSubscriptionData = "userSubscriptionData"
     }
     
     // Save user data to UserDefaults
@@ -28,6 +29,12 @@ class UserSessionManager {
         return (name, email)
     }
     
+    static func getUserEmail() -> (String) {
+        let email = UserDefaults.standard.string(forKey: Keys.userEmail) ?? ""
+        return (email)
+    }
+    
+    
     // Check if user is logged in
     static func isUserLoggedIn() -> Bool {
         return UserDefaults.standard.bool(forKey: Keys.isLoggedIn)
@@ -40,4 +47,23 @@ class UserSessionManager {
         UserDefaults.standard.set(false, forKey: Keys.isLoggedIn)
         NotificationCenter.default.post(name: .userDidLogout, object: nil)
     }
+    
+    // Save the subscription details got from firebase
+    static func saveUserSubscriptionDetail(_ user: SubscriptionPayload) {
+        let encoder = JSONEncoder()
+        if let encodedUser = try? encoder.encode(user) {
+            UserDefaults.standard.set(encodedUser, forKey: Keys.userSubscriptionData)
+        }
+    }
+    // To get  the subscription details saved previously
+    static func getUserSubscriptionDetail() -> SubscriptionPayload? {
+        if let savedUserData = UserDefaults.standard.data(forKey: Keys.userSubscriptionData) {
+            let decoder = JSONDecoder()
+            if let user = try? decoder.decode(SubscriptionPayload.self, from: savedUserData) {
+                return user
+            }
+        }
+        return nil
+    }
+    
 }

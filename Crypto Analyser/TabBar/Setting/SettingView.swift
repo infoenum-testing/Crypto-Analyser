@@ -23,6 +23,10 @@ struct SettingView: View {
     @State private var alertMessage = ""
     @State private var alertButtonText = ""
     
+    
+    
+    
+    
     var body: some View {
         ZStack {
             VStack {

@@ -27,7 +27,7 @@ struct WebViewContainer: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var isLoading: Bool = true
-    @State var isHeaderViewHidden : Bool = false
+    @State var isHeaderViewHidden : Bool = true
     let url: URL
     var title : String
     

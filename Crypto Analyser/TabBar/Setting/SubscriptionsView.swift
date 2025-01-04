@@ -13,10 +13,14 @@ struct SubscriptionsView: View {
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
-    @State private var selectedProduct: Product? = nil
+  //  @State private var selectedProduct: Product? = nil
     @State private var emptyProductAlert: Bool = false
+    @State private var showPrivacyPolicy: Bool = false
+    @State private var showTermsConditions: Bool = false
     private let features: [String] = ["Remove all ads", "Daily new content", "Other cool features", "Follow for more tutorials"]
-    
+    static let privacyPolicy = "https://www.offhandlabs.com/privacy-policy"
+    static let termsAndConditions = "https://www.termsfeed.com/blog/sample-terms-and-conditions-template/"
+  
     // MARK: - Layout
     var body: some View {
         VStack {
@@ -41,12 +45,20 @@ struct SubscriptionsView: View {
                 .onAppear {
                     Task {
                         await subscriptionsManager.loadProducts()
+                        print(subscriptionsManager.purchasedProductIDs)
+                        subscriptionsManager.returnPurchaseTitle()
                     }
                 }
-    }
+        }
         .alert("Please select a product before purchasing.", isPresented: $emptyProductAlert) {
-                    Button("OK", role: .cancel) { }
-                }
+            Button("OK", role: .cancel) { }
+        }
+        .fullScreenCover(isPresented: $showPrivacyPolicy) {
+            WebViewContainer(isHeaderViewHidden: false, url: URL(string: SubscriptionsView.privacyPolicy)!, title: "Privacy Policy")
+        }
+        .fullScreenCover(isPresented: $showTermsConditions) {
+            WebViewContainer(isHeaderViewHidden: false, url: URL(string: SubscriptionsView.termsAndConditions)!, title: "Terms And Conditions")
+        }
     }
     
     // MARK: - Views
@@ -85,8 +97,8 @@ struct SubscriptionsView: View {
                         .foregroundColor(.midnightBlue)
                         .padding(.top,10)
                     }
-                   
-
+                    
+                    
                 }
                 Spacer()
                 purchaseSection
@@ -136,7 +148,7 @@ struct SubscriptionsView: View {
     
     private var productsListView: some View {
         List(subscriptionsManager.products, id: \.self) { product in
-            SubscriptionItemView(product: product, selectedProduct: $selectedProduct)
+            SubscriptionItemView(product: product, selectedProduct: $subscriptionsManager.selectedProduct)
         }
         .scrollDisabled(true)
         .listStyle(.plain)
@@ -147,11 +159,9 @@ struct SubscriptionsView: View {
     private var purchaseSection: some View {
         VStack(alignment: .center, spacing: 15) {
             
-           
-            
             HStack {
                 Button {
-                    //
+                    showTermsConditions = true
                 } label: {
                     Text("Terms & Conditions")
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
@@ -162,7 +172,7 @@ struct SubscriptionsView: View {
                 Spacer()
                 
                 Button {
-                    //
+                    showPrivacyPolicy = true
                 } label: {
                     Text("Privacy Policy")
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
@@ -171,13 +181,13 @@ struct SubscriptionsView: View {
                 }
             }
             
-           
-        }
+        }.padding(.horizontal, 15)
     }
     
     private var purchaseButtonView: some View {
+    
         Button(action: {
-            if let selectedProduct = selectedProduct {
+            if let selectedProduct = subscriptionsManager.selectedProduct {
                 Task {
                     await subscriptionsManager.buyProduct(selectedProduct)
                 }
@@ -187,57 +197,67 @@ struct SubscriptionsView: View {
             }
         }) {
             RoundedRectangle(cornerRadius: 12.5)
-                .foregroundColor( selectedProduct == nil ? .midnightBlue.opacity(0.4) : .midnightBlue)
+                .foregroundColor( subscriptionsManager.selectedProduct == nil ? .midnightBlue.opacity(0.4) : .midnightBlue)
                 .overlay {
-                    Text("Purchase")
-                        .foregroundStyle(.white)
-                        .font(.system(size: 16.5, weight: .semibold, design: .rounded))
+                    VStack {
+                        if subscriptionsManager.isLoading  {
+                            ProgressView()
+                                .tint(.white)
+                        } else {
+                            Text(subscriptionsManager.title)
+                                .foregroundStyle(.white)
+                                .font(.system(size: 16.5, weight: .semibold, design: .rounded))
+                        }
+                        
+                    }
                 }
+                .padding(.horizontal, 20)
+                .frame(height: 46)
+                .disabled(subscriptionsManager.selectedProduct == nil)
         }
-        .padding(.horizontal, 20)
-        .frame(height: 46)
-        .disabled(selectedProduct == nil)
     }
-}
-
-
-// MARK: Subscription Item
-struct SubscriptionItemView: View {
-    var product: Product
-    @Binding var selectedProduct: Product?
     
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12.5)
-                .stroke(selectedProduct == product ? .midnightBlue : .gray, lineWidth: 2.0)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
-            
-            HStack {
-                VStack(alignment: .leading, spacing: 8.5) {
-                    Text(product.displayName)
-                        .font(.system(size: 16.0, weight: .semibold, design: .rounded))
-                        .multilineTextAlignment(.leading)
-                    
-                    Text("Get full access for just \(product.displayPrice)")
-                        .font(.system(size: 14.0, weight: .regular, design: .rounded))
-                        .multilineTextAlignment(.leading)
+    
+    // MARK: Subscription Item
+    struct SubscriptionItemView: View {
+        @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
+
+        var product: Product
+        @Binding var selectedProduct: Product?
+        
+        var body: some View {
+            ZStack {
+                RoundedRectangle(cornerRadius: 12.5)
+                    .stroke(selectedProduct == product ? .midnightBlue : .gray, lineWidth: 2.0)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 8.5) {
+                        Text(product.displayName)
+                            .font(.system(size: 16.0, weight: .semibold, design: .rounded))
+                            .multilineTextAlignment(.leading)
+                        
+                        Text("Get full access for just \(product.displayPrice)")
+                            .font(.system(size: 14.0, weight: .regular, design: .rounded))
+                            .multilineTextAlignment(.leading)
+                    }
+                    Spacer()
+                    Image(systemName: selectedProduct == product ? "checkmark.circle.fill" : "circle")
+                        .foregroundColor(selectedProduct == product ? .midnightBlue : .gray)
                 }
-                Spacer()
-                Image(systemName: selectedProduct == product ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(selectedProduct == product ? .midnightBlue : .gray)
+                .padding(.horizontal, 20)
+                .frame(height: 65, alignment: .center)
             }
-            .padding(.horizontal, 20)
-            .frame(height: 65, alignment: .center)
+            .onTapGesture {
+                selectedProduct = product
+            }
+            .disabled(subscriptionsManager.isViewDisabled(title: subscriptionsManager.title, product: product.id))
+            
+            .listRowSeparator(.hidden)
         }
-        .onTapGesture {
-            selectedProduct = product
-        }
-        .listRowSeparator(.hidden)
     }
+    
 }
-
-
-
-#Preview {
-    SubscriptionsView()
-}
+//#Preview {
+//    SubscriptionsView()
+//}

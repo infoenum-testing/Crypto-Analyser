@@ -18,6 +18,8 @@
 		023CC1F42D26A9C400BC13A6 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E2102D23E4E600304CA6 /* KeychainService.swift */; };
 		023CC1F62D26D4E600BC13A6 /* WebContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */; };
 		023CC1F72D26D4E600BC13A6 /* WebContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */; };
+		02D5C09E2D27E858001087DF /* SubscriptionPayLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D5C09D2D27E858001087DF /* SubscriptionPayLoad.swift */; };
+		02D5C09F2D27F306001087DF /* StoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 02D5C09C2D27CB68001087DF /* StoreKit.storekit */; };
 		16612F1AE15F31D42F0804E3 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6DBFA4237E21E0FAAA641 /* Pods_Crypto_Analyser_Dev.framework */; };
 		CC18856E0AED3E858D78581C /* Pods_Crypto_Analyser_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A5FFF841158D935F3A5A9D /* Pods_Crypto_Analyser_Pro.framework */; };
 		E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDC62D1D1C420028FE6D /* FireBaseResentSearches.swift */; };
@@ -141,6 +143,8 @@
 		023CC1EC2D26963400BC13A6 /* IAP Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IAP Constants.swift"; sourceTree = "<group>"; };
 		023CC1EE2D26A9B200BC13A6 /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
 		023CC1F52D26D4E600BC13A6 /* WebContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContainerView.swift; sourceTree = "<group>"; };
+		02D5C09C2D27CB68001087DF /* StoreKit.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKit.storekit; sourceTree = "<group>"; };
+		02D5C09D2D27E858001087DF /* SubscriptionPayLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPayLoad.swift; sourceTree = "<group>"; };
 		29A6218ABFEA86ADF280ABE2 /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		35989BF2BA1E9417B1FDA34B /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
 		58EDB3420BD0161D92B829F0 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				023CC1E82D26959100BC13A6 /* SubscriptionsManager.swift */,
 				023CC1EA2D2695B300BC13A6 /* EntitlementManager.swift */,
 				023CC1EC2D26963400BC13A6 /* IAP Constants.swift */,
+				02D5C09C2D27CB68001087DF /* StoreKit.storekit */,
+				02D5C09D2D27E858001087DF /* SubscriptionPayLoad.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -573,6 +579,7 @@
 				E9868E602D16E848007ACB26 /* GoogleService-Info.plist in Resources */,
 				E97259482D155CA300D498CC /* Preview Assets.xcassets in Resources */,
 				E975E7E12D1EAEE2004F1769 /* NewsJson.json in Resources */,
+				02D5C09F2D27F306001087DF /* StoreKit.storekit in Resources */,
 				E975E7D82D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */,
 				E97259492D155CA300D498CC /* Assets.xcassets in Resources */,
 			);
@@ -650,6 +657,7 @@
 				E97E80722D199652003D6CC6 /* EditProfileView.swift in Sources */,
 				023CC1EB2D2695B300BC13A6 /* EntitlementManager.swift in Sources */,
 				E97259602D158E8500D498CC /* Router.swift in Sources */,
+				02D5C09E2D27E858001087DF /* SubscriptionPayLoad.swift in Sources */,
 				023CC1ED2D26963400BC13A6 /* IAP Constants.swift in Sources */,
 				E971E2112D23E4E600304CA6 /* KeychainService.swift in Sources */,
 				E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */,

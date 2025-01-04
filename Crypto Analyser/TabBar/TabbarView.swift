@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TabbarView: View {
     @EnvironmentObject var router: Router
-    
+    @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
+
     var body: some View {
         TabView {
             HomeView()
@@ -36,6 +37,9 @@ struct TabbarView: View {
             UITabBar.appearance().backgroundColor = .systemGray4.withAlphaComponent(0.3)
             
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemPink]
+            Task {
+                await subscriptionsManager.getSubscriptionDetails(for: UserSessionManager.getUserEmail())
+            }
         })
     }
 }
