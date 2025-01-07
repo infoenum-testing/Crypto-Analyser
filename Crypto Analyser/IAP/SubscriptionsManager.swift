@@ -116,8 +116,10 @@ extension SubscriptionsManager {
             guard case .verified(let transaction) = result else {
                 continue
             }
-            if transaction.revocationDate == nil {
-                self.purchasedProductIDs.insert(transaction.productID)
+            if transaction.revocationDate == nil  {
+                if let expdate = transaction.expirationDate, expdate < Date() {
+                    self.purchasedProductIDs.insert(transaction.productID)
+                }
             } else {
                 self.purchasedProductIDs.remove(transaction.productID)
             }
@@ -298,5 +300,78 @@ extension SubscriptionsManager {
         return (title == "Upgrade" && product == IAPConstants.Products.monthlySubscription) ||
                (title == "Downgrade" && product == IAPConstants.Products.yearlySubscription) ||
                false
+    }
+}
+
+extension SubscriptionsManager {
+    
+    /// Fetches subscription details from Apple's StoreKit server using the original transaction ID.
+    /// - Parameters:
+    ///   - originalTransactionId: The original transaction ID for the subscription.
+    ///   - isSandbox: A Boolean indicating whether to use the sandbox or production environment.
+    ///   - completion: A closure that returns the subscription details or an error.
+    func fetchSubscriptionDetails(
+        originalTransactionId: String,
+        isSandbox: Bool = true,
+        completion: @escaping (Result<[String: Any], Error>) -> Void
+    ) {
+        // Define the base URL depending on the environment
+        let baseURL = isSandbox
+            ? "https://api.storekit-sandbox.itunes.apple.com/inApps/v1/subscriptions/"
+            : "https://api.storekit.itunes.apple.com/inApps/v1/subscriptions/"
+        
+        guard let url = URL(string: baseURL + originalTransactionId) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        // Retrieve the app's StoreKit token
+        guard let token = AppStore.appStoreReceiptToken else {
+            completion(.failure(NSError(domain: "No App Store token", code: -1, userInfo: nil)))
+            return
+        }
+        
+        // Create the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        // Execute the request
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
+                  let data = data else {
+                completion(.failure(NSError(domain: "Invalid response", code: -1, userInfo: nil)))
+                return
+            }
+            
+            do {
+                // Decode the response JSON
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                completion(.success(json ?? [:]))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
+    }
+
+    
+}
+
+
+
+/// A helper to fetch the App Store receipt token (StoreKit 2).
+private extension AppStore {
+    static var appStoreReceiptToken: String? {
+        guard let receiptURL = Bundle.main.appStoreReceiptURL,
+              let receiptData = try? Data(contentsOf: receiptURL) else { return nil }
+        
+        return receiptData.base64EncodedString()
     }
 }

@@ -47,6 +47,14 @@ struct SubscriptionsView: View {
                         await subscriptionsManager.loadProducts()
                         print(subscriptionsManager.purchasedProductIDs)
                         subscriptionsManager.returnPurchaseTitle()
+                        subscriptionsManager.fetchSubscriptionDetails(originalTransactionId: "", isSandbox: true) { result in
+                            switch result {
+                            case .success(let details):
+                                print("Subscription details: \(details)")
+                            case .failure(let error):
+                                print("Error fetching subscription details: \(error)")
+                            }
+                        }
                     }
                 }
         }
