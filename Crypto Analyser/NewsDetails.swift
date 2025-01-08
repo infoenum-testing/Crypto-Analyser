@@ -20,35 +20,87 @@ struct NewsDetails: Codable {
     let tickers: [String]?
 
     private enum CodingKeys: String, CodingKey {
-            case newsUrl = "news_url"
-            case imageUrl = "image_url"
-            case title = "title"
-            case text = "text"
-            case sourceName = "source_name"
-            case date = "date"
-            case topics = "topics"
-            case sentiment = "sentiment"
-            case type = "type"
-            case tickers = "tickers"
-        }
+        case newsUrl = "news_url"
+        case imageUrl = "image_url"
+        case title = "title"
+        case text = "text"
+        case sourceName = "source_name"
+        case date = "date"
+        case topics = "topics"
+        case sentiment = "sentiment"
+        case type = "type"
+        case tickers = "tickers"
+    }
 }
 
-func decodeNewsJson() -> [NewsDetails]? {
-    guard let fileUrl = Bundle.main.url(forResource: "NewsJson", withExtension: "json") else {
-        print("JSON file not found")
-        return nil
+// Define a struct to represent the root response
+struct CryptoNewsResponse: Codable {
+    let data: [NewsDetails]
+}
+
+func fetchCryptoNews(section: String = "general", items: Int = 3, page: Int = 1, apiKey: String = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu", completion: @escaping (Result<[NewsDetails], Error>) -> Void) {
+    var components = URLComponents(string: "https://cryptonews-api.com/api/v1/category")
+    
+    components?.queryItems = [
+        URLQueryItem(name: "section", value: section),
+        URLQueryItem(name: "items", value: "\(items)"),
+        URLQueryItem(name: "page", value: "\(page)"),
+        URLQueryItem(name: "token", value: apiKey)
+    ]
+    
+    guard let url = components?.url else {
+        completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+        return
     }
     
-    do {
-        let data = try Data(contentsOf: fileUrl)
-        if let jsonString = String(data: data, encoding: .utf8) {
-            print("JSON Content:\n\(jsonString)")
+    // Create the URLRequest
+    let request = URLRequest(url: url)
+    
+    // Perform the URLSession data task
+    URLSession.shared.dataTask(with: request) { data, response, error in
+        // Handle errors
+        if let error = error {
+            print("Request failed with error: \(error)")
+            completion(.failure(error))
+            return
         }
-        let decoder = JSONDecoder()
-        let newsArray = try decoder.decode([NewsDetails].self, from: data)
-        return newsArray
-    } catch {
-        print("Error: \(error.localizedDescription)")
-        return nil
-    }
+        
+        // Ensure we have valid data
+        guard let data = data else {
+            completion(.failure(NSError(domain: "No data received", code: 0, userInfo: nil)))
+            return
+        }
+        
+        // Decode the response
+        do {
+            let decoder = JSONDecoder()
+            let decodedResponse = try decoder.decode(CryptoNewsResponse.self, from: data)
+            // Pass the decoded news array to the completion handler
+            completion(.success(decodedResponse.data))
+        } catch {
+            print("Decoding error: \(error)")
+            completion(.failure(error))
+        }
+    }.resume() // Start the data task
 }
+
+//func decodeNewsJson() -> [NewsDetails]? {
+//    guard let fileUrl = Bundle.main.url(forResource: "NewsJson", withExtension: "json") else {
+//        print("JSON file not found")
+//        return nil
+//    }
+//    
+//    do {
+//        let data = try Data(contentsOf: fileUrl)
+//        if let jsonString = String(data: data, encoding: .utf8) {
+//            print("JSON Content:\n\(jsonString)")
+//        }
+//        let decoder = JSONDecoder()
+//        let newsArray = try decoder.decode([NewsDetails].self, from: data)
+//        return newsArray
+//    } catch {
+//        print("Error: \(error.localizedDescription)")
+//        return nil
+//    }
+//}
+

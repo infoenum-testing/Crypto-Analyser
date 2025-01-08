@@ -46,22 +46,24 @@ class FirebaseAuthentication {
     
     func deleteUser(completion: @escaping (Result<Void, Error>) -> Void) {
         guard let user = Auth.auth().currentUser else {
-            completion(.failure(NSError(domain: "FirebaseAuth", code: -1, userInfo: [NSLocalizedDescriptionKey: "No user logged in"])))
+            completion(.failure(NSError(domain: "FirebaseAuth", code: -1, userInfo: [NSLocalizedDescriptionKey: "Log in Again"])))
             return
         }
-        
-        let userEmail = user.email ?? ""
-        db.collection("users").document(userEmail).delete { error in
+        user.delete { error in
             if let error = error {
                 completion(.failure(error))
-                return
+            } else {
+                deleteFromDataBase()
             }
-            user.delete { error in
+        }
+        func deleteFromDataBase() {
+            let userEmail = user.email ?? ""
+            db.collection("users").document(userEmail).delete { error in
                 if let error = error {
                     completion(.failure(error))
-                } else {
-                    completion(.success(()))
+                    return
                 }
+                completion(.success(()))
             }
         }
     }
@@ -132,6 +134,7 @@ class FirebaseAuthentication {
 
 struct SearchDetails {
     let id:String
+    let image: UIImage?
     let title: String
     let message: String
     let date: Date

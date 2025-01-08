@@ -49,6 +49,9 @@ struct Crypto_AnalyserApp: App {
                     case .imageAnalyser(let image):
                          ImageAnalyserView(image: image)
                             .navigationBarBackButtonHidden()
+                    case .dataDescription(afterAnalyse: let afterAnalyse,title: let title, message: let message):
+                        DataDescriptionView(afterAnalyse: afterAnalyse, title: title, message: message)
+                           .navigationBarBackButtonHidden()
                     }
                 }
             }

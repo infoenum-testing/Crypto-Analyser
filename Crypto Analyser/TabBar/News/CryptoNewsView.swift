@@ -10,24 +10,41 @@ import WebKit
 
 struct CryptoNewsView: View {
     @State private var newsData:[NewsDetails] = []
+    @State private var newsLoading:Bool = false
     var body: some View {
         VStack(spacing:1) {
             Text("Crypto News")
                 .font(.system(size: 30, weight: .semibold))
-            
-            ScrollView {
-                LazyVStack(spacing:15) {
-                    ForEach(newsData.indices, id: \.self) { index in
-                        let news = newsData[index]
-                        newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "")
-                    }
+            if newsLoading  {
+                VStack {
+                    Spacer()
+                    ProgressView()
+                        .controlSize(.large)
+                        .foregroundColor(.white)
+                    Spacer()
                 }
-                .padding(.horizontal,20)
-                .padding(.top,15)
+            } else {
+                ScrollView {
+                    LazyVStack(spacing:15) {
+                        ForEach(newsData.indices, id: \.self) { index in
+                            let news = newsData[index]
+                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "")
+                        }
+                    }
+                    .padding(.horizontal,20)
+                    .padding(.top,15)
+                }
             }
         } .onAppear {
-            if let news = decodeNewsJson() {
-                newsData = news
+            newsLoading = true
+            fetchCryptoNews { result in
+                newsLoading = false
+                switch result {
+                case .success(let newsArray):
+                    newsData = newsArray
+                case .failure(let error):
+                    print("Error fetching news: \(error)")
+                }
             }
         }
     }

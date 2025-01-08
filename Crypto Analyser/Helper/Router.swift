@@ -54,6 +54,7 @@ final class Router: ObservableObject {
         case editProfile
         case searchView
         case imageAnalyser(image: UIImage)
+        case dataDescription(afterAnalyse:Bool,title: String?, message: String)
 
         // Custom hashable implementation
         func hash(into hasher: inout Hasher) {
@@ -73,11 +74,15 @@ final class Router: ObservableObject {
             case .searchView:
                 hasher.combine("searchView")
             case .imageAnalyser(let image):
-                hasher.combine(image.hashValue)
+                hasher.combine(image.pngData()?.hashValue ?? 0)
+            case .dataDescription(let afterAnalyse, let title, let message):
+                hasher.combine(afterAnalyse)
+                hasher.combine(title)
+                hasher.combine(message)
             }
         }
 
-        static func == (lhs: AuthDestination, rhs: AuthDestination) -> Bool {
+        public static func == (lhs: AuthDestination, rhs: AuthDestination) -> Bool {
             switch (lhs, rhs) {
             case (.signUp, .signUp),
                  (.logIn, .logIn),
@@ -88,7 +93,12 @@ final class Router: ObservableObject {
                  (.searchView, .searchView):
                 return true
             case (.imageAnalyser(let lhsImage), .imageAnalyser(let rhsImage)):
-                return lhsImage.isEqual(rhsImage)
+                return lhsImage.pngData() == rhsImage.pngData()
+            case (.dataDescription(let lhsAfterAnalyse, let lhsTitle, let lhsMessage),
+                  .dataDescription(let rhsAfterAnalyse,let rhsTitle, let rhsMessage)):
+                return lhsAfterAnalyse == rhsAfterAnalyse &&
+                       lhsTitle == rhsTitle &&
+                       lhsMessage == rhsMessage
             default:
                 return false
             }

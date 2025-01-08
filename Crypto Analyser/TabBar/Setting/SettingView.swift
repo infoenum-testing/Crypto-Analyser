@@ -177,7 +177,7 @@ struct SettingView: View {
     }
     
     func deleteAccount() {
-        GoogleSignInManager.shared.deleteAccount { result in
+        FirebaseAuthentication.shared.deleteUser { result in
             switch result {
             case .success():
                 router.navigateToAuthRoot()
@@ -185,8 +185,11 @@ struct SettingView: View {
             case .failure(let error):
                 errorAlert = true
                 alertMessage = error.localizedDescription
+                router.navigateToAuthRoot()
+                UserSessionManager.clearUserData()
             }
         }
+       
     }
 }
 

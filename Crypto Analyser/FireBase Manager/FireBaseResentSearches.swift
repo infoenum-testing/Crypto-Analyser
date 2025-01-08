@@ -11,12 +11,13 @@ import FirebaseFirestore
 class FireBaseResentSearches {
    static let shared = FireBaseResentSearches()
     
-    func addRecentSearch(for email: String, title: String, message: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addRecentSearch(email: String, image: UIImage,title: String, message: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let db = Firestore.firestore()
         
         let recentSearchRef = db.collection("users").document(email).collection("recentSearch")
-        
+        let strImage = image.resized(to: 800).toBase64String()
         let searchItem = [
+            "image": strImage,
             "title": title,
             "message": message,
             "date": FieldValue.serverTimestamp() // Use Firestore server timestamp
@@ -30,7 +31,7 @@ class FireBaseResentSearches {
             }
         }
     }
-    
+
     func fetchRecentSearches(for email: String, completion: @escaping (Result<[SearchDetails], Error>) -> Void) {
         let db = Firestore.firestore()
         let recentSearchRef = db.collection("users").document(email).collection("recentSearch")
@@ -41,13 +42,14 @@ class FireBaseResentSearches {
             } else if let snapshot = snapshot {
                 let recentSearches = snapshot.documents.compactMap { document -> SearchDetails? in
                     let data = document.data()
-                    guard let title = data["title"] as? String,
+                    guard let image = data["image"] as? String , let title = data["title"] as? String,
                           let message = data["message"] as? String,
                           let date = (data["date"] as? Timestamp)?.dateValue() else {
                         return nil
                     }
                     return SearchDetails(
-                        id: document.documentID,
+                        id: document.documentID, 
+                        image: image.toImage(),
                         title: title,
                         message: message,
                         date: date
@@ -59,7 +61,7 @@ class FireBaseResentSearches {
             }
         }
     }
-    
+
     func removeRecentSearch(for email: String, documentID: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let db = Firestore.firestore()
         

@@ -47,6 +47,12 @@ struct StringConstants {
     
     // Home
     static let search = "search"
+    static let analyseCrypto = "Analyse Crypto"
+    static let takeAPic = "Take a \n picture"
+    static let or = "or"
+    static let uploadFromGallery = "Upload from gallery"
+    static let searchForCoin = "Search for a coin"
+    static let recentSearches = "Recent Searches"
     
     
     // Setting

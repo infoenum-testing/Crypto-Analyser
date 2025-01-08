@@ -17,13 +17,15 @@ struct HomeView: View {
     @State private var isCamera: Bool = false
     @State private var resentSearches:[SearchDetails] = []
     
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    Text("Analyse Crypto")
+                    Text(StringConstants.analyseCrypto)
                         .font(.system(size: 25, weight: .semibold))
                     HStack {
+                        Spacer()
                         Button(action: {
                             isCamera = true
                         }, label: {
@@ -31,7 +33,7 @@ struct HomeView: View {
                                 Image(systemName: "camera")
                                     .resizable()
                                     .frame(width: 25, height: 25, alignment: .center)
-                                Text("Take a \n picture")
+                                Text(StringConstants.takeAPic)
                                     .font(.system(size: 12, weight: .regular))
                             }
                         })
@@ -44,7 +46,7 @@ struct HomeView: View {
                         .font(.system(size: 20))
                         .padding(.bottom)
                         
-                        Text("or")
+                        Text(StringConstants.or)
                             .lineLimit(1)
                         
                         Button(action: {
@@ -54,7 +56,7 @@ struct HomeView: View {
                                 Image(systemName: "photo.on.rectangle")
                                     .resizable()
                                     .frame(width: 25, height: 25, alignment: .center)
-                                Text("Upload from gallery")
+                                Text(StringConstants.uploadFromGallery)
                                     .font(.system(size: 12, weight: .regular))
                             }
                         })
@@ -67,7 +69,7 @@ struct HomeView: View {
                         .font(.system(size: 20))
                         .padding(.bottom)
                         
-                        Text("or")
+                        Text(StringConstants.or)
                             .lineLimit(1)
                         
                         Button(action: {
@@ -77,7 +79,7 @@ struct HomeView: View {
                                 Image(systemName: "magnifyingglass")
                                     .resizable()
                                     .frame(width: 25, height: 25, alignment: .center)
-                                Text("Search for a coin")
+                                Text(StringConstants.searchForCoin)
                                     .font(.system(size: 12, weight: .regular))
                             }
                         })
@@ -95,7 +97,7 @@ struct HomeView: View {
                 .padding(.top,30)
                 .padding(.horizontal,20)
                 
-                Text("Recent Searches")
+                Text(StringConstants.recentSearches)
                     .font(.system(size: 25, weight: .semibold))
                     .padding(.bottom,5)
                     .padding(.horizontal,20)
@@ -108,9 +110,6 @@ struct HomeView: View {
                                 let message = resentSearches[index].message
                                 VStack(alignment: .leading,spacing: 0) {
                                     HStack {
-                                        Text(title)
-                                            .foregroundStyle(.black)
-                                            .font(.system(size: 20, weight: .semibold))
                                         Spacer()
                                         Button(action: {
                                             let id = resentSearches[index].id
@@ -126,6 +125,8 @@ struct HomeView: View {
                                         .lineLimit(2)
                                         .font(.system(size: 15, weight: .regular))
                                         .padding(.horizontal)
+                                        .padding(.bottom)
+                                    
                                 }
                                 .padding(.vertical,4)
                                 .background(Color.white)
@@ -134,6 +135,9 @@ struct HomeView: View {
                                 .accentColor(.black)
                                 .foregroundColor(.black)
                                 .font(.system(size: 20))
+                                .onTapGesture {
+                                    router.navigateToAuth(.dataDescription(afterAnalyse: false,title: nil, message: message))
+                                }
                                 
                             }
                         } else {
@@ -157,6 +161,7 @@ struct HomeView: View {
             .fullScreenCover(isPresented: $isCamera) {
                 CameraView(isCamera: $isCamera, captureImage: { image in
                     self.image = image
+                    
                 })
             }
         }
@@ -164,6 +169,7 @@ struct HomeView: View {
         .onAppear {
             fetchRecentSearches()
         }
+        
         .onChange(of: image) { value in
             if let value {
                 router.navigateToAuth(.imageAnalyser(image: value))
@@ -178,7 +184,7 @@ struct HomeView: View {
             recentSearchIsLoading = false
             switch result {
             case .success(let recentSearches):
-                self.resentSearches = recentSearches
+                self.resentSearches = recentSearches.sorted(by: { $0.date > $1.date })
             case .failure(let error):
                 print("Failed to fetch recent searches: \(error.localizedDescription)")
             }
