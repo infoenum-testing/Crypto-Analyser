@@ -19,7 +19,6 @@ struct Crypto_AnalyserApp: App {
                 ZStack {
                     if !isLoggedIn || !isUserLoggedIn {
                         LoginView()
-                        
                     } else {
                         TabbarView()
                     }
@@ -28,30 +27,39 @@ struct Crypto_AnalyserApp: App {
                     case .signUp:
                         SignUpView()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .logIn:
                         LoginView()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .forgotPassword:
                         ForgotPassword()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .tabBar:
                         TabbarView()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .accountInformation:
                         AccountInformationView()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .editProfile:
                         EditProfileView()
                             .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     case .searchView:
                         SearchView()
                             .navigationBarBackButtonHidden()
-                    case .imageAnalyser(let image):
-                         ImageAnalyserView(image: image)
+                            .navigationBarHidden(true)
+                    case .imageAnalyser(let image,let fromSearch):
+                        ImageAnalyserView(fromSearch: fromSearch, image: image)
                             .navigationBarBackButtonHidden()
-                    case .dataDescription(afterAnalyse: let afterAnalyse,title: let title, message: let message):
-                        DataDescriptionView(afterAnalyse: afterAnalyse, title: title, message: message)
-                           .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
+                    case .dataDescription(image:let image,afterAnalyse: let afterAnalyse,title: let title, message: let message):
+                        DataDescriptionView(image:image,afterAnalyse: afterAnalyse, title: title, message: message)
+                            .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     }
                 }
             }

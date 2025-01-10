@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DataDescriptionView: View {
     @EnvironmentObject var router: Router
+    let image: UIImage
     let afterAnalyse:Bool
     let title: String?
     let message: String
@@ -17,12 +18,7 @@ struct DataDescriptionView: View {
         VStack {
             HStack {
                 Button(action: {
-                    if afterAnalyse {
-                        router.navigateBackInAuth()
-                        router.navigateBackInAuth()
-                    } else {
-                        router.navigateBackInAuth()
-                    }
+                    router.navigateBackInAuth()
                 }, label: {
                     Image(.back)
                         .foregroundColor(.black)
@@ -31,31 +27,39 @@ struct DataDescriptionView: View {
                 Text("Analysed")
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()
-                Text("")
+                Text(" ")
             }
             .padding(.horizontal, 20)
-            .frame(height: 50)
+            .frame(height: 30)
             .clipped()
             
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .center) {
-                    VStack(alignment: .leading) {
-                        if let title {
-                            Text(title)
-                                .font(.system(size: 20, weight: .semibold))
-                                .padding(.bottom,5)
+            ZStack {
+                ScrollView {
+                    VStack {
+                        VStack {
+                            ZStack {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width)
+                                    .frame(maxHeight: UIScreen.main.bounds.height - 500)
+                                    .clipped()
+                            }
                         }
                         Text(message)
                             .font(.system(size: 20, weight: .regular))
+                            .multilineTextAlignment(.leading)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 20)
+                            .transition(.opacity)
+                        
                     }
-                    .padding(.horizontal)
                 }
-                
             }
         }
     }
 }
 
 #Preview {
-    DataDescriptionView(afterAnalyse: false, title: nil, message: "")
+    DataDescriptionView(image: UIImage(), afterAnalyse: false, title: nil, message: "")
 }

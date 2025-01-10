@@ -53,8 +53,8 @@ final class Router: ObservableObject {
         case accountInformation
         case editProfile
         case searchView
-        case imageAnalyser(image: UIImage)
-        case dataDescription(afterAnalyse:Bool,title: String?, message: String)
+        case imageAnalyser(image: UIImage,fromSearch: Bool)
+        case dataDescription(image: UIImage,afterAnalyse:Bool,title: String?, message: String)
 
         // Custom hashable implementation
         func hash(into hasher: inout Hasher) {
@@ -73,9 +73,11 @@ final class Router: ObservableObject {
                 hasher.combine("editProfile")
             case .searchView:
                 hasher.combine("searchView")
-            case .imageAnalyser(let image):
+            case .imageAnalyser(let image,let fromSearch):
                 hasher.combine(image.pngData()?.hashValue ?? 0)
-            case .dataDescription(let afterAnalyse, let title, let message):
+                hasher.combine(fromSearch)
+            case .dataDescription(let image,let afterAnalyse, let title, let message):
+                hasher.combine(image.pngData()?.hashValue ?? 0)
                 hasher.combine(afterAnalyse)
                 hasher.combine(title)
                 hasher.combine(message)
@@ -92,11 +94,13 @@ final class Router: ObservableObject {
                  (.editProfile, .editProfile),
                  (.searchView, .searchView):
                 return true
-            case (.imageAnalyser(let lhsImage), .imageAnalyser(let rhsImage)):
-                return lhsImage.pngData() == rhsImage.pngData()
-            case (.dataDescription(let lhsAfterAnalyse, let lhsTitle, let lhsMessage),
-                  .dataDescription(let rhsAfterAnalyse,let rhsTitle, let rhsMessage)):
-                return lhsAfterAnalyse == rhsAfterAnalyse &&
+            case (.imageAnalyser(let lhsImage,let lhsFromSearch), .imageAnalyser(let rhsImage,let rhsFromSearch)):
+                return lhsImage.pngData() == rhsImage.pngData()  &&
+                lhsFromSearch == rhsFromSearch
+            case (.dataDescription(let lhsImage,let lhsAfterAnalyse, let lhsTitle, let lhsMessage),
+                  .dataDescription(let rhsImage,let rhsAfterAnalyse,let rhsTitle, let rhsMessage)):
+                return lhsImage.pngData() == rhsImage.pngData()  &&
+                       lhsAfterAnalyse == rhsAfterAnalyse &&
                        lhsTitle == rhsTitle &&
                        lhsMessage == rhsMessage
             default:
@@ -113,12 +117,16 @@ final class Router: ObservableObject {
         authNavigationPath.append(destination)
     }
 
-    func navigateBackInAuth() {
-        if !authNavigationPath.isEmpty {
-            authNavigationPath.removeLast()
-        }
+    func navigateBackInAuth(count:Int = 1) {
+          for _ in 0..<count {
+                if !authNavigationPath.isEmpty {
+                    authNavigationPath.removeLast()
+                } else {
+                    break // Stop if the path is already empty
+                }
+            }
     }
-
+    
     func navigateToAuthRoot() {
         authNavigationPath.removeLast(authNavigationPath.count)
     }

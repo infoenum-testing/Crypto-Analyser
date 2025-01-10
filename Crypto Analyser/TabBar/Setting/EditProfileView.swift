@@ -35,8 +35,8 @@ struct EditProfileView: View {
                             .foregroundColor(.black)
                     })
                     Spacer()
-                    Text("Edit")
-                        .font(.system(size: 30, weight: .semibold))
+                    Text("Edit Profile")
+                        .font(.system(size: 25, weight: .semibold))
                     
                     Spacer()
                     Text("")
@@ -45,8 +45,8 @@ struct EditProfileView: View {
               
                     Image(systemName: "person.crop.circle")
                         .resizable()
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .frame(width: 80,height: 80)
+                        .foregroundColor(.black)
+                        .frame(width: 50,height: 50)
                         .padding(.leading)
                     
                     formField(title: StringConstants.nameTitle, text: $name, focusedField: .name, placeholder: StringConstants.nameTitle)

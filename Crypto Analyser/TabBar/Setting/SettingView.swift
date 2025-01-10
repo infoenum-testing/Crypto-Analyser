@@ -27,21 +27,21 @@ struct SettingView: View {
         ZStack {
             VStack {
                 Text(StringConstants.setting)
-                    .font(.system(size: 30, weight: .semibold))
+                    .font(.system(size: 25, weight: .semibold))
                 
                 ScrollView(showsIndicators:false) {
                     VStack {
                         HStack(spacing:5) {
                             Image(systemName: "person.crop.circle")
                                 .resizable()
-                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                                .frame(width: 80,height: 80)
+                                .foregroundColor(.black)
+                                .frame(width: 50,height: 50)
                                 .padding(.leading)
                             VStack(alignment: .leading) {
                                 let name = UserSessionManager.getUserData().name 
                                 Text(name)
                                     .foregroundColor(.black)
-                                    .font(.system(size: 15, weight: .semibold))
+                                    .font(.system(size: 20, weight: .semibold))
                                 let email = UserSessionManager.getUserData().email 
                                 Text(email)
                                     .foregroundColor(.black)

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16612F1AE15F31D42F0804E3 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE6DBFA4237E21E0FAAA641 /* Pods_Crypto_Analyser_Dev.framework */; };
-		CC18856E0AED3E858D78581C /* Pods_Crypto_Analyser_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A5FFF841158D935F3A5A9D /* Pods_Crypto_Analyser_Pro.framework */; };
+		45B9228500DD77E046BF1AC8 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FDB02C231F62150C660AD2 /* Pods_Crypto_Analyser_Dev.framework */; };
+		E6FF9ECBF19AF4C87AD76022 /* Pods_Crypto_Analyser_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C9F2309C15C24909603AC3 /* Pods_Crypto_Analyser_Pro.framework */; };
 		E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDC62D1D1C420028FE6D /* FireBaseResentSearches.swift */; };
 		E91DEDC82D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDC62D1D1C420028FE6D /* FireBaseResentSearches.swift */; };
 		E91DEDCA2D1D5E210028FE6D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDC92D1D5E210028FE6D /* SearchView.swift */; };
@@ -17,6 +17,8 @@
 		E91DEDCF2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDCD2D1D68C80028FE6D /* CircularLoaderView.swift */; };
 		E91DEDD12D1D9D820028FE6D /* ImageAnalyserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDD02D1D9D820028FE6D /* ImageAnalyserView.swift */; };
 		E91DEDD22D1D9D820028FE6D /* ImageAnalyserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91DEDD02D1D9D820028FE6D /* ImageAnalyserView.swift */; };
+		E94F141B2D2FBBF100F41BBB /* SearchWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F141A2D2FBBF100F41BBB /* SearchWebView.swift */; };
+		E94F141C2D2FBBF100F41BBB /* SearchWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94F141A2D2FBBF100F41BBB /* SearchWebView.swift */; };
 		E9695B4D2D2699DC00CA441D /* DataDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9695B4C2D2699DC00CA441D /* DataDescriptionView.swift */; };
 		E9695B4E2D2699DC00CA441D /* DataDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9695B4C2D2699DC00CA441D /* DataDescriptionView.swift */; };
 		E96F9E102D2EA4890038D714 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E2102D23E4E600304CA6 /* KeychainService.swift */; };
@@ -29,6 +31,10 @@
 		E97259602D158E8500D498CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972595E2D158E8500D498CC /* Router.swift */; };
 		E97259632D15955600D498CC /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97259612D15955600D498CC /* ForgotPassword.swift */; };
 		E97259642D15A3D500D498CC /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97259592D15656900D498CC /* StringConstants.swift */; };
+		E973C0DF2D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */; };
+		E973C0E02D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */; };
+		E973C0E42D30F50D0076D1E6 /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */; };
+		E973C0E52D30F50D0076D1E6 /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */; };
 		E974C29C2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */; };
 		E974C29D2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */; };
 		E975E7D82D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */; };
@@ -132,16 +138,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29A6218ABFEA86ADF280ABE2 /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
-		35989BF2BA1E9417B1FDA34B /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
-		58EDB3420BD0161D92B829F0 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
-		9447423D3A897B1449EB68FF /* Pods-Crypto Analyser Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.release.xcconfig"; sourceTree = "<group>"; };
-		99A5FFF841158D935F3A5A9D /* Pods_Crypto_Analyser_Pro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FE6DBFA4237E21E0FAAA641 /* Pods_Crypto_Analyser_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2EFC639EEB1A892AC072E2 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
+		27691080F18D00505809B20A /* Pods-Shared Pods-Crypto Analyser Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared Pods-Crypto Analyser Dev.release.xcconfig"; path = "Target Support Files/Pods-Shared Pods-Crypto Analyser Dev/Pods-Shared Pods-Crypto Analyser Dev.release.xcconfig"; sourceTree = "<group>"; };
+		485F7D37F8E7FC36E014D524 /* Pods-Shared Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared Pods-Crypto Analyser Pro.debug.xcconfig"; path = "Target Support Files/Pods-Shared Pods-Crypto Analyser Pro/Pods-Shared Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
+		69C63983E1100E31866C9738 /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Pro.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
+		842DD7C4AE72DB1E7799762C /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		C3C9F2309C15C24909603AC3 /* Pods_Crypto_Analyser_Pro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B5506863977D0347E30606 /* Pods-Shared Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared Pods-Crypto Analyser Pro.release.xcconfig"; path = "Target Support Files/Pods-Shared Pods-Crypto Analyser Pro/Pods-Shared Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
+		D2E6F7B7B93CD7F99D800890 /* Pods-Crypto Analyser Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Analyser Dev.release.xcconfig"; path = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.release.xcconfig"; sourceTree = "<group>"; };
+		D83A49D4A5D46CDC87A08899 /* Pods-Shared Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared Pods-Crypto Analyser Dev.debug.xcconfig"; path = "Target Support Files/Pods-Shared Pods-Crypto Analyser Dev/Pods-Shared Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		E91DEDC62D1D1C420028FE6D /* FireBaseResentSearches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseResentSearches.swift; sourceTree = "<group>"; };
 		E91DEDC92D1D5E210028FE6D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E91DEDCD2D1D68C80028FE6D /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		E91DEDD02D1D9D820028FE6D /* ImageAnalyserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyserView.swift; sourceTree = "<group>"; };
+		E94F141A2D2FBBF100F41BBB /* SearchWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWebView.swift; sourceTree = "<group>"; };
 		E9695B4C2D2699DC00CA441D /* DataDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDescriptionView.swift; sourceTree = "<group>"; };
 		E971E2102D23E4E600304CA6 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		E97259342D155B3D00D498CC /* Crypto_AnalyserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_AnalyserApp.swift; sourceTree = "<group>"; };
@@ -155,6 +165,8 @@
 		E97259612D15955600D498CC /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		E97259652D15B02E00D498CC /* Crypto-Analyser-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypto-Analyser-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E97259662D15B26300D498CC /* Crypto-Analyser-Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypto-Analyser-Dev-Info.plist"; sourceTree = "<group>"; };
+		E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTResponse.swift; sourceTree = "<group>"; };
+		E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebView.swift; sourceTree = "<group>"; };
 		E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
 		E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetails.swift; sourceTree = "<group>"; };
@@ -176,6 +188,7 @@
 		E9868E992D16F75F007ACB26 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		E9868E9D2D1701A7007ACB26 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		E9875F102D2929610017B4A7 /* UiImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiImage+Extension.swift"; sourceTree = "<group>"; };
+		F4FDB02C231F62150C660AD2 /* Pods_Crypto_Analyser_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9868E7D2D16F2FD007ACB26 /* FirebaseDatabase in Frameworks */,
-				16612F1AE15F31D42F0804E3 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */,
 				E9868E6F2D16F2FD007ACB26 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				E9868E982D16F467007ACB26 /* GoogleSignIn in Frameworks */,
 				E9868E872D16F2FD007ACB26 /* FirebaseInstallations in Frameworks */,
@@ -210,6 +222,7 @@
 				E9868E812D16F2FD007ACB26 /* FirebaseFunctions in Frameworks */,
 				E9868E772D16F2FD007ACB26 /* FirebaseAuthCombine-Community in Frameworks */,
 				E9868E7F2D16F2FD007ACB26 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				45B9228500DD77E046BF1AC8 /* Pods_Crypto_Analyser_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +235,6 @@
 				E9868EA32D17051B007ACB26 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				E9868ED12D17051B007ACB26 /* GoogleSignIn in Frameworks */,
 				E9868EC12D17051B007ACB26 /* FirebaseInstallations in Frameworks */,
-				CC18856E0AED3E858D78581C /* Pods_Crypto_Analyser_Pro.framework in Frameworks */,
 				E9868EA72D17051B007ACB26 /* FirebaseAppCheck in Frameworks */,
 				E9868EBF2D17051B007ACB26 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				E9868EC52D17051B007ACB26 /* FirebaseMLModelDownloader in Frameworks */,
@@ -244,19 +256,33 @@
 				E9868EBB2D17051B007ACB26 /* FirebaseFunctions in Frameworks */,
 				E9868EB52D17051B007ACB26 /* FirebaseDynamicLinks in Frameworks */,
 				E9868EB92D17051B007ACB26 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				E6FF9ECBF19AF4C87AD76022 /* Pods_Crypto_Analyser_Pro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06A5C9ED2CD33711A0FACF91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDB02C231F62150C660AD2 /* Pods_Crypto_Analyser_Dev.framework */,
+				C3C9F2309C15C24909603AC3 /* Pods_Crypto_Analyser_Pro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		36C1C8FB85D47BA3A4B91092 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				29A6218ABFEA86ADF280ABE2 /* Pods-Crypto Analyser Dev.debug.xcconfig */,
-				9447423D3A897B1449EB68FF /* Pods-Crypto Analyser Dev.release.xcconfig */,
-				35989BF2BA1E9417B1FDA34B /* Pods-Crypto Analyser Pro.debug.xcconfig */,
-				58EDB3420BD0161D92B829F0 /* Pods-Crypto Analyser Pro.release.xcconfig */,
+				842DD7C4AE72DB1E7799762C /* Pods-Crypto Analyser Dev.debug.xcconfig */,
+				D2E6F7B7B93CD7F99D800890 /* Pods-Crypto Analyser Dev.release.xcconfig */,
+				69C63983E1100E31866C9738 /* Pods-Crypto Analyser Pro.debug.xcconfig */,
+				0D2EFC639EEB1A892AC072E2 /* Pods-Crypto Analyser Pro.release.xcconfig */,
+				D83A49D4A5D46CDC87A08899 /* Pods-Shared Pods-Crypto Analyser Dev.debug.xcconfig */,
+				27691080F18D00505809B20A /* Pods-Shared Pods-Crypto Analyser Dev.release.xcconfig */,
+				485F7D37F8E7FC36E014D524 /* Pods-Shared Pods-Crypto Analyser Pro.debug.xcconfig */,
+				C8B5506863977D0347E30606 /* Pods-Shared Pods-Crypto Analyser Pro.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -287,7 +313,7 @@
 				E97259332D155B3D00D498CC /* Crypto Analyser */,
 				E97259322D155B3D00D498CC /* Products */,
 				36C1C8FB85D47BA3A4B91092 /* Pods */,
-				FA62948046A12B291031D2CE /* Frameworks */,
+				06A5C9ED2CD33711A0FACF91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,12 +334,12 @@
 				E97259342D155B3D00D498CC /* Crypto_AnalyserApp.swift */,
 				E9868E452D169803007ACB26 /* AppDelegate.swift */,
 				E975E7E02D1EAEE2004F1769 /* NewsJson.json */,
-				E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */,
 				E974C29A2D2D179300BBD7C9 /* Network */,
 				E97259582D15654D00D498CC /* Helper */,
 				E972594F2D155FF800D498CC /* FireBase Manager */,
 				E97259522D15609D00D498CC /* AuthFlow */,
 				E972594E2D155F1000D498CC /* TabBar */,
+				E91DEDCC2D1D689E0028FE6D /* Components */,
 				E97259382D155B3F00D498CC /* Assets.xcassets */,
 				E972593A2D155B3F00D498CC /* Preview Content */,
 			);
@@ -333,7 +359,6 @@
 			children = (
 				E9868E482D16A535007ACB26 /* TabbarView.swift */,
 				E9868E542D16ABC8007ACB26 /* Home */,
-				E91DEDCC2D1D689E0028FE6D /* Components */,
 				E9868E552D16ABD3007ACB26 /* News */,
 				E9868E562D16ABE6007ACB26 /* Setting */,
 			);
@@ -370,10 +395,30 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		E973C0E12D30ECF60076D1E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */,
+				E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E973C0E22D30EFB20076D1E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E97D15A92D1ACE7E005A9A3F /* CameraView.swift */,
+				E97D15AC2D1AD0C0005A9A3F /* GalleryView.swift */,
+				E94F141A2D2FBBF100F41BBB /* SearchWebView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E974C29A2D2D179300BBD7C9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */,
+				E973C0E12D30ECF60076D1E6 /* Model */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -392,11 +437,10 @@
 			isa = PBXGroup;
 			children = (
 				E9868E4B2D16A5C4007ACB26 /* HomeView.swift */,
-				E97D15A92D1ACE7E005A9A3F /* CameraView.swift */,
-				E97D15AC2D1AD0C0005A9A3F /* GalleryView.swift */,
 				E91DEDC92D1D5E210028FE6D /* SearchView.swift */,
 				E91DEDD02D1D9D820028FE6D /* ImageAnalyserView.swift */,
 				E9695B4C2D2699DC00CA441D /* DataDescriptionView.swift */,
+				E973C0E22D30EFB20076D1E6 /* Components */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -405,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				E9868E4E2D16A623007ACB26 /* CryptoNewsView.swift */,
+				E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -419,15 +464,6 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		FA62948046A12B291031D2CE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FE6DBFA4237E21E0FAAA641 /* Pods_Crypto_Analyser_Dev.framework */,
-				99A5FFF841158D935F3A5A9D /* Pods_Crypto_Analyser_Pro.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,10 +471,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E972594A2D155CA300D498CC /* Build configuration list for PBXNativeTarget "Crypto Analyser Dev" */;
 			buildPhases = (
-				61374AEF768C893A1A46C977 /* [CP] Check Pods Manifest.lock */,
+				895EF9BD2C1734116E344CE7 /* [CP] Check Pods Manifest.lock */,
 				E97259432D155CA300D498CC /* Sources */,
 				E97259462D155CA300D498CC /* Frameworks */,
 				E97259472D155CA300D498CC /* Resources */,
+				E5E74D492679412CF460720B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,10 +518,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9868E3F2D168ED6007ACB26 /* Build configuration list for PBXNativeTarget "Crypto Analyser Pro" */;
 			buildPhases = (
-				0CBBB88F91AED2C9ECB63B67 /* [CP] Check Pods Manifest.lock */,
+				600E5471AC4F684AA06199E6 /* [CP] Check Pods Manifest.lock */,
 				E9868E332D168ED6007ACB26 /* Sources */,
 				E9868E3A2D168ED6007ACB26 /* Frameworks */,
 				E9868E3B2D168ED6007ACB26 /* Resources */,
+				F37BA61B866F3F290A5E4193 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -586,7 +624,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CBBB88F91AED2C9ECB63B67 /* [CP] Check Pods Manifest.lock */ = {
+		600E5471AC4F684AA06199E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -608,7 +646,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61374AEF768C893A1A46C977 /* [CP] Check Pods Manifest.lock */ = {
+		895EF9BD2C1734116E344CE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -630,6 +668,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E5E74D492679412CF460720B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F37BA61B866F3F290A5E4193 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -643,13 +715,16 @@
 				E971E2112D23E4E600304CA6 /* KeychainService.swift in Sources */,
 				E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E972595D2D1587CC00D498CC /* LoginView.swift in Sources */,
+				E973C0E42D30F50D0076D1E6 /* NewsWebView.swift in Sources */,
 				E9868E492D16A535007ACB26 /* TabbarView.swift in Sources */,
 				E97E806B2D193EDE003D6CC6 /* AppleSignInManager.swift in Sources */,
 				E97E806F2D19963A003D6CC6 /* AccountInformationView.swift in Sources */,
 				E9868E9A2D16F75F007ACB26 /* GoogleSignInManager.swift in Sources */,
 				E97259642D15A3D500D498CC /* StringConstants.swift in Sources */,
 				E9695B4D2D2699DC00CA441D /* DataDescriptionView.swift in Sources */,
+				E973C0DF2D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */,
 				E91DEDCA2D1D5E210028FE6D /* SearchView.swift in Sources */,
+				E94F141B2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,
 				E974C29C2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */,
 				E97259562D15626800D498CC /* SignUpView.swift in Sources */,
 				E9868E5E2D16BBBF007ACB26 /* FirebaseAuthentication.swift in Sources */,
@@ -678,13 +753,16 @@
 				E9868E9F2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
 				E97D15AB2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E9868E342D168ED6007ACB26 /* Router.swift in Sources */,
+				E973C0E52D30F50D0076D1E6 /* NewsWebView.swift in Sources */,
 				E9868E352D168ED6007ACB26 /* LoginView.swift in Sources */,
 				E97E806C2D193EDF003D6CC6 /* AppleSignInManager.swift in Sources */,
 				E97E80702D19963A003D6CC6 /* AccountInformationView.swift in Sources */,
 				E9868E4A2D16A535007ACB26 /* TabbarView.swift in Sources */,
 				E9868E362D168ED6007ACB26 /* StringConstants.swift in Sources */,
 				E91DEDCB2D1D5E210028FE6D /* SearchView.swift in Sources */,
+				E973C0E02D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */,
 				E9868E372D168ED6007ACB26 /* SignUpView.swift in Sources */,
+				E94F141C2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,
 				E9868E472D169803007ACB26 /* AppDelegate.swift in Sources */,
 				E9868E502D16A623007ACB26 /* CryptoNewsView.swift in Sources */,
 				E974C29D2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */,
@@ -827,7 +905,7 @@
 		};
 		E972594B2D155CA300D498CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29A6218ABFEA86ADF280ABE2 /* Pods-Crypto Analyser Dev.debug.xcconfig */;
+			baseConfigurationReference = 842DD7C4AE72DB1E7799762C /* Pods-Crypto Analyser Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -835,7 +913,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7UUTF6T5P9;
@@ -847,8 +925,11 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture images for analyzing cryptocurrency.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -870,7 +951,7 @@
 		};
 		E972594C2D155CA300D498CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9447423D3A897B1449EB68FF /* Pods-Crypto Analyser Dev.release.xcconfig */;
+			baseConfigurationReference = D2E6F7B7B93CD7F99D800890 /* Pods-Crypto Analyser Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -878,7 +959,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7UUTF6T5P9;
@@ -890,8 +971,11 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture images for analyzing cryptocurrency.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -913,12 +997,12 @@
 		};
 		E9868E402D168ED6007ACB26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35989BF2BA1E9417B1FDA34B /* Pods-Crypto Analyser Pro.debug.xcconfig */;
+			baseConfigurationReference = 69C63983E1100E31866C9738 /* Pods-Crypto Analyser Pro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = 7UUTF6T5P9;
 				ENABLE_PREVIEWS = YES;
@@ -935,7 +1019,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.infoenum.Crypto-Analyser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = Pro;
@@ -947,13 +1031,13 @@
 		};
 		E9868E412D168ED6007ACB26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58EDB3420BD0161D92B829F0 /* Pods-Crypto Analyser Pro.release.xcconfig */;
+			baseConfigurationReference = 0D2EFC639EEB1A892AC072E2 /* Pods-Crypto Analyser Pro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7UUTF6T5P9;
@@ -971,7 +1055,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.infoenum.Crypto-Analyser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

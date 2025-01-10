@@ -7,98 +7,284 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1349AA652FA934CFB5C326C9D2213139 /* Pods-Crypto Analyser Dev-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F819A0AD225BCA92B57D6A66717BCC /* Pods-Crypto Analyser Dev-dummy.m */; };
-		32ACE58A13060A7128DB421DF3B08631 /* Pods-Crypto Analyser Pro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3A6C8AA7189792F36D7B394993768A /* Pods-Crypto Analyser Pro-dummy.m */; };
-		3717B41B76798AEE4B816C4F6A0A3404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		3770CBE95861CCD4D0221A143D65C41B /* Pods-Crypto Analyser Pro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A808D3CFB5273D73F48E6DE932090DB /* Pods-Crypto Analyser Pro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C4D5D92FDE356413B03C487AB583CF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		98EFC7C071F5E33300060D312AE37971 /* Pods-Crypto Analyser Dev-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69599A5035D2C4A3FBE2459FF6F67DB2 /* Pods-Crypto Analyser Dev-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14A8DC1F614141BEDDBDCDE58E6E5D81 /* Keys-library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5810699DA9A0AD32430867D476B5F9BC /* Keys-library-dummy.m */; };
+		26F4D12B3F2AABB44E7EA0351FD01A5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		2E02354B25EA62E740B1AB4BCE4BA064 /* Pods-Crypto Analyser Dev-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B798FC9E1FF0CB8A0CA701DC3A7A0D1F /* Pods-Crypto Analyser Dev-dummy.m */; };
+		398EF94DE0B2D953362C96F75B478BA3 /* FlowersKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = A0CC939115C0D4376F995E85077B3EAC /* FlowersKeys.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3F56F057E9C59BCFB7C7DE2C93E73852 /* FlowersKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = A0CC939115C0D4376F995E85077B3EAC /* FlowersKeys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41FEC8DC2A21C8A54783F87A423557ED /* Pods-Crypto Analyser Pro-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0198499D1B1D520518B0AD9EFEC8C3 /* Pods-Crypto Analyser Pro-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FC922C81E88666478EE7B2E942F8755 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8FFB771B4E0C85DBC7935A88610D5760 /* PrivacyInfo.xcprivacy */; };
+		5B094AECD875F2C5416ACF7D70D6B6B2 /* SwiftyJSON-SwiftyJSON in Resources */ = {isa = PBXBuildFile; fileRef = 7CA3B05F07B063827B34AD2B0DB23706 /* SwiftyJSON-SwiftyJSON */; };
+		5F9A72150ADC8769E1E28AD550D314A1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7487369FCE6D4A573151377FE534ECB /* SwiftyJSON.swift */; };
+		618CE63AE483A6006199F6F4FE353502 /* FlowersKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 741CE60A34580D16120D1C4C208ECB36 /* FlowersKeys.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6ADB00CA4A3825C6178371E98A43477E /* FlowersKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 741CE60A34580D16120D1C4C208ECB36 /* FlowersKeys.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		701FD0CAF5A590EC71F17FD4210C5C2A /* Keys-framework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F059307208BC6FCC2D9A0F6CAB3FA12 /* Keys-framework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B2207E5EC5C2444D016C4786FB34BA4 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57956AA6325FAA40AAE26C2D10B19597 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		930C3C3667AF8051421C45E825426569 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		99E7FC00731C82197038DBFB709D436B /* Pods-Crypto Analyser Pro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C5DD2B8EF34D669186963F1DDEC524 /* Pods-Crypto Analyser Pro-dummy.m */; };
+		A57326C8E77245DB6680543B3426F381 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC20029F837A6D2DECA0F33317FDE79 /* SwiftyJSON-dummy.m */; };
+		A5B5344ADBDA316DBCA07CCD605A2EFA /* Keys-framework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E9A6088852B33E9ADC86B0B00D33F2 /* Keys-framework-dummy.m */; };
+		AF620626C346451D6BE817EF62771EDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		B7D1C8AFCFD1252B353D1CAF3431D73F /* Pods-Crypto Analyser Dev-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EAEEC63A759C38B98D7554170DD7556 /* Pods-Crypto Analyser Dev-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAB98DDCE1A65F6F377E0318A4782874 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		227079652FA42F62E4FBE8223A334EA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+		6489C6EC538A26E8C8E23159DDACB734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 677650A76A720691B88A6959EFED6418;
+			remoteInfo = "SwiftyJSON-SwiftyJSON";
+		};
+		795DC7289566BD2B618E0F17AB6BD152 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038B9A85B25D53B15C36692368AA8E7E;
+			remoteInfo = "Keys-framework";
+		};
+		CDD2986BAA3D0F140EB80015A7D3E681 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038B9A85B25D53B15C36692368AA8E7E;
+			remoteInfo = "Keys-framework";
+		};
+		EE735B854C7F44D943F4B4C760AED1EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		1703F5FE6E8B89990579A0BF78934821 /* Pods-Crypto Analyser Dev.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Crypto Analyser Dev.modulemap"; sourceTree = "<group>"; };
-		2008F5A9E0D273EED3489770C40A11A9 /* Pods-Crypto Analyser Dev-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Dev-Info.plist"; sourceTree = "<group>"; };
-		2D437C31F661116C7ABB30FDE192871A /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
-		301E966124E481FB966C9A820A04DF65 /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
-		34F819A0AD225BCA92B57D6A66717BCC /* Pods-Crypto Analyser Dev-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Crypto Analyser Dev-dummy.m"; sourceTree = "<group>"; };
+		05A8CC1EE347C66544484F992AA1D886 /* ResourceBundle-SwiftyJSON-SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SwiftyJSON-SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		0AC89A09AF3FE98AD8785256E3251708 /* Pods-Crypto Analyser Pro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Crypto Analyser Pro-acknowledgements.markdown"; sourceTree = "<group>"; };
+		10BEF31B5E18E7049FBEB2615E03FEA8 /* Pods-Crypto Analyser Dev-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Dev-Info.plist"; sourceTree = "<group>"; };
+		26C5DD2B8EF34D669186963F1DDEC524 /* Pods-Crypto Analyser Pro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Crypto Analyser Pro-dummy.m"; sourceTree = "<group>"; };
+		2DA80B8981820935329EF93D56EC669A /* Pods-Crypto Analyser Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		2F059307208BC6FCC2D9A0F6CAB3FA12 /* Keys-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-framework-umbrella.h"; sourceTree = "<group>"; };
+		35FF7707B2B35D65503E81090CD440A5 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
+		37900F34CB8DE5BD71B69D34DA7AD64F /* Pods-Crypto Analyser Pro-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Crypto Analyser Pro-frameworks.sh"; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4A808D3CFB5273D73F48E6DE932090DB /* Pods-Crypto Analyser Pro-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Crypto Analyser Pro-umbrella.h"; sourceTree = "<group>"; };
-		4E97E61C81B8DC67CDA4F9713A1CB82F /* Pods-Crypto Analyser Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Dev.release.xcconfig"; sourceTree = "<group>"; };
-		61E8E8CDC6CBCCCB3E7B1AB4AA07C6D4 /* Pods-Crypto Analyser Dev-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Dev-acknowledgements.plist"; sourceTree = "<group>"; };
+		3ABF87A1BB5E17D6FC108469EC209042 /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
+		3CC20029F837A6D2DECA0F33317FDE79 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		3D21020E1A00D110C4EF4E859D04052C /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
+		435B7E649F36C6F7AEAE4AF1CC2FDC65 /* Pods-Crypto Analyser Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Dev.release.xcconfig"; sourceTree = "<group>"; };
+		508BFB72805BF3A5E49F242D7832E9F9 /* Pods-Crypto Analyser Dev-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Crypto Analyser Dev-acknowledgements.markdown"; sourceTree = "<group>"; };
+		57956AA6325FAA40AAE26C2D10B19597 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		5810699DA9A0AD32430867D476B5F9BC /* Keys-library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Keys-library-dummy.m"; path = "../Keys-library/Keys-library-dummy.m"; sourceTree = "<group>"; };
+		61E9A6088852B33E9ADC86B0B00D33F2 /* Keys-framework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Keys-framework-dummy.m"; sourceTree = "<group>"; };
 		66253421615A464A631A292A2DD50C25 /* Pods-Crypto Analyser Pro */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Crypto Analyser Pro"; path = Pods_Crypto_Analyser_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69599A5035D2C4A3FBE2459FF6F67DB2 /* Pods-Crypto Analyser Dev-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Crypto Analyser Dev-umbrella.h"; sourceTree = "<group>"; };
-		6D0FCB7912B22463C95C3E4AE69D21C4 /* Pods-Crypto Analyser Pro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Pro-acknowledgements.plist"; sourceTree = "<group>"; };
-		789DAF737C0B89261735BDA63E1F3E93 /* Pods-Crypto Analyser Pro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Crypto Analyser Pro-acknowledgements.markdown"; sourceTree = "<group>"; };
-		89E2875A302D9B02461699F134F68CC0 /* Pods-Crypto Analyser Pro.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Crypto Analyser Pro.modulemap"; sourceTree = "<group>"; };
+		6EAEEC63A759C38B98D7554170DD7556 /* Pods-Crypto Analyser Dev-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Crypto Analyser Dev-umbrella.h"; sourceTree = "<group>"; };
+		741CE60A34580D16120D1C4C208ECB36 /* FlowersKeys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FlowersKeys.m; sourceTree = "<group>"; };
+		7CA3B05F07B063827B34AD2B0DB23706 /* SwiftyJSON-SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "SwiftyJSON-SwiftyJSON"; path = SwiftyJSON.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8582FE6484157E68DC02DCC066316BEC /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		8E7A946EB934A776A5627C1FFA8FCACF /* Pods-Crypto Analyser Pro.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Crypto Analyser Pro.modulemap"; sourceTree = "<group>"; };
+		8EF6C2CFD8F115D52B70A6986A9AEFE6 /* Keys-framework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Keys-framework-Info.plist"; sourceTree = "<group>"; };
+		8FFB771B4E0C85DBC7935A88610D5760 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Source/SwiftyJSON/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		97424C81617B3D9311F8EF35630FF445 /* Keys-framework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Keys-framework-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A03AD54A2F794C61774E9EDD991ADAA5 /* Pods-Crypto Analyser Dev-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Crypto Analyser Dev-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BB3A6C8AA7189792F36D7B394993768A /* Pods-Crypto Analyser Pro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Crypto Analyser Pro-dummy.m"; sourceTree = "<group>"; };
-		BD8A6EE7421B7503044A85113A3F7E49 /* Pods-Crypto Analyser Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Pro.release.xcconfig"; sourceTree = "<group>"; };
+		A0CC939115C0D4376F995E85077B3EAC /* FlowersKeys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FlowersKeys.h; sourceTree = "<group>"; };
+		A5E67ABB427E397586F20C2CAA1831CA /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		A63E927F620C196B19E0A7C934C17807 /* Keys-framework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Keys-framework.modulemap"; sourceTree = "<group>"; };
+		AC4C56C51EABF67087513F14F7FFBF7E /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		AC853A79D01D9AA3BD2ADB988EDC5E8D /* Pods-Crypto Analyser Pro-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Pro-Info.plist"; sourceTree = "<group>"; };
+		B1DC920DA0D02870D9CCCE7DA8A7FCCF /* Keys-framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Keys-framework.debug.xcconfig"; sourceTree = "<group>"; };
+		B62CED338872EF536910A466267352B5 /* Keys-framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Keys-framework"; path = Keys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B798FC9E1FF0CB8A0CA701DC3A7A0D1F /* Pods-Crypto Analyser Dev-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Crypto Analyser Dev-dummy.m"; sourceTree = "<group>"; };
+		BC64171F75B27EDB603BCFBFC455DAB8 /* Keys.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; path = Keys.podspec.json; sourceTree = "<group>"; };
+		C502F5B67995F4CECF4E25B1D3D4CC6D /* Pods-Crypto Analyser Dev-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Dev-acknowledgements.plist"; sourceTree = "<group>"; };
+		C8C8F8B4E04339E00E111F5574CC6BE4 /* Keys-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Keys-framework.release.xcconfig"; sourceTree = "<group>"; };
+		C997FADA17464CC651489CD377B0B37D /* Keys-library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Keys-library-prefix.pch"; path = "../Keys-library/Keys-library-prefix.pch"; sourceTree = "<group>"; };
+		CD0198499D1B1D520518B0AD9EFEC8C3 /* Pods-Crypto Analyser Pro-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Crypto Analyser Pro-umbrella.h"; sourceTree = "<group>"; };
+		D4B5FC1A8F44103C20C834E5CAAEC363 /* Keys-library */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "Keys-library"; path = "libKeys-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDECBF1D81726F30A31B341B51355C7 /* Pods-Crypto Analyser Pro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Pro-acknowledgements.plist"; sourceTree = "<group>"; };
 		DD8D9B2DDA3CC193160142E58907CB6D /* Pods-Crypto Analyser Dev */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Crypto Analyser Dev"; path = Pods_Crypto_Analyser_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4781D1F6DDBFDE4A170AD073D80299F /* Pods-Crypto Analyser Pro-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Crypto Analyser Pro-Info.plist"; sourceTree = "<group>"; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54523343CA7081EBAAE148BB76B9E85 /* Keys-library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Keys-library.release.xcconfig"; path = "../Keys-library/Keys-library.release.xcconfig"; sourceTree = "<group>"; };
+		E7487369FCE6D4A573151377FE534ECB /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		EF65FB9E3739694AEEB0937B8E39A470 /* Keys-library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Keys-library.debug.xcconfig"; path = "../Keys-library/Keys-library.debug.xcconfig"; sourceTree = "<group>"; };
+		F994876D2C766D0F8943EC89B61ADE87 /* Pods-Crypto Analyser Dev.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Crypto Analyser Dev.modulemap"; sourceTree = "<group>"; };
+		FB825F609A39389CD25E1BB3B7153834 /* Pods-Crypto Analyser Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Crypto Analyser Pro.debug.xcconfig"; sourceTree = "<group>"; };
+		FFE8E8CB84B0A67141F09F0351094B16 /* Pods-Crypto Analyser Dev-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Crypto Analyser Dev-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		86112CD6B88B3AD890684DAEFACFB9BD /* Frameworks */ = {
+		8534E08CB6A676957C0E2E379BB917F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3717B41B76798AEE4B816C4F6A0A3404 /* Foundation.framework in Frameworks */,
+				26F4D12B3F2AABB44E7EA0351FD01A5F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A69E44D21CD719CD986B2A83D21364B2 /* Frameworks */ = {
+		8AFA96E378968AE5CE8EB7045C02A858 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4D5D92FDE356413B03C487AB583CF3 /* Foundation.framework in Frameworks */,
+				BAB98DDCE1A65F6F377E0318A4782874 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		928CE010CD8689328EBA9DE1FEF197CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF620626C346451D6BE817EF62771EDB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B48543D6E3927DCB58042A7571A4DD94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C86C53181AD77C7C4B7F1851009DF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6C5A6D2D4E8DC2C7C248FF1097563A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				930C3C3667AF8051421C45E825426569 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2951B370D0258A505EE802FB2ADB9C7E /* Targets Support Files */ = {
+		15234414FC28CABB6ACFD55FC847E264 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7002C2E3F43A3EDDE7A9E49F72104B79 /* Pods-Crypto Analyser Dev */,
-				E5E5A79F322979F97970E8E5C49799DA /* Pods-Crypto Analyser Pro */,
+				3F1343C71505CD7D6533F3AC3128F242 /* Pods-Crypto Analyser Dev */,
+				1B542788D89284CB50CD06C146EBCF6A /* Pods-Crypto Analyser Pro */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		37BFBAC5C651B1F701796F76F5414ED2 /* Products */ = {
+		1B542788D89284CB50CD06C146EBCF6A /* Pods-Crypto Analyser Pro */ = {
 			isa = PBXGroup;
 			children = (
-				DD8D9B2DDA3CC193160142E58907CB6D /* Pods-Crypto Analyser Dev */,
-				66253421615A464A631A292A2DD50C25 /* Pods-Crypto Analyser Pro */,
+				8E7A946EB934A776A5627C1FFA8FCACF /* Pods-Crypto Analyser Pro.modulemap */,
+				0AC89A09AF3FE98AD8785256E3251708 /* Pods-Crypto Analyser Pro-acknowledgements.markdown */,
+				DCDECBF1D81726F30A31B341B51355C7 /* Pods-Crypto Analyser Pro-acknowledgements.plist */,
+				26C5DD2B8EF34D669186963F1DDEC524 /* Pods-Crypto Analyser Pro-dummy.m */,
+				37900F34CB8DE5BD71B69D34DA7AD64F /* Pods-Crypto Analyser Pro-frameworks.sh */,
+				AC853A79D01D9AA3BD2ADB988EDC5E8D /* Pods-Crypto Analyser Pro-Info.plist */,
+				CD0198499D1B1D520518B0AD9EFEC8C3 /* Pods-Crypto Analyser Pro-umbrella.h */,
+				FB825F609A39389CD25E1BB3B7153834 /* Pods-Crypto Analyser Pro.debug.xcconfig */,
+				35FF7707B2B35D65503E81090CD440A5 /* Pods-Crypto Analyser Pro.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-Crypto Analyser Pro";
+			path = "Target Support Files/Pods-Crypto Analyser Pro";
 			sourceTree = "<group>";
 		};
-		7002C2E3F43A3EDDE7A9E49F72104B79 /* Pods-Crypto Analyser Dev */ = {
+		3F1343C71505CD7D6533F3AC3128F242 /* Pods-Crypto Analyser Dev */ = {
 			isa = PBXGroup;
 			children = (
-				1703F5FE6E8B89990579A0BF78934821 /* Pods-Crypto Analyser Dev.modulemap */,
-				A03AD54A2F794C61774E9EDD991ADAA5 /* Pods-Crypto Analyser Dev-acknowledgements.markdown */,
-				61E8E8CDC6CBCCCB3E7B1AB4AA07C6D4 /* Pods-Crypto Analyser Dev-acknowledgements.plist */,
-				34F819A0AD225BCA92B57D6A66717BCC /* Pods-Crypto Analyser Dev-dummy.m */,
-				2008F5A9E0D273EED3489770C40A11A9 /* Pods-Crypto Analyser Dev-Info.plist */,
-				69599A5035D2C4A3FBE2459FF6F67DB2 /* Pods-Crypto Analyser Dev-umbrella.h */,
-				2D437C31F661116C7ABB30FDE192871A /* Pods-Crypto Analyser Dev.debug.xcconfig */,
-				4E97E61C81B8DC67CDA4F9713A1CB82F /* Pods-Crypto Analyser Dev.release.xcconfig */,
+				F994876D2C766D0F8943EC89B61ADE87 /* Pods-Crypto Analyser Dev.modulemap */,
+				508BFB72805BF3A5E49F242D7832E9F9 /* Pods-Crypto Analyser Dev-acknowledgements.markdown */,
+				C502F5B67995F4CECF4E25B1D3D4CC6D /* Pods-Crypto Analyser Dev-acknowledgements.plist */,
+				B798FC9E1FF0CB8A0CA701DC3A7A0D1F /* Pods-Crypto Analyser Dev-dummy.m */,
+				FFE8E8CB84B0A67141F09F0351094B16 /* Pods-Crypto Analyser Dev-frameworks.sh */,
+				10BEF31B5E18E7049FBEB2615E03FEA8 /* Pods-Crypto Analyser Dev-Info.plist */,
+				6EAEEC63A759C38B98D7554170DD7556 /* Pods-Crypto Analyser Dev-umbrella.h */,
+				2DA80B8981820935329EF93D56EC669A /* Pods-Crypto Analyser Dev.debug.xcconfig */,
+				435B7E649F36C6F7AEAE4AF1CC2FDC65 /* Pods-Crypto Analyser Dev.release.xcconfig */,
 			);
 			name = "Pods-Crypto Analyser Dev";
 			path = "Target Support Files/Pods-Crypto Analyser Dev";
+			sourceTree = "<group>";
+		};
+		58A3C404C53935CFC94D2B18BD41E532 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0FCCF94BFD00B9FCD1DDB43B0DB2E35 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5C6D15015CF8E42E036DE9F9EE3ECE2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FFB771B4E0C85DBC7935A88610D5760 /* PrivacyInfo.xcprivacy */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6594780046F8F3D1AD5D5F8545301E47 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BC64171F75B27EDB603BCFBFC455DAB8 /* Keys.podspec.json */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		74979CFF01C2E0277C715364D1ACC240 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A63E927F620C196B19E0A7C934C17807 /* Keys-framework.modulemap */,
+				61E9A6088852B33E9ADC86B0B00D33F2 /* Keys-framework-dummy.m */,
+				8EF6C2CFD8F115D52B70A6986A9AEFE6 /* Keys-framework-Info.plist */,
+				97424C81617B3D9311F8EF35630FF445 /* Keys-framework-prefix.pch */,
+				2F059307208BC6FCC2D9A0F6CAB3FA12 /* Keys-framework-umbrella.h */,
+				B1DC920DA0D02870D9CCCE7DA8A7FCCF /* Keys-framework.debug.xcconfig */,
+				C8C8F8B4E04339E00E111F5574CC6BE4 /* Keys-framework.release.xcconfig */,
+				5810699DA9A0AD32430867D476B5F9BC /* Keys-library-dummy.m */,
+				C997FADA17464CC651489CD377B0B37D /* Keys-library-prefix.pch */,
+				EF65FB9E3739694AEEB0937B8E39A470 /* Keys-library.debug.xcconfig */,
+				E54523343CA7081EBAAE148BB76B9E85 /* Keys-library.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Keys-framework";
+			sourceTree = "<group>";
+		};
+		8EB944F8F773A62E984D5269A25F34B4 /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				A0CC939115C0D4376F995E85077B3EAC /* FlowersKeys.h */,
+				741CE60A34580D16120D1C4C208ECB36 /* FlowersKeys.m */,
+				6594780046F8F3D1AD5D5F8545301E47 /* Pod */,
+				74979CFF01C2E0277C715364D1ACC240 /* Support Files */,
+			);
+			name = Keys;
+			path = CocoaPodsKeys;
+			sourceTree = "<group>";
+		};
+		918C67CEDF38AB6FC9603B3803A92E0F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EB944F8F773A62E984D5269A25F34B4 /* Keys */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				918C67CEDF38AB6FC9603B3803A92E0F /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				37BFBAC5C651B1F701796F76F5414ED2 /* Products */,
-				2951B370D0258A505EE802FB2ADB9C7E /* Targets Support Files */,
+				58A3C404C53935CFC94D2B18BD41E532 /* Pods */,
+				E80DC1F20140BACB6564EDDCB6A6F7CB /* Products */,
+				15234414FC28CABB6ACFD55FC847E264 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,56 +304,161 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E5E5A79F322979F97970E8E5C49799DA /* Pods-Crypto Analyser Pro */ = {
+		E80DC1F20140BACB6564EDDCB6A6F7CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89E2875A302D9B02461699F134F68CC0 /* Pods-Crypto Analyser Pro.modulemap */,
-				789DAF737C0B89261735BDA63E1F3E93 /* Pods-Crypto Analyser Pro-acknowledgements.markdown */,
-				6D0FCB7912B22463C95C3E4AE69D21C4 /* Pods-Crypto Analyser Pro-acknowledgements.plist */,
-				BB3A6C8AA7189792F36D7B394993768A /* Pods-Crypto Analyser Pro-dummy.m */,
-				E4781D1F6DDBFDE4A170AD073D80299F /* Pods-Crypto Analyser Pro-Info.plist */,
-				4A808D3CFB5273D73F48E6DE932090DB /* Pods-Crypto Analyser Pro-umbrella.h */,
-				301E966124E481FB966C9A820A04DF65 /* Pods-Crypto Analyser Pro.debug.xcconfig */,
-				BD8A6EE7421B7503044A85113A3F7E49 /* Pods-Crypto Analyser Pro.release.xcconfig */,
+				B62CED338872EF536910A466267352B5 /* Keys-framework */,
+				D4B5FC1A8F44103C20C834E5CAAEC363 /* Keys-library */,
+				DD8D9B2DDA3CC193160142E58907CB6D /* Pods-Crypto Analyser Dev */,
+				66253421615A464A631A292A2DD50C25 /* Pods-Crypto Analyser Pro */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */,
+				7CA3B05F07B063827B34AD2B0DB23706 /* SwiftyJSON-SwiftyJSON */,
 			);
-			name = "Pods-Crypto Analyser Pro";
-			path = "Target Support Files/Pods-Crypto Analyser Pro";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0FCCF94BFD00B9FCD1DDB43B0DB2E35 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				E7487369FCE6D4A573151377FE534ECB /* SwiftyJSON.swift */,
+				5C6D15015CF8E42E036DE9F9EE3ECE2F /* Resources */,
+				F1D97A0F194DA1509E5D9EE82F64EBA9 /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		F1D97A0F194DA1509E5D9EE82F64EBA9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05A8CC1EE347C66544484F992AA1D886 /* ResourceBundle-SwiftyJSON-SwiftyJSON-Info.plist */,
+				A5E67ABB427E397586F20C2CAA1831CA /* SwiftyJSON.modulemap */,
+				3CC20029F837A6D2DECA0F33317FDE79 /* SwiftyJSON-dummy.m */,
+				8582FE6484157E68DC02DCC066316BEC /* SwiftyJSON-Info.plist */,
+				AC4C56C51EABF67087513F14F7FFBF7E /* SwiftyJSON-prefix.pch */,
+				57956AA6325FAA40AAE26C2D10B19597 /* SwiftyJSON-umbrella.h */,
+				3ABF87A1BB5E17D6FC108469EC209042 /* SwiftyJSON.debug.xcconfig */,
+				3D21020E1A00D110C4EF4E859D04052C /* SwiftyJSON.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BC76AD2AA282538BA63B682592C6478D /* Headers */ = {
+		55591490CCF9980FAB0570B68F8BFE17 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98EFC7C071F5E33300060D312AE37971 /* Pods-Crypto Analyser Dev-umbrella.h in Headers */,
+				41FEC8DC2A21C8A54783F87A423557ED /* Pods-Crypto Analyser Pro-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F145FF55727315B9134568490CF260AA /* Headers */ = {
+		810C7E1F699BD7C4EA2A7FC9F0F91F5E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3770CBE95861CCD4D0221A143D65C41B /* Pods-Crypto Analyser Pro-umbrella.h in Headers */,
+				7B2207E5EC5C2444D016C4786FB34BA4 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F598740E5F35B32C11D5562A4DD465 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				398EF94DE0B2D953362C96F75B478BA3 /* FlowersKeys.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA97CCA6B56BDE4F01829E874F24A13F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7D1C8AFCFD1252B353D1CAF3431D73F /* Pods-Crypto Analyser Dev-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2D447B4FBEF6BBBEB4F30D6A71559E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F56F057E9C59BCFB7C7DE2C93E73852 /* FlowersKeys.h in Headers */,
+				701FD0CAF5A590EC71F17FD4210C5C2A /* Keys-framework-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D355ECC655D5DE82AB4227AD24AECC00 /* Pods-Crypto Analyser Pro */ = {
+		038B9A85B25D53B15C36692368AA8E7E /* Keys-framework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 255726A73FDB9A1334C6342181F81964 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Pro" */;
+			buildConfigurationList = 24C41EFED30D5EFD4B454AB9431D9389 /* Build configuration list for PBXNativeTarget "Keys-framework" */;
 			buildPhases = (
-				F145FF55727315B9134568490CF260AA /* Headers */,
-				E39D6096A2873F968F5909FAFCB58684 /* Sources */,
-				86112CD6B88B3AD890684DAEFACFB9BD /* Frameworks */,
-				32C6147A9BD744BB8EFD8373B63E9045 /* Resources */,
+				C2D447B4FBEF6BBBEB4F30D6A71559E5 /* Headers */,
+				27ED773EF465BEA94FB03371A2910656 /* Sources */,
+				E6C5A6D2D4E8DC2C7C248FF1097563A8 /* Frameworks */,
+				1579F6E7788A92A535C5F519BAD5D9FA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = "Keys-framework";
+			productName = Keys;
+			productReference = B62CED338872EF536910A466267352B5 /* Keys-framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		677650A76A720691B88A6959EFED6418 /* SwiftyJSON-SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8F5168842B84CBEEA0914EA5DBA2324 /* Build configuration list for PBXNativeTarget "SwiftyJSON-SwiftyJSON" */;
+			buildPhases = (
+				957E7A03004869519B98CCB05373F1EC /* Sources */,
+				B48543D6E3927DCB58042A7571A4DD94 /* Frameworks */,
+				B80025A367E7A3DFE0EA65A7B8FC2604 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftyJSON-SwiftyJSON";
+			productName = SwiftyJSON;
+			productReference = 7CA3B05F07B063827B34AD2B0DB23706 /* SwiftyJSON-SwiftyJSON */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5176F9AA0EF18F0B0B9D8EF8227C5E46 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				810C7E1F699BD7C4EA2A7FC9F0F91F5E /* Headers */,
+				A43FC2C1BFDC0FE2957688B876B318DE /* Sources */,
+				8AFA96E378968AE5CE8EB7045C02A858 /* Frameworks */,
+				50889C9DFDABCC7C2200CC144ABFC047 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2226D02FE6BDAF1B3CDADFBCCA7A6C77 /* PBXTargetDependency */,
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */;
+			productType = "com.apple.product-type.framework";
+		};
+		D355ECC655D5DE82AB4227AD24AECC00 /* Pods-Crypto Analyser Pro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8986B2E76F9AF0EC70CF7863DFB45DE9 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Pro" */;
+			buildPhases = (
+				55591490CCF9980FAB0570B68F8BFE17 /* Headers */,
+				61ED3591F42F4FB4ADE3F4962F58CA22 /* Sources */,
+				928CE010CD8689328EBA9DE1FEF197CC /* Frameworks */,
+				99B949FC437750E7B2D0C630E2874CBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C500FEB52E6CC815FFBD2E8053729EFC /* PBXTargetDependency */,
+				7E253B6632ED1640EABB1414E9F871F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-Crypto Analyser Pro";
 			productName = Pods_Crypto_Analyser_Pro;
@@ -176,21 +467,40 @@
 		};
 		DAAD8345D27B27F01208E07F2F36CE49 /* Pods-Crypto Analyser Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7EA58B066E5BB47A20CBDB6A744B717 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Dev" */;
+			buildConfigurationList = 909EE551B9730A071E520822FEA7D3F2 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Dev" */;
 			buildPhases = (
-				BC76AD2AA282538BA63B682592C6478D /* Headers */,
-				61E7F69EF92DA1B369F44A3369469AD6 /* Sources */,
-				A69E44D21CD719CD986B2A83D21364B2 /* Frameworks */,
-				02F52C52F23FCAF83B68F751A35ED910 /* Resources */,
+				BA97CCA6B56BDE4F01829E874F24A13F /* Headers */,
+				534EBE2A4CF19E1E448CB5FB88D853FF /* Sources */,
+				8534E08CB6A676957C0E2E379BB917F2 /* Frameworks */,
+				0AD70479E131EC8BF63028A6F8D3403A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0435538238479D3A3E2A009AC7C65A3 /* PBXTargetDependency */,
+				9E2B8D4E4483ECF5C4E06B996F3CEE7A /* PBXTargetDependency */,
 			);
 			name = "Pods-Crypto Analyser Dev";
 			productName = Pods_Crypto_Analyser_Dev;
 			productReference = DD8D9B2DDA3CC193160142E58907CB6D /* Pods-Crypto Analyser Dev */;
 			productType = "com.apple.product-type.framework";
+		};
+		FBDE307EEE6EFAED12F501BC7E7652AA /* Keys-library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08BF6A031FFFB65A5503B8C8767D8951 /* Build configuration list for PBXNativeTarget "Keys-library" */;
+			buildPhases = (
+				95F598740E5F35B32C11D5562A4DD465 /* Headers */,
+				CEC67F67DE017E532E7CF2E0136AA035 /* Sources */,
+				D6C86C53181AD77C7C4B7F1851009DF5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Keys-library";
+			productName = "Keys-library";
+			productReference = D4B5FC1A8F44103C20C834E5CAAEC363 /* Keys-library */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -212,56 +522,254 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 37BFBAC5C651B1F701796F76F5414ED2 /* Products */;
+			productRefGroup = E80DC1F20140BACB6564EDDCB6A6F7CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				038B9A85B25D53B15C36692368AA8E7E /* Keys-framework */,
+				FBDE307EEE6EFAED12F501BC7E7652AA /* Keys-library */,
 				DAAD8345D27B27F01208E07F2F36CE49 /* Pods-Crypto Analyser Dev */,
 				D355ECC655D5DE82AB4227AD24AECC00 /* Pods-Crypto Analyser Pro */,
+				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
+				677650A76A720691B88A6959EFED6418 /* SwiftyJSON-SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		02F52C52F23FCAF83B68F751A35ED910 /* Resources */ = {
+		0AD70479E131EC8BF63028A6F8D3403A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32C6147A9BD744BB8EFD8373B63E9045 /* Resources */ = {
+		1579F6E7788A92A535C5F519BAD5D9FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50889C9DFDABCC7C2200CC144ABFC047 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B094AECD875F2C5416ACF7D70D6B6B2 /* SwiftyJSON-SwiftyJSON in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99B949FC437750E7B2D0C630E2874CBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80025A367E7A3DFE0EA65A7B8FC2604 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC922C81E88666478EE7B2E942F8755 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		61E7F69EF92DA1B369F44A3369469AD6 /* Sources */ = {
+		27ED773EF465BEA94FB03371A2910656 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1349AA652FA934CFB5C326C9D2213139 /* Pods-Crypto Analyser Dev-dummy.m in Sources */,
+				6ADB00CA4A3825C6178371E98A43477E /* FlowersKeys.m in Sources */,
+				A5B5344ADBDA316DBCA07CCD605A2EFA /* Keys-framework-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E39D6096A2873F968F5909FAFCB58684 /* Sources */ = {
+		534EBE2A4CF19E1E448CB5FB88D853FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32ACE58A13060A7128DB421DF3B08631 /* Pods-Crypto Analyser Pro-dummy.m in Sources */,
+				2E02354B25EA62E740B1AB4BCE4BA064 /* Pods-Crypto Analyser Dev-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61ED3591F42F4FB4ADE3F4962F58CA22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E7FC00731C82197038DBFB709D436B /* Pods-Crypto Analyser Pro-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		957E7A03004869519B98CCB05373F1EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A43FC2C1BFDC0FE2957688B876B318DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F9A72150ADC8769E1E28AD550D314A1 /* SwiftyJSON.swift in Sources */,
+				A57326C8E77245DB6680543B3426F381 /* SwiftyJSON-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEC67F67DE017E532E7CF2E0136AA035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				618CE63AE483A6006199F6F4FE353502 /* FlowersKeys.m in Sources */,
+				14A8DC1F614141BEDDBDCDE58E6E5D81 /* Keys-library-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2226D02FE6BDAF1B3CDADFBCCA7A6C77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON-SwiftyJSON";
+			target = 677650A76A720691B88A6959EFED6418 /* SwiftyJSON-SwiftyJSON */;
+			targetProxy = 6489C6EC538A26E8C8E23159DDACB734 /* PBXContainerItemProxy */;
+		};
+		7E253B6632ED1640EABB1414E9F871F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = EE735B854C7F44D943F4B4C760AED1EC /* PBXContainerItemProxy */;
+		};
+		9E2B8D4E4483ECF5C4E06B996F3CEE7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = 227079652FA42F62E4FBE8223A334EA5 /* PBXContainerItemProxy */;
+		};
+		C0435538238479D3A3E2A009AC7C65A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Keys-framework";
+			target = 038B9A85B25D53B15C36692368AA8E7E /* Keys-framework */;
+			targetProxy = 795DC7289566BD2B618E0F17AB6BD152 /* PBXContainerItemProxy */;
+		};
+		C500FEB52E6CC815FFBD2E8053729EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Keys-framework";
+			target = 038B9A85B25D53B15C36692368AA8E7E /* Keys-framework */;
+			targetProxy = CDD2986BAA3D0F140EB80015A7D3E681 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		00338DBCB6822D93F448DB39CBB112BA /* Release */ = {
+		05EF2E9E1382EA41B1101CD26E065465 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD8A6EE7421B7503044A85113A3F7E49 /* Pods-Crypto Analyser Pro.release.xcconfig */;
+			baseConfigurationReference = C8C8F8B4E04339E00E111F5574CC6BE4 /* Keys-framework.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys-framework/Keys-framework-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Keys-framework/Keys-framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Keys-framework/Keys-framework.modulemap";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = Keys;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4CB9A9E03CA7A41BE598D56208553739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1DC920DA0D02870D9CCCE7DA8A7FCCF /* Keys-framework.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys-framework/Keys-framework-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Keys-framework/Keys-framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Keys-framework/Keys-framework.modulemap";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = Keys;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5275827D18FAFBDDE1E2B0D555E55F06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF65FB9E3739694AEEB0937B8E39A470 /* Keys-library.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys-library/Keys-library-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = "Keys-library";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		730FA4F52C1CB26D83954CED48C09FD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB825F609A39389CD25E1BB3B7153834 /* Pods-Crypto Analyser Pro.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -277,7 +785,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,13 +801,51 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
+		8B80D7BCFFE6E280243060F641D3BE62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DA80B8981820935329EF93D56EC669A /* Pods-Crypto Analyser Dev.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +898,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -365,11 +911,10 @@
 			};
 			name = Debug;
 		};
-		91A99ADF0D445D6BB02CBEDB79CBCE45 /* Debug */ = {
+		90A83603B6BD81AE9AD6D02FC3FADE71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 301E966124E481FB966C9A820A04DF65 /* Pods-Crypto Analyser Pro.debug.xcconfig */;
+			baseConfigurationReference = 3ABF87A1BB5E17D6FC108469EC209042 /* SwiftyJSON.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -381,70 +926,31 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		CE8E712DF84D9B7BC0CD49AD5CFE878C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E97E61C81B8DC67CDA4F9713A1CB82F /* Pods-Crypto Analyser Dev.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -494,7 +1000,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,9 +1012,123 @@
 			};
 			name = Release;
 		};
-		F32CD14798A86ADCC36716CE2CE81600 /* Debug */ = {
+		B3169E5BABE5DD33164CD4FC5F373BF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D437C31F661116C7ABB30FDE192871A /* Pods-Crypto Analyser Dev.debug.xcconfig */;
+			baseConfigurationReference = 35FF7707B2B35D65503E81090CD440A5 /* Pods-Crypto Analyser Pro.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Crypto Analyser Pro/Pods-Crypto Analyser Pro.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E957126B6125604B621955662B318F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D21020E1A00D110C4EF4E859D04052C /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftyJSON";
+				IBSC_MODULE = SwiftyJSON;
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/ResourceBundle-SwiftyJSON-SwiftyJSON-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		F114BFD6C8C8005B7F65DDEFFEE024CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ABF87A1BB5E17D6FC108469EC209042 /* SwiftyJSON.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SwiftyJSON";
+				IBSC_MODULE = SwiftyJSON;
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/ResourceBundle-SwiftyJSON-SwiftyJSON-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F297241D9B06A15050FE4F76DABA19CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D21020E1A00D110C4EF4E859D04052C /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F65FC89A1D6D679061FA4237F72619FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 435B7E649F36C6F7AEAE4AF1CC2FDC65 /* Pods-Crypto Analyser Dev.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -524,7 +1144,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-Crypto Analyser Dev/Pods-Crypto Analyser Dev-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,19 +1160,57 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		F66B99E866F4BFAF7C2B52EB8DD90B25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54523343CA7081EBAAE148BB76B9E85 /* Keys-library.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Keys-library/Keys-library-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = Keys;
+				PRODUCT_NAME = "Keys-library";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		255726A73FDB9A1334C6342181F81964 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Pro" */ = {
+		08BF6A031FFFB65A5503B8C8767D8951 /* Build configuration list for PBXNativeTarget "Keys-library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				91A99ADF0D445D6BB02CBEDB79CBCE45 /* Debug */,
-				00338DBCB6822D93F448DB39CBB112BA /* Release */,
+				5275827D18FAFBDDE1E2B0D555E55F06 /* Debug */,
+				F66B99E866F4BFAF7C2B52EB8DD90B25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24C41EFED30D5EFD4B454AB9431D9389 /* Build configuration list for PBXNativeTarget "Keys-framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CB9A9E03CA7A41BE598D56208553739 /* Debug */,
+				05EF2E9E1382EA41B1101CD26E065465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -560,17 +1218,44 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */,
-				E873CA97BD124B21839AF13C9BE1CD18 /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7EA58B066E5BB47A20CBDB6A744B717 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Dev" */ = {
+		5176F9AA0EF18F0B0B9D8EF8227C5E46 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32CD14798A86ADCC36716CE2CE81600 /* Debug */,
-				CE8E712DF84D9B7BC0CD49AD5CFE878C /* Release */,
+				90A83603B6BD81AE9AD6D02FC3FADE71 /* Debug */,
+				F297241D9B06A15050FE4F76DABA19CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8986B2E76F9AF0EC70CF7863DFB45DE9 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				730FA4F52C1CB26D83954CED48C09FD9 /* Debug */,
+				B3169E5BABE5DD33164CD4FC5F373BF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		909EE551B9730A071E520822FEA7D3F2 /* Build configuration list for PBXNativeTarget "Pods-Crypto Analyser Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B80D7BCFFE6E280243060F641D3BE62 /* Debug */,
+				F65FC89A1D6D679061FA4237F72619FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8F5168842B84CBEEA0914EA5DBA2324 /* Build configuration list for PBXNativeTarget "SwiftyJSON-SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F114BFD6C8C8005B7F65DDEFFEE024CB /* Debug */,
+				E957126B6125604B621955662B318F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

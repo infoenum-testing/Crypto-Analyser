@@ -9,6 +9,9 @@ import Foundation
 
 struct StringConstants {
     static let cryptoAnalyser = "CryptoAnalyser"
+    static let chatGPTApiUrl = "https://api.openai.com/v1/chat/completions"
+    static let newsApiUrl = "https://cryptonews-api.com/api/v1/category"
+    static let newsApiToken = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu"
     
     // Sign Up
     static let signUpTitle = "Sign Up"
@@ -54,6 +57,10 @@ struct StringConstants {
     static let searchForCoin = "Search for a coin"
     static let recentSearches = "Recent Searches"
     
+    // ImageAnalyse
+    static let invalid = "Invalid"
+    static let invalidImageAlertMessage = "The provided image is not a crypto chart. Please upload a valid crypto chart for analysis."
+    static let error = "Error"
     
     // Setting
     static let deleteAccount = "Delete Account"

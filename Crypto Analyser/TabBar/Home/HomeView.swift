@@ -16,7 +16,8 @@ struct HomeView: View {
     @State private var recentSearchIsLoading: Bool = false
     @State private var isCamera: Bool = false
     @State private var resentSearches:[SearchDetails] = []
-    
+    @State private var showAlert = false
+    @State private var itemToDelete: SearchDetails?
     
     var body: some View {
         ZStack {
@@ -94,66 +95,82 @@ struct HomeView: View {
                         Spacer()
                     }
                 }
-                .padding(.top,30)
+//                .padding(.top,10)
                 .padding(.horizontal,20)
                 
                 Text(StringConstants.recentSearches)
                     .font(.system(size: 25, weight: .semibold))
                     .padding(.bottom,5)
                     .padding(.horizontal,20)
-                
-                ScrollView {
-                    VStack {
-                        if !recentSearchIsLoading {
-                            ForEach(0..<resentSearches.count, id: \.self) { index in
-                                let title = resentSearches[index].title
-                                let message = resentSearches[index].message
-                                VStack(alignment: .leading,spacing: 0) {
-                                    HStack {
-                                        Spacer()
-                                        Button(action: {
-                                            let id = resentSearches[index].id
-                                            removeRecentSearch(id:id)
-                                        }, label: {
-                                            Image(systemName: "xmark")
-                                                .resizable()
-                                                .frame(width: 10, height: 10, alignment: .center)
-                                        })
-                                    }
-                                    .padding(.horizontal)
-                                    Text(message)
-                                        .lineLimit(2)
-                                        .font(.system(size: 15, weight: .regular))
-                                        .padding(.horizontal)
-                                        .padding(.bottom)
-                                    
-                                }
-                                .padding(.vertical,4)
-                                .background(Color.white)
-                                .cornerRadius(8)
-                                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                                .accentColor(.black)
-                                .foregroundColor(.black)
-                                .font(.system(size: 20))
-                                .onTapGesture {
-                                    router.navigateToAuth(.dataDescription(afterAnalyse: false,title: nil, message: message))
-                                }
-                                
-                            }
-                        } else {
-                            HStack {
+                if recentSearchIsLoading || resentSearches.count == 0{
+                    HStack {
+                        Spacer()
+                        if recentSearchIsLoading {
+                            VStack {
                                 Spacer()
                                 ProgressView()
                                     .controlSize(.large)
                                     .foregroundColor(.white)
                                 Spacer()
                             }
-                            .padding(.top,20)
+                        } else {
+                            VStack(alignment:.center, spacing: 5) {
+                                Spacer()
+                                Text("No recent search available")
+                                    .font(.title2)
+                                    .foregroundColor(.gray)
+                                Text("Please Search by using the options above.")
+                                    .font(.body)
+                                    .foregroundColor(.secondary)
+                                Spacer()
+                            }
                         }
+                        Spacer()
                     }
                     .padding(.horizontal,20)
+                }  else {
+                    ScrollView {
+                        VStack {
+                                ForEach(0..<resentSearches.count, id: \.self) { index in
+                                    let title = resentSearches[index].title
+                                    let message = resentSearches[index].message
+                                    VStack(alignment: .leading,spacing: 0) {
+                                        HStack {
+                                            Spacer()
+                                            Button(action: {
+                                                itemToDelete = resentSearches[index]
+                                                showAlert = true
+                                            }, label: {
+                                                Image(systemName: "xmark")
+                                                    .resizable()
+                                                    .frame(width: 10, height: 10, alignment: .center)
+                                            })
+                                        }
+                                        .padding(.horizontal,8)
+                                        Text(message)
+                                            .lineLimit(2)
+                                            .font(.system(size: 15, weight: .regular))
+                                            .padding(.horizontal)
+                                            .padding(.bottom)
+                                        
+                                    }
+                                    .padding(.top,8)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
+                                    .accentColor(.black)
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20))
+                                    .onTapGesture {
+                                        router.navigateToAuth(.dataDescription(image: resentSearches[index].image ?? UIImage(),afterAnalyse: false,title: nil, message: message))
+                                    }
+                                    
+                                }
+                        }
+                        .padding(.horizontal,20)
+                        .padding(.top,2)
+                    }
                 }
-                Spacer()
             }
             .fullScreenCover(isPresented: $isGallery) {
                 GalleryView(isGallery: $isGallery, capturedImage: $image)
@@ -161,8 +178,17 @@ struct HomeView: View {
             .fullScreenCover(isPresented: $isCamera) {
                 CameraView(isCamera: $isCamera, captureImage: { image in
                     self.image = image
-                    
                 })
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Confirm Deletion"),
+                    message: Text("Are you sure you want to delete search"),
+                    primaryButton: .destructive(Text("Delete")) {
+                        removeRecentSearch(id:itemToDelete?.id ?? "")
+                    },
+                    secondaryButton: .cancel() // Cancel button to dismiss alert
+                )
             }
         }
         //.background(Color.midnightBlue.opacity(0.4))
@@ -172,7 +198,7 @@ struct HomeView: View {
         
         .onChange(of: image) { value in
             if let value {
-                router.navigateToAuth(.imageAnalyser(image: value))
+                router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
             }
         }
     }
@@ -196,10 +222,16 @@ struct HomeView: View {
         FireBaseResentSearches.shared.removeRecentSearch(for: email, documentID: id) { result in
             switch result {
             case .success:
-                fetchRecentSearches()
+                removeItem(withId: id)
             case .failure(let error):
                 print("Failed to remove recent search: \(error.localizedDescription)")
             }
+        }
+    }
+    
+    func removeItem(withId id: String) {
+        if let index = resentSearches.firstIndex(where: { $0.id == id }) {
+            resentSearches.remove(at: index)
         }
     }
 }

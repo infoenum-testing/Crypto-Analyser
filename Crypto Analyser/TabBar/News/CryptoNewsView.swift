@@ -11,11 +11,14 @@ import WebKit
 struct CryptoNewsView: View {
     @State private var newsData:[NewsDetails] = []
     @State private var newsLoading:Bool = false
+    @State private var pageIndex:Int = 1
+    @State private var showAlert = false
+    @State private var alertMessage = ""
     var body: some View {
         VStack(spacing:1) {
             Text("Crypto News")
-                .font(.system(size: 30, weight: .semibold))
-            if newsLoading  {
+                .font(.system(size: 25, weight: .semibold))
+            if newsLoading &&  newsData.count == 0{
                 VStack {
                     Spacer()
                     ProgressView()
@@ -29,6 +32,12 @@ struct CryptoNewsView: View {
                         ForEach(newsData.indices, id: \.self) { index in
                             let news = newsData[index]
                             newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "")
+                                .onAppear {
+//                                    if pageIndex < 20 {
+//                                        pageIndex += 1
+//                                        fetchData(page: pageIndex)
+//                                    }
+                                }
                         }
                     }
                     .padding(.horizontal,20)
@@ -36,15 +45,28 @@ struct CryptoNewsView: View {
                 }
             }
         } .onAppear {
-            newsLoading = true
-            fetchCryptoNews { result in
-                newsLoading = false
-                switch result {
-                case .success(let newsArray):
-                    newsData = newsArray
-                case .failure(let error):
-                    print("Error fetching news: \(error)")
-                }
+//            fetchData(page: pageIndex)
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(StringConstants.error),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK"), action: {})
+            )
+        }
+    }
+    
+    private func fetchData(page:Int) {
+        newsLoading = true
+        fetchCryptoNews(page:page) { result in
+            newsLoading = false
+            switch result {
+            case .success(let newsArray):
+                newsData += newsArray
+            case .failure(let error):
+                showAlert = true
+                alertMessage = error.localizedDescription
+                print("Error fetching news: \(error)")
             }
         }
     }
@@ -60,7 +82,7 @@ struct newsCellView: View {
     let newsUrl: String
     let des: String
     @State private var showWebView = false
-
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
@@ -86,7 +108,6 @@ struct newsCellView: View {
         .sheet(isPresented: $showWebView) {
             if let url = URL(string: newsUrl) {
                 WebViewContainer(url: url)
-
                     .edgesIgnoringSafeArea(.all)
             } else {
                 Text("Invalid URL")
@@ -95,72 +116,3 @@ struct newsCellView: View {
     }
 }
 
-struct WebView: UIViewRepresentable {
-    let url: URL
-    @Binding var canGoBack: Bool
-    @Binding var canGoForward: Bool
-    
-    class Coordinator: NSObject, WKNavigationDelegate {
-        var parent: WebView
-        
-        init(parent: WebView) {
-            self.parent = parent
-        }
-        
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            parent.canGoBack = webView.canGoBack
-            parent.canGoForward = webView.canGoForward
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-
-    func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        webView.navigationDelegate = context.coordinator
-        webView.load(URLRequest(url: url))
-        return webView
-    }
-
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        // No need to update here since navigation is handled by the user
-    }
-}
-
-struct WebViewContainer: View {
-    let url: URL
-    @State private var canGoBack = false
-    @State private var canGoForward = false
-    @State private var webView: WKWebView?
-
-    var body: some View {
-        VStack {
-            // WebView instance
-            WebView(url: url, canGoBack: $canGoBack, canGoForward: $canGoForward)
-                .onAppear {
-                    // Capture the web view instance when it is created
-                    webView = WKWebView()
-                }
-
-            // Navigation controls
-            HStack {
-                Button(action: {
-                    webView?.goBack()
-                }) {
-                    Label("Back", systemImage: "arrow.backward")
-                }
-                .disabled(!canGoBack)
-
-                Button(action: {
-                    webView?.goForward()
-                }) {
-                    Label("Forward", systemImage: "arrow.forward")
-                }
-                .disabled(!canGoForward)
-            }
-            .padding()
-        }
-    }
-}

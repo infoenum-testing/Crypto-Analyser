@@ -4,54 +4,83 @@
 //
 //  Created by IE15 on 26/12/24.
 //
-
 import SwiftUI
 
 struct ImageAnalyserView: View {
     @EnvironmentObject var router: Router
+    let fromSearch:Bool
     let image: UIImage
     @StateObject var viewModel = ChatGPTData()
     @State private var isItFirst = true
     @State private var isLoading: Bool = true
+    @State private var isDataFound: Bool = false
     @State private var showAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
+    @State private var message = ""
+    
+    @Namespace private var animationNamespace
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
-                    router.navigateBackInAuth()
+                    if fromSearch {
+                        router.navigateBackInAuth(count: 2)
+                    } else {
+                        router.navigateBackInAuth()
+                    }
                 }, label: {
                     Image(.back)
                         .foregroundColor(.black)
                 })
                 Spacer()
+                Text("Analyse")
+                    .font(.system(size: 25, weight: .semibold))
+                Spacer()
+                Text(" ")
             }
             .padding(.horizontal, 20)
-            .frame(height: 50)
+            .frame(height: 30)
             .clipped()
             
-            VStack {
-                Spacer()
-                
-                ZStack {
+            ZStack {
+                ScrollView {
                     VStack {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: UIScreen.main.bounds.width, height: 300)
-                            .clipped()
-                            .contentShape(Rectangle())  // Make sure the image is tappable if needed
-                    }
-                    .frame(height: 300)
-                    
-                    if isLoading {
-                        LeafLoadingView()
+                        VStack {
+                            if !isDataFound {
+                                Spacer()
+                            }
+                            ZStack {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width)
+                                    .frame(maxHeight: UIScreen.main.bounds.height - 500)
+                                    .clipped()
+                                if isLoading {
+                                    LeafLoadingView()
+                                }
+                            }
+                            
+                            if !isDataFound {
+                                Spacer()
+                                Spacer()
+                            }
+                        }
+                        .frame(height: !isDataFound ? UIScreen.main.bounds.height - 30 : UIScreen.main.bounds.height - 500)
+                        if isDataFound {
+                            Text(message)
+                                .font(.system(size: 20, weight: .regular))
+                                .multilineTextAlignment(.leading)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 20)
+                                .transition(.opacity)
+                        }
                     }
                 }
-                Spacer()
             }
+            .animation(.easeIn, value: isLoading)
         }
         .padding(.top, 5)
         .onAppear {
@@ -73,46 +102,48 @@ struct ImageAnalyserView: View {
     private func refreshUI() {
         let imageStr = image.resized(to: 800).toBase64String()
         viewModel.analyseImageData(imageBase64: imageStr ?? "", completion: { result in
+            isLoading = false
             switch result {
             case .success(let success):
-                isLoading = false
-                if let content = success.choices?.first?.message?.content {
-                    if content.replacingOccurrences(of: " ", with: "")
-                        .lowercased() == "false" {
-                        alertTitle = "Invalid"
-                        alertMessage = "The provided image is not a crypto chart. Please upload a valid crypto chart for analysis."
-                        showAlert = true
-                    } else {
-                        let email = UserSessionManager.getUserData().email
-                        FireBaseResentSearches.shared.addRecentSearch(email: email, image: image, title: "", message: content, completion: { result in
-                            removeLastRecentSearch()
-                            print("Save in recent Search",result)
-                        })
-                        isItFirst = false
-                        router.navigateToAuth(.dataDescription(afterAnalyse: true,title: nil, message: content))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Simulating delay for testing animation
+                    if let content = success.choices?.first?.message?.content {
+                        if content.replacingOccurrences(of: " ", with: "").lowercased() == "false" {
+                            alertTitle = StringConstants.invalid
+                            alertMessage = StringConstants.invalidImageAlertMessage
+                            showAlert = true
+                        } else {
+                            let email = UserSessionManager.getUserData().email
+                            FireBaseResentSearches.shared.addRecentSearch(email: email, image: image, title: "", message: content, completion: { result in
+                                removeLastRecentSearch()
+                                print("Saved in recent Search", result)
+                            })
+                            isItFirst = false
+                            message = content
+                            withAnimation {
+                                isDataFound = true
+                            }
+                        }
                     }
                 }
             case .failure(let error):
-                isLoading = false
-                alertTitle = "Error"
+                alertTitle = StringConstants.error
                 alertMessage = "An error occurred: \(error.localizedDescription)"
                 showAlert = true
             }
         })
     }
     
- 
     func removeLastRecentSearch() {
         let email = UserSessionManager.getUserData().email
         FireBaseResentSearches.shared.fetchRecentSearches(for: email) { result in
             switch result {
             case .success(let recentSearches):
-                if recentSearches.count >= 10,let earliestObject = recentSearches.min(by: { $0.date < $1.date }) {
+                if recentSearches.count >= 10, let earliestObject = recentSearches.min(by: { $0.date < $1.date }) {
                     print(earliestObject.message)
                     FireBaseResentSearches.shared.removeRecentSearch(for: email, documentID: earliestObject.id) { result in
                         switch result {
                         case .success:
-                           print("Deleted last search")
+                            print("Deleted last search")
                         case .failure(let error):
                             print("Failed to remove recent search: \(error.localizedDescription)")
                         }
@@ -122,10 +153,5 @@ struct ImageAnalyserView: View {
                 print("Failed to fetch recent searches: \(error.localizedDescription)")
             }
         }
-        
     }
-}
-
-#Preview {
-    ImageAnalyserView(image: UIImage())
 }
