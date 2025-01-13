@@ -23,83 +23,41 @@ struct HomeView: View {
         ZStack {
             VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
-                    Text(StringConstants.analyseCrypto)
-                        .font(.system(size: 25, weight: .semibold))
                     HStack {
                         Spacer()
-                        Button(action: {
-                            isCamera = true
-                        }, label: {
-                            VStack {
-                                Image(systemName: "camera")
-                                    .resizable()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                Text(StringConstants.takeAPic)
-                                    .font(.system(size: 12, weight: .regular))
-                            }
-                        })
-                        .frame(width: 80,height: 80)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                        .accentColor(.black)
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .padding(.bottom)
-                        
-                        Text(StringConstants.or)
-                            .lineLimit(1)
-                        
-                        Button(action: {
-                            isGallery = true
-                        }, label: {
-                            VStack {
-                                Image(systemName: "photo.on.rectangle")
-                                    .resizable()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                Text(StringConstants.uploadFromGallery)
-                                    .font(.system(size: 12, weight: .regular))
-                            }
-                        })
-                        .frame(width: 80,height: 80)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                        .accentColor(.black)
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .padding(.bottom)
-                        
-                        Text(StringConstants.or)
-                            .lineLimit(1)
-                        
-                        Button(action: {
-                            router.navigateToAuth(.searchView)
-                        }, label: {
-                            VStack {
-                                Image(systemName: "magnifyingglass")
-                                    .resizable()
-                                    .frame(width: 25, height: 25, alignment: .center)
-                                Text(StringConstants.searchForCoin)
-                                    .font(.system(size: 12, weight: .regular))
-                            }
-                        })
-                        .frame(width: 80,height: 80)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                        .accentColor(.black)
-                        .foregroundColor(.black)
-                        .font(.system(size: 20))
-                        .padding(.bottom)
+                        Text(StringConstants.analyseCrypto)
+                            .font(.system(size: 25, weight: .semibold))
                         Spacer()
                     }
+                    HStack {
+//                        Spacer()
+                        customButton(imageName: "camera", title: StringConstants.takeAPic, action: {
+                            isCamera = true
+                        })
+                        .frame(maxWidth: .infinity)
+                        
+                        Text(StringConstants.or)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity)
+                        customButton(imageName: "photo.on.rectangle", title: StringConstants.uploadFromGallery, action: {
+                            isGallery = true
+                        })
+                        .frame(maxWidth: .infinity)
+                        
+                        Text(StringConstants.or)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity)
+                        customButton(imageName: "magnifyingglass", title: StringConstants.searchForCoin, action: {
+                            router.navigateToAuth(.searchView)
+                        })
+                        .frame(maxWidth: .infinity)
+//                        Spacer()
+                    }
                 }
-//                .padding(.top,10)
                 .padding(.horizontal,20)
                 
                 Text(StringConstants.recentSearches)
-                    .font(.system(size: 25, weight: .semibold))
+                    .font(.system(size: 20, weight: .semibold))
                     .padding(.bottom,5)
                     .padding(.horizontal,20)
                 if recentSearchIsLoading || resentSearches.count == 0{
@@ -129,47 +87,51 @@ struct HomeView: View {
                     }
                     .padding(.horizontal,20)
                 }  else {
-                    ScrollView {
-                        VStack {
-                                ForEach(0..<resentSearches.count, id: \.self) { index in
-                                    let title = resentSearches[index].title
-                                    let message = resentSearches[index].message
-                                    VStack(alignment: .leading,spacing: 0) {
-                                        HStack {
-                                            Spacer()
-                                            Button(action: {
-                                                itemToDelete = resentSearches[index]
-                                                showAlert = true
-                                            }, label: {
-                                                Image(systemName: "xmark")
-                                                    .resizable()
-                                                    .frame(width: 10, height: 10, alignment: .center)
-                                            })
-                                        }
-                                        .padding(.horizontal,8)
-                                        Text(message)
-                                            .lineLimit(2)
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment:.leading) {
+                            ForEach(resentSearches, id: \.id) { item in
+                                let message = item.message
+                                VStack(alignment: .leading,spacing: 0) {
+                                    HStack(alignment: .center, spacing: 0) {
+                                        Text(message.replacingOccurrences(of: "\n", with: ""))
+                                            .lineLimit(3)
                                             .font(.system(size: 15, weight: .regular))
-                                            .padding(.horizontal)
-                                            .padding(.bottom)
+                                        Spacer()
+                                        Button(action: {
+                                            itemToDelete = item
+                                            showAlert = true
+                                        }, label: {
+                                            if itemToDelete?.id == item.id && !showAlert{
+                                                ProgressView()
+                                            } else {
+                                                Image(systemName: "trash")
+                                                    .resizable()
+                                                    .foregroundStyle(.red.opacity(0.8))
+                                                    .frame(width: 20, height: 20, alignment: .center)
+                                            }
+                                        })
+                                        .frame(width: 20, height: 20)
                                         
                                     }
-                                    .padding(.top,8)
-                                    .background(Color.white)
-                                    .cornerRadius(8)
-                                    .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                                    .accentColor(.black)
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                    .onTapGesture {
-                                        router.navigateToAuth(.dataDescription(image: resentSearches[index].image ?? UIImage(),afterAnalyse: false,title: nil, message: message))
-                                    }
-                                    
+                                    .padding(.horizontal,8)
                                 }
+                                .padding(.vertical,8)
+                                .background(Color.white)
+                                .cornerRadius(8)
+                                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
+                                .accentColor(.black)
+                                .foregroundColor(.black)
+                                .font(.system(size: 20))
+                                .onTapGesture {
+                                    router.navigateToAuth(.dataDescription(image: item.image ?? UIImage(),afterAnalyse: false,title: nil, message: message))
+                                }
+                                .transition(.move(edge: .leading))
+                            }
                         }
-                        .padding(.horizontal,20)
                         .padding(.top,2)
+                        .padding(.horizontal,6)
                     }
+                    .padding(.horizontal,14)
                 }
             }
             .fullScreenCover(isPresented: $isGallery) {
@@ -187,11 +149,12 @@ struct HomeView: View {
                     primaryButton: .destructive(Text("Delete")) {
                         removeRecentSearch(id:itemToDelete?.id ?? "")
                     },
-                    secondaryButton: .cancel() // Cancel button to dismiss alert
+                    secondaryButton: .cancel() {
+                        itemToDelete = nil
+                    }
                 )
             }
-        }
-        //.background(Color.midnightBlue.opacity(0.4))
+        } //.background(Color.midnightBlue.opacity(0.4))
         .onAppear {
             fetchRecentSearches()
         }
@@ -201,6 +164,29 @@ struct HomeView: View {
                 router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
             }
         }
+    }
+    
+    func customButton(imageName: String, title: String, action: @escaping () -> Void) -> some View {
+        Button(action: {
+            action()
+        }, label: {
+            VStack {
+                Image(systemName: imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25, alignment: .center)
+                Text(title)
+                    .font(.system(size: 12, weight: .regular))
+            }
+        })
+        .frame(width: 80, height: 80)
+        .background(Color.white)
+        .cornerRadius(8)
+        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
+        .accentColor(.black)
+        .foregroundColor(.black)
+        .font(.system(size: 20))
+        .padding(.bottom)
     }
     
     func fetchRecentSearches() {
@@ -231,7 +217,9 @@ struct HomeView: View {
     
     func removeItem(withId id: String) {
         if let index = resentSearches.firstIndex(where: { $0.id == id }) {
-            resentSearches.remove(at: index)
+            withAnimation {
+                resentSearches.remove(at: index)
+            }
         }
     }
 }

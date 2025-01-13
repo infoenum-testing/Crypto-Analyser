@@ -24,7 +24,7 @@ struct DataDescriptionView: View {
                         .foregroundColor(.black)
                 })
                 Spacer()
-                Text("Analysed")
+                Text("Analysed Result")
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()
                 Text(" ")
@@ -40,11 +40,16 @@ struct DataDescriptionView: View {
                             ZStack {
                                 Image(uiImage: image)
                                     .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width)
-                                    .frame(maxHeight: UIScreen.main.bounds.height - 500)
+                                    .scaledToFit()
+                                    .frame(width: UIScreen.main.bounds.width - 16)
+                                    .frame(maxHeight: UIScreen.main.bounds.height/2.3)
                                     .clipped()
                             }
+                            .frame(maxHeight: UIScreen.main.bounds.height/2.5)
+                            .cornerRadius(8)
+                            .shadow(color: Color.black, radius: 3, x: 0, y: 0)
+                            .padding(.horizontal, 20)
+                            .padding(.top, 20)
                         }
                         Text(message)
                             .font(.system(size: 20, weight: .regular))

@@ -59,8 +59,8 @@ struct SettingView: View {
                             Text(StringConstants.account)
                                 .font(.system(size: 25, weight: .semibold))
                             
-                            CommonCell(title: StringConstants.accountInformation,action: {
-                                router.navigateToAuth(.accountInformation)
+                            CommonCell(title: "Edit Profile",action: {
+                                router.navigateToAuth(.editProfile)
                             })
                             CommonCell(title: StringConstants.resetPassword,action: {
                                 alertType  = .resetPassword
@@ -68,6 +68,9 @@ struct SettingView: View {
                                 alertTitle = StringConstants.resetPassword
                                 alertMessage = "\(StringConstants.resetPasswordDes) \(UserSessionManager.getUserData().email )."
                                 alertButtonText = StringConstants.sendEmail
+                            })
+                            CommonCell(title: "Subscriptions",action: {
+                              //
                             })
                         }
                         .padding(.top,5)

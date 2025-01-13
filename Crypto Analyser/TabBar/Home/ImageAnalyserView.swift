@@ -35,7 +35,7 @@ struct ImageAnalyserView: View {
                         .foregroundColor(.black)
                 })
                 Spacer()
-                Text("Analyse")
+                Text("Analysed Result")
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()
                 Text(" ")
@@ -51,24 +51,31 @@ struct ImageAnalyserView: View {
                             if !isDataFound {
                                 Spacer()
                             }
-                            ZStack {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: UIScreen.main.bounds.width)
-                                    .frame(maxHeight: UIScreen.main.bounds.height - 500)
-                                    .clipped()
-                                if isLoading {
-                                    LeafLoadingView()
+                            VStack {
+                                ZStack {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: UIScreen.main.bounds.width - 16)
+                                        .frame(maxHeight: UIScreen.main.bounds.height/2.3)
+                                        .clipped()
+                                    if isLoading {
+                                        LeafLoadingView()
+                                    }
                                 }
                             }
-                            
+                            .frame(maxHeight: UIScreen.main.bounds.height/2.5)
+                            .cornerRadius(8)
+                            .shadow(color: Color.black, radius: 3, x: 0, y: 0)
+                            .padding(.horizontal, 20)
+                            .padding(.top, !isDataFound ? 0 : 10)
+                          
                             if !isDataFound {
                                 Spacer()
                                 Spacer()
                             }
                         }
-                        .frame(height: !isDataFound ? UIScreen.main.bounds.height - 30 : UIScreen.main.bounds.height - 500)
+                        .frame(height: !isDataFound ? UIScreen.main.bounds.height: UIScreen.main.bounds.height/2.5)
                         if isDataFound {
                             Text(message)
                                 .font(.system(size: 20, weight: .regular))
@@ -105,7 +112,7 @@ struct ImageAnalyserView: View {
             isLoading = false
             switch result {
             case .success(let success):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Simulating delay for testing animation
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
                     if let content = success.choices?.first?.message?.content {
                         if content.replacingOccurrences(of: " ", with: "").lowercased() == "false" {
                             alertTitle = StringConstants.invalid
@@ -124,7 +131,7 @@ struct ImageAnalyserView: View {
                             }
                         }
                     }
-                }
+//                }
             case .failure(let error):
                 alertTitle = StringConstants.error
                 alertMessage = "An error occurred: \(error.localizedDescription)"

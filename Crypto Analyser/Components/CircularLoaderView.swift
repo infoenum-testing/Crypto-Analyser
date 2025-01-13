@@ -18,7 +18,7 @@ struct LeafLoadingView: View {
                     .fill(Color.black.opacity(Double(index) / 15.0))
                     .frame(width: 15, height: 40)
                     .foregroundColor(.gray.opacity(12.0 / Double(index)))
-                    .offset(y: -75)
+                    .offset(y: -65)
                     .rotationEffect(.degrees(Double(index) * (360 / 15)))
             }
             .frame(width: 150, height: 150)
@@ -31,7 +31,7 @@ struct LeafLoadingView: View {
             
             Text("Analysing...")
                 .foregroundStyle(.black)
-                .font(.system(size: 20, weight: .semibold))
+                .font(.system(size: 15, weight: .semibold))
         }
         .onAppear {
             isAnimating = true
