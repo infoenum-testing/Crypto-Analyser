@@ -3,4 +3,733 @@
    uuid = "2499A25E-8213-4CC1-89DD-F008C516DE78"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE1BAB60-944F-4691-85B7-A0C7EF9ACA63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/AuthFlow/ForgotPassword.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CE1BAB60-944F-4691-85B7-A0C7EF9ACA63 - 49dcc85dc86286bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 () -&gt; SwiftUI.Alert in Crypto_Analyser_Dev.ForgotPassword.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "CE1BAB60-944F-4691-85B7-A0C7EF9ACA63 - 49dcc85dc86286bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 () -&gt; SwiftUI.Alert in Crypto_Analyser_Dev.ForgotPassword.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "931">
+               </Location>
+               <Location
+                  uuid = "CE1BAB60-944F-4691-85B7-A0C7EF9ACA63 - 49dcc85dc86286bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 () -&gt; SwiftUI.Alert in Crypto_Analyser_Dev.ForgotPassword.body.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/AuthFlow/ForgotPassword.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A0615BD-3DC9-44C3-A6CD-1500DBA0C5A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "restorePurchases()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2A3C948-227D-4BA6-8AA2-8081D862D322"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "buyProduct(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D2A3C948-227D-4BA6-8AA2-8081D862D322 - 6d3b3431fa3031d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "D2A3C948-227D-4BA6-8AA2-8081D862D322 - 6d3b3431fa3031d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1917B6FF-5B7F-4B8C-B9BB-BB8213FAE8FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "buyProduct(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1917B6FF-5B7F-4B8C-B9BB-BB8213FAE8FA - 223358de17c400af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "1917B6FF-5B7F-4B8C-B9BB-BB8213FAE8FA - 223358de17c400af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "182">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75C53614-5167-46F6-B8F9-8203A5CDD2D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "buyProduct(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "75C53614-5167-46F6-B8F9-8203A5CDD2D7 - fc38cd95581af955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "4532">
+               </Location>
+               <Location
+                  uuid = "75C53614-5167-46F6-B8F9-8203A5CDD2D7 - fc38cd95581af955"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "5891">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DADB9BB4-24EA-4C39-A16E-B43476595030"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/TabBar/Setting/SubscriptionsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "purchaseButtonView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DADB9BB4-24EA-4C39-A16E-B43476595030 - c9b55f4ff886650"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in Crypto_Analyser_Dev.SubscriptionsView.purchaseButtonView.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/TabBar/Setting/SubscriptionsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "332"
+                  endingLineNumber = "332"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  uuid = "DADB9BB4-24EA-4C39-A16E-B43476595030 - c9b55f4ff886650"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.tint(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.onChange&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Equatable&gt;(of: &#x3c4;_1_0, perform: (&#x3c4;_1_0) -&gt; ()) -&gt; some&gt;&gt;.0 in Crypto_Analyser_Dev.SubscriptionsView.purchaseButtonView.getter : some"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/TabBar/Setting/SubscriptionsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "332"
+                  endingLineNumber = "332"
+                  offsetFromSymbolStart = "884">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F1DBCCD-CAC8-46A1-B191-DD78910811F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/TabBar/Setting/SubscriptionsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "SubscriptionsView"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B941D785-23B9-4A47-962D-8108FB6C794E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "observeTransactionUpdates()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - a3208c1105ccc230"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - 32d17c6e412d6cc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - 4bd728d34f9d8e2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - a3208c1105ccc230"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - 32d17c6e412d6cc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B941D785-23B9-4A47-962D-8108FB6C794E - 4bd728d34f9d8e2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Crypto_Analyser_Dev.SubscriptionsManager.observeTransactionUpdates() -&gt; Swift.Task&lt;(), Swift.Never&gt;"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9F96505-AED5-4D71-965E-3BACC29EE33E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "saveTransactionToFirebase(transaction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9F96505-AED5-4D71-965E-3BACC29EE33E - 238692f926700bab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "516">
+               </Location>
+               <Location
+                  uuid = "B9F96505-AED5-4D71-965E-3BACC29EE33E - 238692f926700bab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "364">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "638DDF45-0AFF-4ED9-A406-69406AD8F1DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "saveTransactionToFirebase(transaction:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "638DDF45-0AFF-4ED9-A406-69406AD8F1DB - 238692f926700b88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "444">
+               </Location>
+               <Location
+                  uuid = "638DDF45-0AFF-4ED9-A406-69406AD8F1DB - 6bf25cb4ec996f86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "638DDF45-0AFF-4ED9-A406-69406AD8F1DB - cff7a551d1adc185"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "638DDF45-0AFF-4ED9-A406-69406AD8F1DB - 238692f926700b69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.saveTransactionToFirebase(transaction: Crypto_Analyser_Dev.SubscriptionPayload) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A2A9547-01C2-494D-AE1C-6E6FAE7C43BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "buyProduct(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A2A9547-01C2-494D-AE1C-6E6FAE7C43BE - fc38cd95581af80c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "5136">
+               </Location>
+               <Location
+                  uuid = "4A2A9547-01C2-494D-AE1C-6E6FAE7C43BE - fc38cd95581af80c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "3952">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7034022-EF44-4EFD-8C00-E01A466A404E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "buyProduct(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7034022-EF44-4EFD-8C00-E01A466A404E - df2ca914187302bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  uuid = "B7034022-EF44-4EFD-8C00-E01A466A404E - fc27a0d4c6e0a4bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) await resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "B7034022-EF44-4EFD-8C00-E01A466A404E - df2ca914187302bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "B7034022-EF44-4EFD-8C00-E01A466A404E - fc27a0d4c6e0a4bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) await resume partial function for Crypto_Analyser_Dev.SubscriptionsManager.buyProduct(StoreKit.Product) async -&gt; ()"
+                  moduleName = "Crypto Analyser Dev"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ie15/Documents/Crypto%20analyser/Crypto-Analyser/Crypto%20Analyser/IAP/SubscriptionsManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54518726-04AD-478B-B4A7-7B0D6570848F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "updatePurchasedProducts()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5467A057-3FB6-433A-A134-C574C92925CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/TabBar/Setting/SubscriptionsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "subscriptionOptionsView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "292F338B-E752-4476-994F-5CBC0BECC9E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "returnPurchaseTitle()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35DFA679-CEB1-41D5-989C-CEEC4837E035"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "handleSinglePurchasedProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2942EE67-CFC4-4EB7-8631-BC553FF544E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto Analyser/IAP/SubscriptionsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
+            landmarkName = "handleSinglePurchasedProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

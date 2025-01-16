@@ -55,6 +55,7 @@ final class Router: ObservableObject {
         case searchView
         case imageAnalyser(image: UIImage,fromSearch: Bool)
         case dataDescription(image: UIImage,afterAnalyse:Bool,title: String?, message: String)
+        case subscription
 
         // Custom hashable implementation
         func hash(into hasher: inout Hasher) {
@@ -81,6 +82,8 @@ final class Router: ObservableObject {
                 hasher.combine(afterAnalyse)
                 hasher.combine(title)
                 hasher.combine(message)
+            case .subscription:
+                hasher.combine("subscription")
             }
         }
 
@@ -92,7 +95,8 @@ final class Router: ObservableObject {
                  (.tabBar, .tabBar),
                  (.accountInformation, .accountInformation),
                  (.editProfile, .editProfile),
-                 (.searchView, .searchView):
+                 (.searchView, .searchView),
+                (.subscription, .subscription):
                 return true
             case (.imageAnalyser(let lhsImage,let lhsFromSearch), .imageAnalyser(let rhsImage,let rhsFromSearch)):
                 return lhsImage.pngData() == rhsImage.pngData()  &&

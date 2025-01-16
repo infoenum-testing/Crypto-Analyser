@@ -113,6 +113,7 @@ struct LoginView: View {
                     }
                 }
             }
+            
             if isLoading {
                 VStack {
                     Spacer()
@@ -127,6 +128,20 @@ struct LoginView: View {
                     Spacer()
                 }
                 .background(.black.opacity(0.2))
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .keyboard) {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                       activeField = nil
+                    }, label: {
+                        Text("Done")
+                            .foregroundStyle(.blue)
+                            .font(.system(size: 18, weight: .regular))
+                    })
+                }
             }
         }
         .alert(isPresented: $showAlert) {
@@ -153,6 +168,9 @@ struct LoginView: View {
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                 .focused($activeField, equals: focusedField)
+                .onSubmit {
+                    activeField = .password
+                }
         }
         .padding(.bottom)
     }

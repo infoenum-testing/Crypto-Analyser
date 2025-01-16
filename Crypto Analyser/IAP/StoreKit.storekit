@@ -1,0 +1,121 @@
+{
+  "identifier" : "09ABA513",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6739863266",
+    "_developerTeamID" : "7UUTF6T5P9",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 758542881.78107095,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21616026",
+      "localizations" : [
+
+      ],
+      "name" : "CryptoAnalyser",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6740079452",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "com.infoenum.Crypto.autoRenewableOneMonth",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "AutoRenewableOneMonth",
+          "subscriptionGroupID" : "21616026",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6740079769",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "com.infoenum.Crypto.autoRenewableOneYear",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "AutoRenewableOneYear",
+          "subscriptionGroupID" : "21616026",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -70,7 +70,7 @@ struct SettingView: View {
                                 alertButtonText = StringConstants.sendEmail
                             })
                             CommonCell(title: "Subscriptions",action: {
-                              //
+                                router.navigateToAuth(.subscription)
                             })
                         }
                         .padding(.top,5)
@@ -80,17 +80,21 @@ struct SettingView: View {
                                 .font(.system(size: 25, weight: .semibold))
                             
                             CommonCell(title: StringConstants.privacyPolicy,action: {
-                                if let url = URL(string: "https://www.offhandlabs.com/privacy-policy") {
+                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
                                     UIApplication.shared.open(url)
                                 }
                             })
                             
                             CommonCell(title: StringConstants.termsAndConditions,action: {
-                                //
+                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                                    UIApplication.shared.open(url)
+                                }
                             })
                             
                             CommonCell(title: StringConstants.helpAndSupport,action: {
-                                //
+                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                                    UIApplication.shared.open(url)
+                                }
                             })
                         }
                         .padding(.top)
@@ -141,8 +145,7 @@ struct SettingView: View {
                         FirebaseAuthentication.shared.forgotPassword(email: email) { result in
                             switch result {
                             case .success(_):
-                                router.navigateToAuthRoot()
-                                UserSessionManager.clearUserData()
+                                print("Success")
                             case .failure(let error):
                                 print(error)
                             }

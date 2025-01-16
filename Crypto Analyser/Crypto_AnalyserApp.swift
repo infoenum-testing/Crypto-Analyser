@@ -13,6 +13,15 @@ struct Crypto_AnalyserApp: App {
     @ObservedObject var router = Router()
     @State var isUserLoggedIn = UserSessionManager.isUserLoggedIn()
     @State private var isLoggedIn = true
+    @StateObject private var entitlementManager: EntitlementManager
+    @StateObject private var subscriptionsManager: SubscriptionsManager
+    init() {
+        let entitlementManager = EntitlementManager()
+        let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)
+        
+        self._entitlementManager = StateObject(wrappedValue: entitlementManager)
+        self._subscriptionsManager = StateObject(wrappedValue: subscriptionsManager)
+    }
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.authNavigationPath) {
@@ -60,11 +69,17 @@ struct Crypto_AnalyserApp: App {
                         DataDescriptionView(image:image,afterAnalyse: afterAnalyse, title: title, message: message)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
+                    case .subscription:
+                        SubscriptionsView()
+                            .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
                     }
                 }
             }
             .navigationBarBackButtonHidden()
             .environmentObject(router)
+            .environmentObject(entitlementManager)
+            .environmentObject(subscriptionsManager)
             .onAppear {
 #if Pro
                 print("Production")
@@ -76,6 +91,23 @@ struct Crypto_AnalyserApp: App {
                 NotificationCenter.default.addObserver(forName: .userDidLogout, object: nil, queue: .main) { _ in
                     isLoggedIn = false
                 }
+            }
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            KeyboardUtility.hideKeyboard()
+                        }, label: {
+                            Text("Done")
+                                .foregroundStyle(.blue)
+                                .font(.system(size: 18, weight: .regular))
+                        })
+                    }
+                }
+            }
+            .task {
+                await subscriptionsManager.updatePurchasedProducts()
             }
         }
     }

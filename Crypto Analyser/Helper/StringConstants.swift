@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct StringConstants {
     static let cryptoAnalyser = "CryptoAnalyser"
@@ -51,7 +52,7 @@ struct StringConstants {
     // Home
     static let search = "search"
     static let analyseCrypto = "Analyse Crypto"
-    static let takeAPic = "Take    a picture"
+    static let takeAPic = "Take \n a picture"
     static let or = "or"
     static let uploadFromGallery = "Upload from gallery"
     static let searchForCoin = "Search for a coin"
@@ -82,4 +83,11 @@ struct StringConstants {
     static let helpAndSupport = "Help & support"
     static let securityOptions = "Security Options"
 
+}
+
+
+struct KeyboardUtility {
+  static func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+  }
 }

@@ -119,7 +119,6 @@ struct EditProfileView: View {
                     switch result {
                     case .success:
                         router.navigateBackInAuth()
-                        router.navigateBackInAuth()
                         UserSessionManager.saveUserData(name: name, email: email)
                     case .failure(let error):
                         errorMessage = "Login failed: \(error.localizedDescription)"

@@ -43,6 +43,18 @@
 		E975E7DC2D1EAE97004F1769 /* NewsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */; };
 		E975E7E12D1EAEE2004F1769 /* NewsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = E975E7E02D1EAEE2004F1769 /* NewsJson.json */; };
 		E975E7E22D1EAEE2004F1769 /* NewsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = E975E7E02D1EAEE2004F1769 /* NewsJson.json */; };
+		E978BD7D2D3544ED00219A41 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD782D3544ED00219A41 /* IAP Constants.swift */; };
+		E978BD7E2D3544ED00219A41 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD782D3544ED00219A41 /* IAP Constants.swift */; };
+		E978BD7F2D3544ED00219A41 /* SubscriptionPayLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */; };
+		E978BD802D3544ED00219A41 /* SubscriptionPayLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */; };
+		E978BD812D3544ED00219A41 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD7A2D3544ED00219A41 /* EntitlementManager.swift */; };
+		E978BD822D3544ED00219A41 /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD7A2D3544ED00219A41 /* EntitlementManager.swift */; };
+		E978BD832D3544ED00219A41 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD7B2D3544ED00219A41 /* SubscriptionsManager.swift */; };
+		E978BD842D3544ED00219A41 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD7B2D3544ED00219A41 /* SubscriptionsManager.swift */; };
+		E978BD852D3544ED00219A41 /* StoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E978BD7C2D3544ED00219A41 /* StoreKit.storekit */; };
+		E978BD862D3544ED00219A41 /* StoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E978BD7C2D3544ED00219A41 /* StoreKit.storekit */; };
+		E978BD882D35453900219A41 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD872D35453900219A41 /* SubscriptionsView.swift */; };
+		E978BD892D35453900219A41 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD872D35453900219A41 /* SubscriptionsView.swift */; };
 		E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D15A92D1ACE7E005A9A3F /* CameraView.swift */; };
 		E97D15AB2D1ACE7E005A9A3F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D15A92D1ACE7E005A9A3F /* CameraView.swift */; };
 		E97D15AD2D1AD0C0005A9A3F /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D15AC2D1AD0C0005A9A3F /* GalleryView.swift */; };
@@ -171,6 +183,12 @@
 		E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetails.swift; sourceTree = "<group>"; };
 		E975E7E02D1EAEE2004F1769 /* NewsJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsJson.json; sourceTree = "<group>"; };
+		E978BD782D3544ED00219A41 /* IAP Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IAP Constants.swift"; sourceTree = "<group>"; };
+		E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionPayLoad.swift; sourceTree = "<group>"; };
+		E978BD7A2D3544ED00219A41 /* EntitlementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		E978BD7B2D3544ED00219A41 /* SubscriptionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsManager.swift; sourceTree = "<group>"; };
+		E978BD7C2D3544ED00219A41 /* StoreKit.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StoreKit.storekit; sourceTree = "<group>"; };
+		E978BD872D35453900219A41 /* SubscriptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
 		E97D15A92D1ACE7E005A9A3F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		E97D15AC2D1AD0C0005A9A3F /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		E97E80692D1936DD003D6CC6 /* Crypto Analyser Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Crypto Analyser Dev.entitlements"; sourceTree = "<group>"; };
@@ -334,6 +352,7 @@
 				E97259342D155B3D00D498CC /* Crypto_AnalyserApp.swift */,
 				E9868E452D169803007ACB26 /* AppDelegate.swift */,
 				E975E7E02D1EAEE2004F1769 /* NewsJson.json */,
+				E978BD772D3544ED00219A41 /* IAP */,
 				E974C29A2D2D179300BBD7C9 /* Network */,
 				E97259582D15654D00D498CC /* Helper */,
 				E972594F2D155FF800D498CC /* FireBase Manager */,
@@ -423,6 +442,18 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		E978BD772D3544ED00219A41 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				E978BD782D3544ED00219A41 /* IAP Constants.swift */,
+				E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */,
+				E978BD7A2D3544ED00219A41 /* EntitlementManager.swift */,
+				E978BD7B2D3544ED00219A41 /* SubscriptionsManager.swift */,
+				E978BD7C2D3544ED00219A41 /* StoreKit.storekit */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
 		E97E806D2D194046003D6CC6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,8 +489,9 @@
 			isa = PBXGroup;
 			children = (
 				E9868E512D16A8BF007ACB26 /* SettingView.swift */,
-				E97E806E2D19963A003D6CC6 /* AccountInformationView.swift */,
 				E97E80712D199652003D6CC6 /* EditProfileView.swift */,
+				E978BD872D35453900219A41 /* SubscriptionsView.swift */,
+				E97E806E2D19963A003D6CC6 /* AccountInformationView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -603,6 +635,7 @@
 				E9868E602D16E848007ACB26 /* GoogleService-Info.plist in Resources */,
 				E97259482D155CA300D498CC /* Preview Assets.xcassets in Resources */,
 				E975E7E12D1EAEE2004F1769 /* NewsJson.json in Resources */,
+				E978BD852D3544ED00219A41 /* StoreKit.storekit in Resources */,
 				E975E7D82D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */,
 				E97259492D155CA300D498CC /* Assets.xcassets in Resources */,
 			);
@@ -616,6 +649,7 @@
 				E9868E612D16E848007ACB26 /* GoogleService-Info.plist in Resources */,
 				E9868E442D168F10007ACB26 /* Crypto-Analyser-Pro-Info.plist in Resources */,
 				E975E7E22D1EAEE2004F1769 /* NewsJson.json in Resources */,
+				E978BD862D3544ED00219A41 /* StoreKit.storekit in Resources */,
 				E975E7D92D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */,
 				E9868E3E2D168ED6007ACB26 /* Assets.xcassets in Resources */,
 			);
@@ -714,6 +748,7 @@
 				E97259602D158E8500D498CC /* Router.swift in Sources */,
 				E971E2112D23E4E600304CA6 /* KeychainService.swift in Sources */,
 				E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
+				E978BD7D2D3544ED00219A41 /* IAP Constants.swift in Sources */,
 				E972595D2D1587CC00D498CC /* LoginView.swift in Sources */,
 				E973C0E42D30F50D0076D1E6 /* NewsWebView.swift in Sources */,
 				E9868E492D16A535007ACB26 /* TabbarView.swift in Sources */,
@@ -735,11 +770,15 @@
 				E91DEDCE2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */,
 				E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E97259632D15955600D498CC /* ForgotPassword.swift in Sources */,
+				E978BD812D3544ED00219A41 /* EntitlementManager.swift in Sources */,
+				E978BD7F2D3544ED00219A41 /* SubscriptionPayLoad.swift in Sources */,
 				E97D15AD2D1AD0C0005A9A3F /* GalleryView.swift in Sources */,
 				E9875F112D2929610017B4A7 /* UiImage+Extension.swift in Sources */,
 				E9868E522D16A8BF007ACB26 /* SettingView.swift in Sources */,
 				E9868E9E2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
+				E978BD882D35453900219A41 /* SubscriptionsView.swift in Sources */,
 				E975E7DB2D1EAE97004F1769 /* NewsDetails.swift in Sources */,
+				E978BD832D3544ED00219A41 /* SubscriptionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +791,7 @@
 				E97E80732D199652003D6CC6 /* EditProfileView.swift in Sources */,
 				E9868E9F2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
 				E97D15AB2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
+				E978BD7E2D3544ED00219A41 /* IAP Constants.swift in Sources */,
 				E9868E342D168ED6007ACB26 /* Router.swift in Sources */,
 				E973C0E52D30F50D0076D1E6 /* NewsWebView.swift in Sources */,
 				E9868E352D168ED6007ACB26 /* LoginView.swift in Sources */,
@@ -773,11 +813,15 @@
 				E91DEDC82D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E9868ED42D170552007ACB26 /* FirebaseAuthentication.swift in Sources */,
 				E9875F122D2929610017B4A7 /* UiImage+Extension.swift in Sources */,
+				E978BD822D3544ED00219A41 /* EntitlementManager.swift in Sources */,
+				E978BD802D3544ED00219A41 /* SubscriptionPayLoad.swift in Sources */,
 				E97D15AE2D1AD0C0005A9A3F /* GalleryView.swift in Sources */,
 				E9868E392D168ED6007ACB26 /* ForgotPassword.swift in Sources */,
 				E96F9E102D2EA4890038D714 /* KeychainService.swift in Sources */,
 				E9868E532D16A8BF007ACB26 /* SettingView.swift in Sources */,
+				E978BD892D35453900219A41 /* SubscriptionsView.swift in Sources */,
 				E975E7DC2D1EAE97004F1769 /* NewsDetails.swift in Sources */,
+				E978BD842D3544ED00219A41 /* SubscriptionsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,7 +957,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7UUTF6T5P9;
@@ -927,6 +971,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -959,7 +1004,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto Analyser/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7UUTF6T5P9;
@@ -973,6 +1018,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1013,6 +1059,8 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture images for analyzing cryptocurrency.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1049,6 +1097,8 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture images for analyzing cryptocurrency.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

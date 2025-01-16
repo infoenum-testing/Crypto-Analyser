@@ -81,6 +81,20 @@ struct SignUpView: View {
                 .background(.black.opacity(0.2))
             }
         }
+        .toolbar {
+              ToolbarItem(placement: .keyboard) {
+                HStack {
+                  Spacer()
+                    Button(action: {
+                        activeField = nil
+                    }, label: {
+                        Text("Done")
+                            .foregroundStyle(.blue)
+                            .font(.system(size: 18, weight: .regular))
+                    })
+                }
+              }
+            }
         .alert(isPresented: $showAlert) {
             Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)))
         }
@@ -108,6 +122,13 @@ struct SignUpView: View {
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                 .focused($activeField, equals: focusedField)
+                .onSubmit {
+                    if focusedField == .nameField {
+                        activeField = .emailField
+                    } else if focusedField == .emailField {
+                        activeField = .password
+                    }
+                  }
         }
         .padding(.bottom)
     }
@@ -122,10 +143,20 @@ struct SignUpView: View {
                     TextField(placeholder, text: text)
                         .accentColor(.black)
                         .focused($activeField, equals: focusedField)
+                        .onSubmit {
+                            if focusedField == .password {
+                                activeField = .conformPassword
+                            }
+                        }
                 } else {
                     SecureField(placeholder, text: text)
                         .accentColor(.black)
                         .focused($activeField, equals: focusedField)
+                        .onSubmit {
+                            if focusedField == .password {
+                                activeField = .conformPassword
+                            }
+                        }
                 }
                 Button(action: {
                     withAnimation {

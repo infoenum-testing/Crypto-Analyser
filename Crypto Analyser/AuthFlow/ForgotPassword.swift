@@ -75,12 +75,27 @@ struct ForgotPassword: View {
                 title: Text(errorTitle),
                 message: Text(errorMessage),
                 dismissButton: .default(Text(StringConstants.oKText)) {
-                    if  errorTitle != StringConstants.emailTitle {
+                    if  errorTitle != StringConstants.emailTitle &&  errorTitle != StringConstants.error {
                         router.navigateBackInAuth()
                     }
                 }
             )
         }
+        .toolbar {
+              ToolbarItem(placement: .keyboard) {
+                HStack {
+                  Spacer()
+                    Button(action: {
+                        KeyboardUtility.hideKeyboard()
+                    }, label: {
+                        Text("Done")
+                            .foregroundStyle(.blue)
+                            .font(.system(size: 18, weight: .regular))
+                            
+                    })
+                }
+              }
+            }
     }
     
     private func formField(title: String, text: Binding<String>, placeholder: String = "Type here") -> some View {

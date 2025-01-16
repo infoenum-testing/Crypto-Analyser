@@ -130,6 +130,38 @@ class FirebaseAuthentication {
             }
         }
     }
+    
+    func updateTrial(email: String, trail: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+        // Reference the document directly using the email as the document ID
+        db.collection("users").document(email).updateData(["Trial": trail]) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+    
+    func getTrial(email: String, completion: @escaping (Result<Int, Error>) -> Void) {
+        let docRef = db.collection("users").document(email)
+        
+        docRef.getDocument { document, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            if let document = document, document.exists {
+                if let trial = document.data()?["Trial"] as? Int {
+                    completion(.success(trial))
+                } else {
+                    completion(.failure(NSError(domain: "Firestore", code: -1, userInfo: [NSLocalizedDescriptionKey: "Trial field not found or invalid"])))
+                }
+            } else {
+                completion(.failure(NSError(domain: "Firestore", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document does not exist"])))
+            }
+        }
+    }
 }
 
 struct SearchDetails {

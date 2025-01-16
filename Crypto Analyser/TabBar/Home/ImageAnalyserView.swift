@@ -129,6 +129,11 @@ struct ImageAnalyserView: View {
                             withAnimation {
                                 isDataFound = true
                             }
+                            
+                            FirebaseAuthentication.shared.updateTrial(email: email, trail: UserSessionManager.getUserTrail() + 1) { result in
+                                print(result)
+                            }
+                            UserSessionManager.saveUserTrail(count: UserSessionManager.getUserTrail() + 1)
                         }
                     }
 //                }
