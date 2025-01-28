@@ -18,6 +18,8 @@ class SubscriptionsManager: NSObject, ObservableObject {
     @Published var products: [Product] = []
     @Published var  title = "Continue"
     @Published var latestPayload: SubscriptionPayload?
+    @Published var isPlanActive: Bool?
+    @Published var latestTransactionId: String?
     @Published var isLoading: Bool = false
     @Published var alertMessage: String = ""
     @Published var alertType: String = ""
@@ -108,6 +110,7 @@ extension SubscriptionsManager {
     }
     
     func updatePurchasedProducts() async {
+        var tempLatestPayload: SubscriptionPayload?
         
         for product in productIDs {
             if let result = try? await Transaction.latest(for: product),
@@ -118,12 +121,14 @@ extension SubscriptionsManager {
                 print("subscriptionEndDate",transaction.expirationDate as Any)
                 print("productId",transaction.productID)
                 self.purchasedProductIDs.insert(transaction.productID)
-                if latestPayload == nil {
-                    latestPayload = SubscriptionPayload(transactionId: "\(transaction.id)",
+                if tempLatestPayload == nil {
+                    latestTransactionId = "\(transaction.originalID)"
+                    tempLatestPayload = SubscriptionPayload(transactionId: "\(transaction.id)",
                                                         originalTransactionId: "\(transaction.originalID)", subscriptionStartDate: "\(transaction.purchaseDate)", subscriptionEndDate: "\(transaction.expirationDate ?? Date())",
                                                         productId: "\(transaction.productID)")
-                } else if let payload = latestPayload, transaction.purchaseDate >= convertToDate(from: payload.subscriptionStartDate ?? "") ?? Date() {
-                    latestPayload = SubscriptionPayload(transactionId: "\(transaction.id)",
+                } else if let payload = tempLatestPayload, transaction.purchaseDate >= convertToDate(from: payload.subscriptionStartDate ?? "") ?? Date() {
+                    latestTransactionId = "\(transaction.originalID)"
+                    tempLatestPayload = SubscriptionPayload(transactionId: "\(transaction.id)",
                                                         originalTransactionId: "\(transaction.originalID)", subscriptionStartDate: "\(transaction.purchaseDate)", subscriptionEndDate: "\(transaction.expirationDate ?? Date())",
                                                         productId: "\(transaction.productID)")
                 }
@@ -133,14 +138,32 @@ extension SubscriptionsManager {
             }
         }
         
-        let email = UserSessionManager.getUserEmail()
-        if let payload = latestPayload {
-            Task { [weak self] in
-                await saveTransactionToFirebase(transaction: payload)
-            }
+       
+        if let payload = tempLatestPayload {
+            let email = UserSessionManager.getUserEmail()
+           updateSubscriptionDetails(for: email, newSubscription: payload, completion: { result in
+               switch result {
+               case .success():
+                   print("updated")
+                       self.latestPayload = tempLatestPayload
+                   if let subscriptionPayload = tempLatestPayload , let dateStr = subscriptionPayload.subscriptionEndDate , let date = self.convertToDate(from: dateStr) ,date > Date() {
+                       self.isPlanActive = true
+                   } else {
+                       self.isPlanActive = false
+                   }
+
+               case .failure(_):
+                   print("update apple id")
+                   self.isPlanActive = false
+                   self.purchasedProductIDs.removeAll()
+                   self.latestPayload = nil
+               }
+               self.entitlementManager?.hasPro = !self.purchasedProductIDs.isEmpty
+               self.returnPurchaseTitle()
+                })
         }
-        self.entitlementManager?.hasPro = !self.purchasedProductIDs.isEmpty
-        returnPurchaseTitle()
+       
+       
     }
     
     func convertToDate(from dateString: String) -> Date? {
@@ -178,6 +201,56 @@ extension SubscriptionsManager: SKPaymentTransactionObserver {
 
 //MARK: - Firebase Subscription Api's
 extension SubscriptionsManager {
+    func updateSubscriptionDetails(
+        for userEmail: String,
+        newSubscription: SubscriptionPayload,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) {
+        if userEmail.isEmpty {
+            completion(.failure(NSError(domain: "NoDataError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid email."])))
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(userEmail).collection("Subscriptions").document("SubscriptionDetails")
+        
+        docRef.getDocument { documentSnapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let documentSnapshot = documentSnapshot, documentSnapshot.exists,
+                  let data = documentSnapshot.data(),
+                  let savedOriginalTransactionId = data["originalTransactionId"] as? String else {
+                completion(.failure(NSError(domain: "NoDataError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document not found or invalid data."])))
+                return
+            }
+            
+            // Check if the saved originalTransactionId matches the new one
+            if savedOriginalTransactionId == newSubscription.originalTransactionId {
+                // Update Firestore document
+                let updatedData: [String: Any] = [
+                    "transactionId": newSubscription.transactionId ?? "",
+                    "subscriptionStartDate": newSubscription.subscriptionStartDate ?? "",
+                    "subscriptionEndDate": newSubscription.subscriptionEndDate ?? "",
+                    "productId": newSubscription.productId ?? ""
+                ]
+                
+                docRef.updateData(updatedData) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        completion(.success(()))
+                    }
+                }
+            } else {
+                // If originalTransactionId doesn't match, return an error
+                completion(.failure(NSError(domain: "UpdateError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Original Transaction ID does not match."])))
+            }
+        }
+    }
+    
     func saveTransactionToFirebase(transaction: SubscriptionPayload) async {
         
         let email = UserSessionManager.getUserEmail()

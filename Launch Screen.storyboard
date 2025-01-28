@@ -30,7 +30,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" name="MidnightBlue"/>
+                        <color key="backgroundColor" name="ThemeColor"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ESm-bs-i2C"/>
@@ -46,8 +46,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="MidnightBlue">
-            <color red="0.1803921568627451" green="0.22745098039215686" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="ThemeColor">
+            <color red="0.056364871560000002" green="0.048799738289999998" blue="0.19616439939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

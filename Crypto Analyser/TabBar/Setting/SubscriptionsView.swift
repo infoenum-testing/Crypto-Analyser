@@ -19,7 +19,8 @@ struct SubscriptionsView: View {
     @State private var isContinue: Bool = false
     @State private var isRestore: Bool = false
     @State private var emptyProductAlert: Bool = false
-    
+    @State private var isShowAlert = false
+    @State private var alertMessage = ""
     //    private let features: [String] = ["Remove all ads", "Daily new content", "Other cool features", "Follow for more tutorials"]
     // MARK: - Layout
     var body: some View {
@@ -98,7 +99,7 @@ struct SubscriptionsView: View {
                                                 .foregroundStyle(.blue)
                                                 .onAppear {
                                                     print(date)
-                                                   print(Date())
+                                                    print(Date())
                                                 }
                                         } else {
                                             Text("Inactive")
@@ -159,6 +160,9 @@ struct SubscriptionsView: View {
                         VStack {
                             purchaseButtonView
                                 .padding(.top,20)
+                                .alert(isPresented: $isShowAlert) {
+                                    Alert(title: Text("Purchase Alert"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                                }
                             
                             Button("Restore Purchases") {
                                 Task {
@@ -315,9 +319,14 @@ struct SubscriptionsView: View {
         
         Button(action: {
             if let selectedProduct = subscriptionsManager.selectedProduct {
-                Task {
-                    isContinue = true
-                    await subscriptionsManager.buyProduct(selectedProduct)
+                if let  _ = subscriptionsManager.latestTransactionId ,subscriptionsManager.latestPayload == nil  {
+                    isShowAlert = true
+                    alertMessage = "This item has already been purchased by another user from this Apple ID"
+                } else {
+                    Task {
+                        isContinue = true
+                        await subscriptionsManager.buyProduct(selectedProduct)
+                    }
                 }
             } else {
                 emptyProductAlert = true

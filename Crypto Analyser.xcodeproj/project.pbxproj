@@ -35,14 +35,18 @@
 		E973C0E02D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */; };
 		E973C0E42D30F50D0076D1E6 /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */; };
 		E973C0E52D30F50D0076D1E6 /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */; };
-		E974C29C2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */; };
-		E974C29D2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */; };
 		E975E7D82D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */; };
 		E975E7D92D1E9AD9004F1769 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */; };
 		E975E7DB2D1EAE97004F1769 /* NewsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */; };
 		E975E7DC2D1EAE97004F1769 /* NewsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */; };
 		E975E7E12D1EAEE2004F1769 /* NewsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = E975E7E02D1EAEE2004F1769 /* NewsJson.json */; };
 		E975E7E22D1EAEE2004F1769 /* NewsJson.json in Resources */ = {isa = PBXBuildFile; fileRef = E975E7E02D1EAEE2004F1769 /* NewsJson.json */; };
+		E977D3E82D47BABF0079B382 /* ReferenceCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3E72D47BABF0079B382 /* ReferenceCurrencyResponse.swift */; };
+		E977D3E92D47BABF0079B382 /* ReferenceCurrencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3E72D47BABF0079B382 /* ReferenceCurrencyResponse.swift */; };
+		E977D3EB2D47BC940079B382 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3EA2D47BC940079B382 /* ChatGPTData.swift */; };
+		E977D3EC2D47BC940079B382 /* ChatGPTData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3EA2D47BC940079B382 /* ChatGPTData.swift */; };
+		E977D3EE2D47C1C80079B382 /* CryptoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3ED2D47C1C80079B382 /* CryptoResponse.swift */; };
+		E977D3EF2D47C1C80079B382 /* CryptoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E977D3ED2D47C1C80079B382 /* CryptoResponse.swift */; };
 		E978BD7D2D3544ED00219A41 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD782D3544ED00219A41 /* IAP Constants.swift */; };
 		E978BD7E2D3544ED00219A41 /* IAP Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD782D3544ED00219A41 /* IAP Constants.swift */; };
 		E978BD7F2D3544ED00219A41 /* SubscriptionPayLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */; };
@@ -147,6 +151,10 @@
 		E9868ED52D170555007ACB26 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9868E992D16F75F007ACB26 /* GoogleSignInManager.swift */; };
 		E9875F112D2929610017B4A7 /* UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875F102D2929610017B4A7 /* UiImage+Extension.swift */; };
 		E9875F122D2929610017B4A7 /* UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875F102D2929610017B4A7 /* UiImage+Extension.swift */; };
+		E9890E5D2D48AA5400FBE71C /* SearchCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */; };
+		E9890E5E2D48AA5400FBE71C /* SearchCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */; };
+		E9890E602D48CC9D00FBE71C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */; };
+		E9890E612D48CC9D00FBE71C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,10 +187,12 @@
 		E97259662D15B26300D498CC /* Crypto-Analyser-Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crypto-Analyser-Dev-Info.plist"; sourceTree = "<group>"; };
 		E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTResponse.swift; sourceTree = "<group>"; };
 		E973C0E32D30F50D0076D1E6 /* NewsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebView.swift; sourceTree = "<group>"; };
-		E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
 		E975E7D72D1E9AD9004F1769 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetails.swift; sourceTree = "<group>"; };
 		E975E7E02D1EAEE2004F1769 /* NewsJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsJson.json; sourceTree = "<group>"; };
+		E977D3E72D47BABF0079B382 /* ReferenceCurrencyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCurrencyResponse.swift; sourceTree = "<group>"; };
+		E977D3EA2D47BC940079B382 /* ChatGPTData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGPTData.swift; sourceTree = "<group>"; };
+		E977D3ED2D47C1C80079B382 /* CryptoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoResponse.swift; sourceTree = "<group>"; };
 		E978BD782D3544ED00219A41 /* IAP Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IAP Constants.swift"; sourceTree = "<group>"; };
 		E978BD792D3544ED00219A41 /* SubscriptionPayLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionPayLoad.swift; sourceTree = "<group>"; };
 		E978BD7A2D3544ED00219A41 /* EntitlementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
@@ -206,6 +216,8 @@
 		E9868E992D16F75F007ACB26 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		E9868E9D2D1701A7007ACB26 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
 		E9875F102D2929610017B4A7 /* UiImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiImage+Extension.swift"; sourceTree = "<group>"; };
+		E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinView.swift; sourceTree = "<group>"; };
+		E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F4FDB02C231F62150C660AD2 /* Pods_Crypto_Analyser_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -419,6 +431,8 @@
 			children = (
 				E975E7DA2D1EAE97004F1769 /* NewsDetails.swift */,
 				E973C0DE2D30ECD70076D1E6 /* ChatGPTResponse.swift */,
+				E977D3E72D47BABF0079B382 /* ReferenceCurrencyResponse.swift */,
+				E977D3ED2D47C1C80079B382 /* CryptoResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,7 +450,8 @@
 		E974C29A2D2D179300BBD7C9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E974C29B2D2D181200BBD7C9 /* ChatGPTData.swift */,
+				E977D3EA2D47BC940079B382 /* ChatGPTData.swift */,
+				E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */,
 				E973C0E12D30ECF60076D1E6 /* Model */,
 			);
 			path = Network;
@@ -471,6 +486,7 @@
 				E91DEDC92D1D5E210028FE6D /* SearchView.swift */,
 				E91DEDD02D1D9D820028FE6D /* ImageAnalyserView.swift */,
 				E9695B4C2D2699DC00CA441D /* DataDescriptionView.swift */,
+				E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */,
 				E973C0E22D30EFB20076D1E6 /* Components */,
 			);
 			path = Home;
@@ -746,6 +762,7 @@
 				E9868E4C2D16A5C4007ACB26 /* HomeView.swift in Sources */,
 				E97E80722D199652003D6CC6 /* EditProfileView.swift in Sources */,
 				E97259602D158E8500D498CC /* Router.swift in Sources */,
+				E977D3E82D47BABF0079B382 /* ReferenceCurrencyResponse.swift in Sources */,
 				E971E2112D23E4E600304CA6 /* KeychainService.swift in Sources */,
 				E97D15AA2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E978BD7D2D3544ED00219A41 /* IAP Constants.swift in Sources */,
@@ -760,13 +777,15 @@
 				E973C0DF2D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */,
 				E91DEDCA2D1D5E210028FE6D /* SearchView.swift in Sources */,
 				E94F141B2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,
-				E974C29C2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */,
 				E97259562D15626800D498CC /* SignUpView.swift in Sources */,
 				E9868E5E2D16BBBF007ACB26 /* FirebaseAuthentication.swift in Sources */,
 				E9868E462D169803007ACB26 /* AppDelegate.swift in Sources */,
 				E91DEDD12D1D9D820028FE6D /* ImageAnalyserView.swift in Sources */,
 				E9868E4F2D16A623007ACB26 /* CryptoNewsView.swift in Sources */,
+				E977D3EE2D47C1C80079B382 /* CryptoResponse.swift in Sources */,
+				E977D3EB2D47BC940079B382 /* ChatGPTData.swift in Sources */,
 				E97259452D155CA300D498CC /* Crypto_AnalyserApp.swift in Sources */,
+				E9890E602D48CC9D00FBE71C /* SearchViewModel.swift in Sources */,
 				E91DEDCE2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */,
 				E91DEDC72D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E97259632D15955600D498CC /* ForgotPassword.swift in Sources */,
@@ -777,6 +796,7 @@
 				E9868E522D16A8BF007ACB26 /* SettingView.swift in Sources */,
 				E9868E9E2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
 				E978BD882D35453900219A41 /* SubscriptionsView.swift in Sources */,
+				E9890E5D2D48AA5400FBE71C /* SearchCoinView.swift in Sources */,
 				E975E7DB2D1EAE97004F1769 /* NewsDetails.swift in Sources */,
 				E978BD832D3544ED00219A41 /* SubscriptionsManager.swift in Sources */,
 			);
@@ -789,6 +809,7 @@
 				E9695B4E2D2699DC00CA441D /* DataDescriptionView.swift in Sources */,
 				E9868E4D2D16A5C4007ACB26 /* HomeView.swift in Sources */,
 				E97E80732D199652003D6CC6 /* EditProfileView.swift in Sources */,
+				E977D3E92D47BABF0079B382 /* ReferenceCurrencyResponse.swift in Sources */,
 				E9868E9F2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
 				E97D15AB2D1ACE7E005A9A3F /* CameraView.swift in Sources */,
 				E978BD7E2D3544ED00219A41 /* IAP Constants.swift in Sources */,
@@ -805,11 +826,13 @@
 				E94F141C2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,
 				E9868E472D169803007ACB26 /* AppDelegate.swift in Sources */,
 				E9868E502D16A623007ACB26 /* CryptoNewsView.swift in Sources */,
-				E974C29D2D2D181200BBD7C9 /* ChatGPTData.swift in Sources */,
 				E91DEDD22D1D9D820028FE6D /* ImageAnalyserView.swift in Sources */,
 				E9868E382D168ED6007ACB26 /* Crypto_AnalyserApp.swift in Sources */,
 				E9868ED52D170555007ACB26 /* GoogleSignInManager.swift in Sources */,
+				E977D3EF2D47C1C80079B382 /* CryptoResponse.swift in Sources */,
+				E977D3EC2D47BC940079B382 /* ChatGPTData.swift in Sources */,
 				E91DEDCF2D1D68C80028FE6D /* CircularLoaderView.swift in Sources */,
+				E9890E612D48CC9D00FBE71C /* SearchViewModel.swift in Sources */,
 				E91DEDC82D1D1C420028FE6D /* FireBaseResentSearches.swift in Sources */,
 				E9868ED42D170552007ACB26 /* FirebaseAuthentication.swift in Sources */,
 				E9875F122D2929610017B4A7 /* UiImage+Extension.swift in Sources */,
@@ -820,6 +843,7 @@
 				E96F9E102D2EA4890038D714 /* KeychainService.swift in Sources */,
 				E9868E532D16A8BF007ACB26 /* SettingView.swift in Sources */,
 				E978BD892D35453900219A41 /* SubscriptionsView.swift in Sources */,
+				E9890E5E2D48AA5400FBE71C /* SearchCoinView.swift in Sources */,
 				E975E7DC2D1EAE97004F1769 /* NewsDetails.swift in Sources */,
 				E978BD842D3544ED00219A41 /* SubscriptionsManager.swift in Sources */,
 			);

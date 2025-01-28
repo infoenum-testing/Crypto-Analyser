@@ -12,7 +12,7 @@ struct HomeView: View {
         case delete
         case purchase
     }
-    @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
+    @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
     
     @State public var image: UIImage? = nil
@@ -25,7 +25,9 @@ struct HomeView: View {
     @State private var showAlert = false
     @State private var itemToDelete: SearchDetails?
     @State private var alertType: AlertType = .delete
-    @State private var trail:Int = 0
+    @State private var trail:Int?
+    @StateObject var viewModel = ChatGPTData()
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -37,13 +39,13 @@ struct HomeView: View {
                         Spacer()
                     }
                     HStack {
-//                        Spacer()
+                        //                        Spacer()
                         customButton(imageName: "camera", title: StringConstants.takeAPic, action: {
-                            if trail >= 3  && !isPlanActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                                isCamera = true
+                            } else {
                                 showAlert = true
                                 alertType = .purchase
-                            } else {
-                                isCamera = true
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -52,11 +54,11 @@ struct HomeView: View {
                             .lineLimit(1)
                             .frame(maxWidth: .infinity)
                         customButton(imageName: "photo.on.rectangle", title: StringConstants.uploadFromGallery, action: {
-                            if trail >= 3  && !isPlanActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
+                                isGallery = true
+                            } else {
                                 showAlert = true
                                 alertType = .purchase
-                            } else {
-                                isGallery = true
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -65,15 +67,15 @@ struct HomeView: View {
                             .lineLimit(1)
                             .frame(maxWidth: .infinity)
                         customButton(imageName: "magnifyingglass", title: StringConstants.searchForCoin, action: {
-                            if trail >= 3  && !isPlanActive {
+                            if /*let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive*/ true{
+                                router.navigateToAuth(.searchCoin)
+                            } else {
                                 showAlert = true
                                 alertType = .purchase
-                            } else {
-                                router.navigateToAuth(.searchView)
                             }
                         })
                         .frame(maxWidth: .infinity)
-//                        Spacer()
+                        //                        Spacer()
                     }
                 }
                 .padding(.horizontal,20)
@@ -161,9 +163,20 @@ struct HomeView: View {
                 GalleryView(isGallery: $isGallery, capturedImage: $image)
             }
             .fullScreenCover(isPresented: $isCamera) {
-                CameraView(isCamera: $isCamera, captureImage: { image in
-                    self.image = image
-                })
+                //              CameraView(isCamera: $isCamera, captureImage: { image in
+                //                  self.image = image
+                //              })
+#if targetEnvironment(simulator)
+                VStack {
+                    Text("simulator")
+                }
+                .onAppear {
+                    isCamera = false
+                }
+#else
+                CameraPicker(image: $image)
+                    .ignoresSafeArea(.all)
+#endif
             }
             .alert(isPresented: $showAlert) {
                 if alertType == .delete {
@@ -188,21 +201,19 @@ struct HomeView: View {
                     )
                 }
             }
-            
-        } //.background(Color.midnightBlue.opacity(0.4))
+        }
         .onAppear {
             fetchRecentSearches()
             getUserTrails()
         }
-        
-        .onChange(of: image) { value in
+        .onChange(of: image) { _ ,value in
             if let value {
                 router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
             }
         }
     }
     
-    func customButton(imageName: String, title: String, action: @escaping () -> Void) -> some View {
+    private func customButton(imageName: String, title: String, action: @escaping () -> Void) -> some View {
         Button(action: {
             action()
         }, label: {
@@ -230,26 +241,13 @@ struct HomeView: View {
         FirebaseAuthentication.shared.getTrial(email: email) { result in
             switch result {
             case .success(let trialCount):
-                    self.trail = trialCount
+                self.trail = trialCount
                 UserSessionManager.saveUserTrail(count: trialCount)
             case .failure(let error):
+                self.trail = 0
                 print("Error fetching trial: \(error.localizedDescription)")
             }
         }
-        if let subscriptionPayload = subscriptionsManager.latestPayload , let dateStr = subscriptionPayload.subscriptionEndDate , let date = convertToDate(from: dateStr) ,date < Date() {
-            isPlanActive = false
-        } else {
-            isPlanActive = true
-        }
-    }
-    
-    private func convertToDate(from dateString: String) -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z" // Format matches the input string
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Ensure consistent parsing
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0) // Match the +0000 timezone
-        
-        return dateFormatter.date(from: dateString)
     }
     
     private  func fetchRecentSearches() {

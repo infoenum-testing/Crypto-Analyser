@@ -26,7 +26,7 @@ struct ImageAnalyserView: View {
             HStack {
                 Button(action: {
                     if fromSearch {
-                        router.navigateBackInAuth(count: 2)
+                        router.navigateBackInAuth(count: 3)
                     } else {
                         router.navigateBackInAuth()
                     }
@@ -117,6 +117,10 @@ struct ImageAnalyserView: View {
                         if content.replacingOccurrences(of: " ", with: "").lowercased() == "false" {
                             alertTitle = StringConstants.invalid
                             alertMessage = StringConstants.invalidImageAlertMessage
+                            showAlert = true
+                        } else if content.replacingOccurrences(of: " ", with: "").lowercased() == "true" {
+                            alertTitle = ""
+                            alertMessage = "Image detected, but not clear. Please provide a better image."
                             showAlert = true
                         } else {
                             let email = UserSessionManager.getUserData().email

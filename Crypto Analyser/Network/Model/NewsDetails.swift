@@ -18,7 +18,7 @@ struct NewsDetails: Codable {
     let sentiment: String?
     let type: String?
     let tickers: [String]?
-
+    
     private enum CodingKeys: String, CodingKey {
         case newsUrl = "news_url"
         case imageUrl = "image_url"
@@ -38,7 +38,7 @@ struct CryptoNewsResponse: Codable {
     let data: [NewsDetails]
 }
 
-func fetchCryptoNews(section: String = "general", items: Int = 3, page: Int = 1, apiKey: String = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu", completion: @escaping (Result<[NewsDetails], Error>) -> Void) {
+func fetchCryptoNews(section: String = "general", items: Int = 10, page: Int = 1, apiKey: String = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu", completion: @escaping (Result<[NewsDetails], Error>) -> Void) {
     var components = URLComponents(string: "https://cryptonews-api.com/api/v1/category")
     
     components?.queryItems = [

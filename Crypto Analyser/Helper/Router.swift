@@ -52,7 +52,8 @@ final class Router: ObservableObject {
         case tabBar
         case accountInformation
         case editProfile
-        case searchView
+        case searchCoin
+        case searchView(symbol:String)
         case imageAnalyser(image: UIImage,fromSearch: Bool)
         case dataDescription(image: UIImage,afterAnalyse:Bool,title: String?, message: String)
         case subscription
@@ -72,8 +73,8 @@ final class Router: ObservableObject {
                 hasher.combine("accountInformation")
             case .editProfile:
                 hasher.combine("editProfile")
-            case .searchView:
-                hasher.combine("searchView")
+            case .searchView(let symbol):
+                hasher.combine(symbol)
             case .imageAnalyser(let image,let fromSearch):
                 hasher.combine(image.pngData()?.hashValue ?? 0)
                 hasher.combine(fromSearch)
@@ -84,6 +85,8 @@ final class Router: ObservableObject {
                 hasher.combine(message)
             case .subscription:
                 hasher.combine("subscription")
+            case .searchCoin:
+                hasher.combine("searchCoin")
             }
         }
 
@@ -95,9 +98,11 @@ final class Router: ObservableObject {
                  (.tabBar, .tabBar),
                  (.accountInformation, .accountInformation),
                  (.editProfile, .editProfile),
-                 (.searchView, .searchView),
+                (.searchCoin, .searchCoin),
                 (.subscription, .subscription):
                 return true
+            case (.searchView(let lhsSymbol), .searchView(let rhsSymbol)):
+                return lhsSymbol == rhsSymbol
             case (.imageAnalyser(let lhsImage,let lhsFromSearch), .imageAnalyser(let rhsImage,let rhsFromSearch)):
                 return lhsImage.pngData() == rhsImage.pngData()  &&
                 lhsFromSearch == rhsFromSearch

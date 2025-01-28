@@ -9,14 +9,16 @@ import SwiftUI
 
 struct TabbarView: View {
     @EnvironmentObject var router: Router
-    
+    @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            
+                . task {
+                    await subscriptionsManager.updatePurchasedProducts()
+                }
             
             CryptoNewsView()
                 .tabItem {

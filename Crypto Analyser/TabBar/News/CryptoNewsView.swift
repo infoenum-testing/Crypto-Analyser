@@ -12,13 +12,16 @@ struct CryptoNewsView: View {
     @State private var newsData:[NewsDetails] = []
     @State private var newsLoading:Bool = false
     @State private var pageIndex:Int = 1
+    @State private var isLast:Bool = false
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State  var showWebView:Bool = false
+    @State  var selectedNewsUrl:String = ""
     var body: some View {
         VStack(spacing:1) {
             Text("Crypto News")
                 .font(.system(size: 25, weight: .semibold))
-            if newsLoading &&  newsData.count == 0{
+            if newsLoading &&  (newsData.count == 0){
                 VStack {
                     Spacer()
                     ProgressView()
@@ -31,12 +34,12 @@ struct CryptoNewsView: View {
                     LazyVStack(spacing:15) {
                         ForEach(newsData.indices, id: \.self) { index in
                             let news = newsData[index]
-                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "")
+                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "",showWebView:$showWebView,selectedNewsUrl: $selectedNewsUrl)
                                 .onAppear {
-//                                    if pageIndex < 20 {
-//                                        pageIndex += 1
-//                                        fetchData(page: pageIndex)
-//                                    }
+                                    if (newsData.count - 1) == index && !isLast{
+                                        pageIndex += 1
+                                        fetchData(page: pageIndex)
+                                    }
                                 }
                         }
                     }
@@ -44,8 +47,17 @@ struct CryptoNewsView: View {
                     .padding(.top,15)
                 }
             }
-        } .onAppear {
-//            fetchData(page: pageIndex)
+        }
+        .sheet(isPresented: $showWebView) {
+            if let url = URL(string: selectedNewsUrl) {
+                WebViewContainer(url: url)
+                    .edgesIgnoringSafeArea(.all)
+            } else {
+                Text("Invalid URL")
+            }
+        }
+        .onAppear {
+            fetchData(page: pageIndex)
         }
         .alert(isPresented: $showAlert) {
             Alert(
@@ -62,6 +74,7 @@ struct CryptoNewsView: View {
             newsLoading = false
             switch result {
             case .success(let newsArray):
+                isLast = newsArray.isEmpty
                 newsData += newsArray
             case .failure(let error):
                 showAlert = true
@@ -81,8 +94,8 @@ struct newsCellView: View {
     let title: String
     let newsUrl: String
     let des: String
-    @State private var showWebView = false
-    
+    @Binding  var showWebView:Bool
+    @Binding  var selectedNewsUrl:String
     var body: some View {
         VStack {
             HStack(alignment: .top) {
@@ -97,6 +110,7 @@ struct newsCellView: View {
                 Text(title)
                     .foregroundStyle(.orange)
                     .onTapGesture {
+                        selectedNewsUrl = newsUrl
                         showWebView = true
                     }
             }
@@ -105,14 +119,6 @@ struct newsCellView: View {
         .padding(5)
         .background(Color.gray.opacity(0.05))
         .cornerRadius(8)
-        .sheet(isPresented: $showWebView) {
-            if let url = URL(string: newsUrl) {
-                WebViewContainer(url: url)
-                    .edgesIgnoringSafeArea(.all)
-            } else {
-                Text("Invalid URL")
-            }
-        }
     }
 }
 

@@ -10,7 +10,7 @@ import WebKit
 
 struct SearchView: View {
     @EnvironmentObject var router: Router
-    @State private var searchText = ""
+    let symbol:String
     @State private var showCancelButton: Bool = false
     @State private var screenshot: UIImage?
     @State private var capture: Bool = false
@@ -38,7 +38,7 @@ struct SearchView: View {
                 }
                 .padding(.horizontal, 20)
             }
-            SearchWebView(screenshot: $screenshot, capture: $capture)
+            SearchWebView(screenshot: $screenshot, capture: $capture, symbol: symbol)
         }
         .onChange(of: screenshot, perform: { value in
             if let value {
@@ -48,7 +48,5 @@ struct SearchView: View {
     }
 }
 
-#Preview {
-    SearchView()
-}
+
 

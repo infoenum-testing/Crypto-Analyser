@@ -57,8 +57,8 @@ struct Crypto_AnalyserApp: App {
                         EditProfileView()
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
-                    case .searchView:
-                        SearchView()
+                    case .searchView(let symbol):
+                        SearchView(symbol: symbol)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
                     case .imageAnalyser(let image,let fromSearch):
@@ -71,6 +71,10 @@ struct Crypto_AnalyserApp: App {
                             .navigationBarHidden(true)
                     case .subscription:
                         SubscriptionsView()
+                            .navigationBarBackButtonHidden()
+                            .navigationBarHidden(true)
+                    case .searchCoin:
+                        SearchCoinView()
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
                     }
@@ -106,9 +110,7 @@ struct Crypto_AnalyserApp: App {
                     }
                 }
             }
-            .task {
-                await subscriptionsManager.updatePurchasedProducts()
-            }
+            
         }
     }
 }

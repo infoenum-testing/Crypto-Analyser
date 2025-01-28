@@ -13,7 +13,7 @@ class UserSessionManager {
         static let userEmail = "userEmail"
         static let isLoggedIn = "isLoggedIn"
         static let userSubscriptionData = "userSubscriptionData"
-        static let tril = "Trsil"
+        static let trail = "Trail"
     }
     
     // Save user data to UserDefaults
@@ -66,9 +66,9 @@ class UserSessionManager {
     }
     
     static func saveUserTrail(count: Int) {
-        UserDefaults.standard.set(count, forKey: Keys.tril)
+        UserDefaults.standard.set(count, forKey: Keys.trail)
     }
     static func getUserTrail() -> Int {
-        return UserDefaults.standard.integer(forKey: Keys.tril)
+        return UserDefaults.standard.integer(forKey: Keys.trail)
     }
 }

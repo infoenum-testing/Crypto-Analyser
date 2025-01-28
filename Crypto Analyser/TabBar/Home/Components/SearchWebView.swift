@@ -11,47 +11,72 @@ import WebKit
 struct SearchWebView: View {
     @Binding var screenshot: UIImage?
     @Binding var capture: Bool
-
+    let symbol:String
+//    var htmlContent =
     var body: some View {
         VStack {
             ChartWebView(htmlContent: """
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container" style="height:100%;width:100%">
-              <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-              <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-              {
-              "autosize": true,
-              "symbol": "CME:BTC1!",
-              "interval": "D",
-              "timezone": "Etc/UTC",
-              "theme": "light",
-              "style": "1",
-              "locale": "en",
-              "allow_symbol_change": true,
-              "save_image": false,
-              "calendar": false,
-              "support_host": "https://www.tradingview.com"
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #f5f5f5;
             }
-              </script>
-            </div>
-            <!-- TradingView Widget END -->
-            """)
-            .edgesIgnoringSafeArea(.all)
-            .onChange(of: capture, perform: { _ in
-                captureScreenshot()
-            })
+        </style>
+    </head>
+    <body>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container" style="height:100%;width:100%">
+          <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+          <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+              <span class="blue-text">Track all markets on TradingView</span>
+            </a>
+          </div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {
+            "autosize": true,
+            "symbol": "\(symbol)",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "allow_symbol_change": true,
+            "save_image": false,
+            "calendar": false,
+            "support_host": "https://www.tradingview.com"
+          }
+          </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </body>
+    </html>
+    """)
+                .edgesIgnoringSafeArea(.all)
+                .onChange(of: capture, perform: { _ in
+                    captureScreenshot()
+                })
         }
     }
     
     private func captureScreenshot() {
-      if let webView = findWebView(in: UIApplication.shared.windows.first?.rootViewController?.view) {
-                let renderer = UIGraphicsImageRenderer(size: webView.frame.size)
-                let image = renderer.image { context in
-                    webView.layer.render(in: context.cgContext)
-                }
-                screenshot = image
+        if let webView = findWebView(in: UIApplication.shared.windows.first?.rootViewController?.view) {
+            let renderer = UIGraphicsImageRenderer(size: webView.frame.size)
+            let image = renderer.image { context in
+                webView.layer.render(in: context.cgContext)
             }
+            screenshot = image
+        }
     }
     
     // Helper function to find the WKWebView instance in the view hierarchy
