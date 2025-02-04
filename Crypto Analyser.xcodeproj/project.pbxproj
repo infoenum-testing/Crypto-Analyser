@@ -161,6 +161,7 @@
 		E9890E642D4909FF00FBE71C /* SafariWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E622D4909FF00FBE71C /* SafariWrapperViewController.swift */; };
 		E9890E662D4919E900FBE71C /* CryptoNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E652D4919E900FBE71C /* CryptoNewsViewModel.swift */; };
 		E9890E672D4919E900FBE71C /* CryptoNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E652D4919E900FBE71C /* CryptoNewsViewModel.swift */; };
+		E9A693612D51ECB50095775B /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A693602D51ECB50095775B /* RecentSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +228,7 @@
 		E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E9890E622D4909FF00FBE71C /* SafariWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWrapperViewController.swift; sourceTree = "<group>"; };
 		E9890E652D4919E900FBE71C /* CryptoNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoNewsViewModel.swift; sourceTree = "<group>"; };
+		E9A693602D51ECB50095775B /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
 		F4FDB02C231F62150C660AD2 /* Pods_Crypto_Analyser_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Analyser_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -408,6 +410,7 @@
 			children = (
 				E9868E482D16A535007ACB26 /* TabbarView.swift */,
 				E9868E542D16ABC8007ACB26 /* Home */,
+				E9A6935F2D51EC8A0095775B /* RecentSeach */,
 				E9868E552D16ABD3007ACB26 /* News */,
 				E9868E562D16ABE6007ACB26 /* Setting */,
 			);
@@ -530,6 +533,14 @@
 				E97E806E2D19963A003D6CC6 /* AccountInformationView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		E9A6935F2D51EC8A0095775B /* RecentSeach */ = {
+			isa = PBXGroup;
+			children = (
+				E9A693602D51ECB50095775B /* RecentSearchView.swift */,
+			);
+			path = RecentSeach;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -798,6 +809,7 @@
 				E973C0DF2D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */,
 				E91DEDCA2D1D5E210028FE6D /* SearchView.swift in Sources */,
 				E94F141B2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,
+				E9A693612D51ECB50095775B /* RecentSearchView.swift in Sources */,
 				E97259562D15626800D498CC /* SignUpView.swift in Sources */,
 				E9868E5E2D16BBBF007ACB26 /* FirebaseAuthentication.swift in Sources */,
 				E9868E462D169803007ACB26 /* AppDelegate.swift in Sources */,

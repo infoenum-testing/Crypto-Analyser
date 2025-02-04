@@ -57,6 +57,7 @@ struct StringConstants {
     static let uploadFromGallery = "Upload from gallery"
     static let searchForCoin = "Search for a coin"
     static let recentSearches = "Recent Searches"
+    static let qualityCoins = "Quality Coins"
     
     // ImageAnalyse
     static let invalid = "Invalid"

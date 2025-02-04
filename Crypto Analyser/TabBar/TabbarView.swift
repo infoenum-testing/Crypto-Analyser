@@ -21,11 +21,15 @@ struct TabbarView: View {
                     await subscriptionsManager.updatePurchasedProducts()
                 }
             
+            RecentSearchView()
+                .tabItem {
+                    Label("Recents", systemImage: "clock.arrow.circlepath")
+                }
+          
             CryptoNewsView()
                 .tabItem {
                     Label("News", systemImage: "newspaper")
                 }
-            
             
             SettingView()
                 .tabItem {

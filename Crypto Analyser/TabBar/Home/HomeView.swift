@@ -21,13 +21,14 @@ struct HomeView: View {
     @State private var recentSearchIsLoading: Bool = false
     @State private var isPlanActive: Bool = true
     @State private var isCamera: Bool = false
+    @State private var coins:[Coin]?
     @State private var resentSearches:[SearchDetails] = []
     @State private var showAlert = false
     @State private var itemToDelete: SearchDetails?
-    @State private var alertType: AlertType = .delete
     @State private var trail:Int?
-    @StateObject var viewModel = ChatGPTData()
     
+    @StateObject var viewModel = ChatGPTData()
+    @StateObject var searchViewModel = SearchViewModel()
     @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     
     var body: some View {
@@ -47,7 +48,6 @@ struct HomeView: View {
                                 isCamera = true
                             } else {
                                 showAlert = true
-                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -60,7 +60,6 @@ struct HomeView: View {
                                 isGallery = true
                             } else {
                                 showAlert = true
-                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -73,7 +72,6 @@ struct HomeView: View {
                                 router.navigateToAuth(.searchCoin)
                             } else {
                                 showAlert = true
-                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -82,92 +80,45 @@ struct HomeView: View {
                 }
                 .padding(.horizontal,20)
                 
-                Text(StringConstants.recentSearches)
+                Text(StringConstants.qualityCoins)
                     .font(.system(size: 20, weight: .regular))
                     .padding(.bottom,5)
                     .padding(.horizontal,20)
                     .foregroundStyle(.white)
                 VStack {
-                    if recentSearchIsLoading || resentSearches.count == 0{
-                        HStack {
-                            Spacer()
-                            if recentSearchIsLoading {
-                                VStack {
-                                    Spacer()
-                                    ProgressView()
-                                        .controlSize(.large)
-                                        .tint(Color.pink)
-                                    Spacer()
-                                }
-                            } else {
-                                VStack(alignment:.center, spacing: 5) {
-                                    Spacer()
-                                    Text("No recent search available")
-                                        .font(.title2)
-                                        .foregroundColor(.white)
-                                        .multilineTextAlignment(.center)
-                                    Text("Please Search by using the options above.")
-                                        .font(.body)
-                                        .foregroundColor(.white)
-                                        .multilineTextAlignment(.center)
-                                    Spacer()
-                                }
-                            }
-                            Spacer()
-                        }
-                        .padding(.horizontal,20)
-                    }  else {
+                    if let coins , !coins.isEmpty{
                         ScrollView(showsIndicators: false) {
-                            VStack(alignment:.leading) {
-                                ForEach(resentSearches, id: \.id) { item in
-                                    let confidenceLavel = item.confidenceLavel
-                                    let message = item.message
-                                    VStack(alignment: .leading,spacing: 0) {
-                                        HStack(alignment: .center, spacing: 0) {
-                                            Text(message.replacingOccurrences(of: "\n", with: ""))
-                                                .foregroundStyle(.white)
-                                                .lineLimit(3)
-                                                .font(.system(size: 15, weight: .regular))
-                                            Spacer()
-                                            Button(action: {
-                                                itemToDelete = item
-                                                showAlert = true
-                                                alertType = .delete
-                                            }, label: {
-                                                if itemToDelete?.id == item.id && !showAlert{
-                                                    ProgressView()
-                                                        .tint(Color.pink)
-                                                } else {
-                                                    Image(systemName: "trash")
-                                                        .resizable()
-                                                        .foregroundStyle(.red.opacity(0.8))
-                                                        .frame(width: 20, height: 20, alignment: .center)
-                                                }
-                                            })
-                                            .frame(width: 20, height: 20)
-                                            
-                                        }
-                                        .padding(.horizontal,8)
-                                    }
-                                    .padding(.vertical,8)
-                                    .background(Color.cellcolor)
-                                    .cornerRadius(8)
-                                    .accentColor(.black)
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
+                            ForEach(coins, id: \.symbol) { coin in
+                                CoinRowView(coin: coin)
                                     .onTapGesture {
-                                        router.navigateToAuth(.dataDescription(image: item.image ?? UIImage(),afterAnalyse: false,confidenceLevel:confidenceLavel, message: message))
+                                        if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                                            router.navigateToAuth(.searchView(symbol: coin.symbol))
+                                        } else {
+                                            showAlert = true
+                                        }
                                     }
-                                    .transition(.move(edge: .leading))
-                                }
                             }
-                            .padding(.top,15)
-                            .padding(.horizontal,12)
+                            .padding(.top,2)
+                            .padding(.horizontal,20)
                         }
-                        .padding(.horizontal,14)
-                        
+                    } else if let coins ,coins.isEmpty{
+                        VStack {
+                            Spacer()
+                            Text("No Data Availble")
+                            Spacer()
+                        }
+                    } else {
+                        VStack {
+                            Spacer()
+                            ProgressView()
+                                .controlSize(.large)
+                                .foregroundColor(.white)
+                                .tint(Color.pink)
+                            Spacer()
+                        }
                     }
                 }
+                .frame(maxWidth: .infinity)
                 .padding(.top,10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 40)
@@ -205,37 +156,38 @@ struct HomeView: View {
 #endif
             }
             .alert(isPresented: $showAlert) {
-                if alertType == .delete {
-                    Alert(
-                        title: Text("Delete?"),
-                        message: Text("Are you sure you want to delete search.."),
-                        primaryButton: .destructive(Text("Delete")) {
-                            removeRecentSearch(id:itemToDelete?.id ?? "")
-                        },
-                        secondaryButton: .cancel() {
-                            itemToDelete = nil
-                        }
-                    )
-                } else {
-                    Alert(
-                        title: Text("Free Trial Ended"),
-                        message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
-                        primaryButton: .default(Text("Buy Now")) {
-                            router.navigateToAuth(.subscription)
-                        },
-                        secondaryButton: .cancel(Text("Cancel"))
-                    )
-                }
+                Alert(
+                    title: Text("Free Trial Ended"),
+                    message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
+                    primaryButton: .default(Text("Buy Now")) {
+                        router.navigateToAuth(.subscription)
+                    },
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
             }
+            
         }
         .background(Color.themecolor)
         .onAppear {
-            fetchRecentSearches()
+            fetchCoins()
             getUserTrails()
         }
         .onChange(of: image) { value in
             if let value {
                 router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
+            }
+        }
+    }
+    
+    private func fetchCoins() {
+        searchViewModel.fetchCryptoData { result in
+            switch result {
+            case .success(let cryptoData):
+                coins = cryptoData.data.coins
+            case .failure(let error):
+//                showAlert = true
+//                alertMessage = "\(error.localizedDescription)"
+                print("Error fetching data: \(error.localizedDescription)")
             }
         }
     }
@@ -286,40 +238,6 @@ struct HomeView: View {
             case .failure(let error):
                 self.trail = 0
                 print("Error fetching trial: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    private  func fetchRecentSearches() {
-        recentSearchIsLoading = true
-        let email = UserSessionManager.getUserData().email
-        FireBaseResentSearches.shared.fetchRecentSearches(for: email) { result in
-            recentSearchIsLoading = false
-            switch result {
-            case .success(let recentSearches):
-                self.resentSearches = recentSearches.sorted(by: { $0.date > $1.date })
-            case .failure(let error):
-                print("Failed to fetch recent searches: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    private func removeRecentSearch(id:String) {
-        let email = UserSessionManager.getUserData().email
-        FireBaseResentSearches.shared.removeRecentSearch(for: email, documentID: id) { result in
-            switch result {
-            case .success:
-                removeItem(withId: id)
-            case .failure(let error):
-                print("Failed to remove recent search: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    private func removeItem(withId id: String) {
-        if let index = resentSearches.firstIndex(where: { $0.id == id }) {
-            withAnimation {
-                resentSearches.remove(at: index)
             }
         }
     }
