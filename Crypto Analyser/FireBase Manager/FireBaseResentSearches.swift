@@ -9,18 +9,19 @@ import Foundation
 import FirebaseFirestore
 
 class FireBaseResentSearches {
-   static let shared = FireBaseResentSearches()
+    static let shared = FireBaseResentSearches()
     
-    func addRecentSearch(email: String, image: UIImage,title: String, message: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addRecentSearch(email: String, image: UIImage,signal: String, confidenceLevel: String,message: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let db = Firestore.firestore()
         
         let recentSearchRef = db.collection("users").document(email).collection("recentSearch")
         let strImage = image.resized(to: 800).toBase64String()
         let searchItem = [
             "image": strImage,
-            "title": title,
+            "signal": signal,
+            "confidenceLevel": confidenceLevel,
             "message": message,
-            "date": FieldValue.serverTimestamp() // Use Firestore server timestamp
+            "date": FieldValue.serverTimestamp()
         ] as [String : Any]
         
         recentSearchRef.addDocument(data: searchItem) { error in
@@ -31,7 +32,7 @@ class FireBaseResentSearches {
             }
         }
     }
-
+    
     func fetchRecentSearches(for email: String, completion: @escaping (Result<[SearchDetails], Error>) -> Void) {
         let db = Firestore.firestore()
         let recentSearchRef = db.collection("users").document(email).collection("recentSearch")
@@ -42,15 +43,16 @@ class FireBaseResentSearches {
             } else if let snapshot = snapshot {
                 let recentSearches = snapshot.documents.compactMap { document -> SearchDetails? in
                     let data = document.data()
-                    guard let image = data["image"] as? String , let title = data["title"] as? String,
+                    guard let image = data["image"] as? String , let signal = data["signal"] as? String,let confidenceLevel = data["confidenceLevel"] as? String,
                           let message = data["message"] as? String,
                           let date = (data["date"] as? Timestamp)?.dateValue() else {
                         return nil
                     }
                     return SearchDetails(
-                        id: document.documentID, 
+                        id: document.documentID,
                         image: image.toImage(),
-                        title: title,
+                        signal: signal,
+                        confidenceLavel: confidenceLevel,
                         message: message,
                         date: date
                     )
@@ -61,7 +63,7 @@ class FireBaseResentSearches {
             }
         }
     }
-
+    
     func removeRecentSearch(for email: String, documentID: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let db = Firestore.firestore()
         
@@ -74,4 +76,13 @@ class FireBaseResentSearches {
             }
         }
     }
+}
+
+struct SearchDetails {
+    let id:String
+    let image: UIImage?
+    let signal: String
+    let confidenceLavel: String
+    let message: String
+    let date: Date
 }

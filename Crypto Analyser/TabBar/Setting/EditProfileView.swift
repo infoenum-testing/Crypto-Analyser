@@ -24,6 +24,7 @@ struct EditProfileView: View {
     @State private var email: String = (UserSessionManager.getUserData().email )
     @State private var name: String = (UserSessionManager.getUserData().name )
     
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     var body: some View {
         ZStack {
             VStack {
@@ -32,34 +33,43 @@ struct EditProfileView: View {
                         router.navigateBackInAuth()
                     }, label: {
                         Image(.back)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     })
                     Spacer()
                     Text("Edit Profile")
+                        .foregroundStyle(Color.white)
                         .font(.system(size: 25, weight: .semibold))
                     
                     Spacer()
                     Text("")
                 }
                 .padding(.horizontal,20)
-              
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .foregroundColor(.black)
-                        .frame(width: 50,height: 50)
-                        .padding(.leading)
-                    
+                VStack {
                     formField(title: StringConstants.nameTitle, text: $name, focusedField: .name, placeholder: StringConstants.nameTitle)
                         .padding(.horizontal, 20)
                     
                     formField(title: StringConstants.emailTitle, text: $email, focusedField: .emailField, placeholder: StringConstants.emailTitle)
                         .padding(.horizontal, 20)
                         .disabled(true)
-                    Spacer()
-                    saveButton
-                        .padding(.horizontal, 20)
-                        .padding(.bottom,30)
-                    
+                }
+                .padding(5)
+                .padding(.top)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(LinearGradient(
+                            gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ), lineWidth: 4) // Gradient border
+                        .blur(radius: 5) // Glow effect
+                )
+                .padding()
+                
+                Spacer()
+                saveButton
+                    .padding(.horizontal, 20)
+                    .padding(.bottom,30)
+                
                 
             }
             if isLoading {
@@ -69,8 +79,8 @@ struct EditProfileView: View {
                         Spacer()
                         ProgressView()
                             .controlSize(.large)
-                            .foregroundColor(.white)
-                        //     .scaleEffect(3)
+                            .tint(.pink)
+                     
                         Spacer()
                     }
                     Spacer()
@@ -78,6 +88,7 @@ struct EditProfileView: View {
                 .background(.black.opacity(0.4))
             }
         }
+        .background(Color.themecolor)
         .alert(isPresented: $showAlert) {
             Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)))
         }
@@ -87,19 +98,18 @@ struct EditProfileView: View {
             let isEmail = focusedField == .emailField ? true : false
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
+                .foregroundColor(.white)
             TextField(placeholder, text: text)
-                .foregroundColor(isEmail ? .gray : .black)
+                .foregroundColor(isEmail ? .gray : .white)
                 .keyboardType(.alphabet)
                 .textInputAutocapitalization(.words)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.white)
+                .background(Color.cellcolor)
                 .cornerRadius(8)
-                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                .accentColor(.black)
+                .accentColor(.blue)
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                 .focused($activeField, equals: focusedField)
@@ -119,7 +129,7 @@ struct EditProfileView: View {
                     switch result {
                     case .success:
                         router.navigateBackInAuth()
-                        UserSessionManager.saveUserData(name: name, email: email)
+                        UserSessionManager.saveUserData(name: name, email: email, loginBy: nil)
                     case .failure(let error):
                         errorMessage = "Login failed: \(error.localizedDescription)"
                         showAlert = true
@@ -138,13 +148,23 @@ struct EditProfileView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.midnightBlue)
+            .background(Color.buttonbackground)
             .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(LinearGradient(
+                        gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ), lineWidth: 4)
+                    .blur(radius: 2)
+            )
         })
         .disabled(isLoading)
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
+        
     }
-    
-    
 }
 
 #Preview {

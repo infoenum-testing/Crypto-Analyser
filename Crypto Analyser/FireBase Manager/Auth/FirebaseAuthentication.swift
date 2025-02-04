@@ -34,7 +34,7 @@ class FirebaseAuthentication {
                 if let error = error {
                     completion(.failure(error))
                 } else {
-                    UserSessionManager.saveUserData(name: name, email: userEmail)
+                    UserSessionManager.saveUserData(name: name, email: userEmail, loginBy: .gmail)
                     completion(.success(()))
                 }
             }
@@ -80,7 +80,7 @@ class FirebaseAuthentication {
                     switch result {
                     case .success(let name):
                         print("User logged in with name: \(name)")
-                        UserSessionManager.saveUserData(name: name, email: email)
+                        UserSessionManager.saveUserData(name: name, email: email, loginBy: .gmail)
                         completion(.success(()))
                     case .failure(let error):
                         print("Failed to fetch username: \(error.localizedDescription)")
@@ -164,10 +164,4 @@ class FirebaseAuthentication {
     }
 }
 
-struct SearchDetails {
-    let id:String
-    let image: UIImage?
-    let title: String
-    let message: String
-    let date: Date
-}
+

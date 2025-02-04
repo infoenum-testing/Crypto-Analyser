@@ -17,58 +17,73 @@ struct SettingView: View {
     
     @EnvironmentObject var router: Router
     @State private var alertType: AlertType = .logout
+    @State private var isDeleteAccount: Bool = false
     @State private var alert = false
     @State private var errorAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var alertButtonText = ""
     
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     var body: some View {
         ZStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(StringConstants.setting)
+                    .foregroundStyle(.white)
                     .font(.system(size: 25, weight: .semibold))
+                    .padding(.leading,20)
                 
                 ScrollView(showsIndicators:false) {
                     VStack {
                         HStack(spacing:5) {
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .foregroundColor(.black)
-                                .frame(width: 50,height: 50)
-                                .padding(.leading)
                             VStack(alignment: .leading) {
                                 let name = UserSessionManager.getUserData().name 
                                 Text(name)
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20, weight: .semibold))
-                                let email = UserSessionManager.getUserData().email 
-                                Text(email)
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 12, weight: .semibold))
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 22, weight: .semibold))
+                                    .padding(.leading)
+                                let gmail = UserSessionManager.getUserData().email
+                                Text(gmail)
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .padding(.leading)
                                 
                             }
                             Spacer()
                         }
-                        .frame(height: 120)
-                        .background(.gray.opacity(0.3))
+                        .frame(height: 100)
+                        .background(Color.themecolor)
                         .cornerRadius(20)
-                        
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(LinearGradient(
+                                    gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ), lineWidth: 4)
+                                .blur(radius: 2)
+                        )
+                        .onAppear {borderAnimationViewModel.startColorAnimation()}
+                        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
+                        .padding(.top,5)
                         
                         VStack(alignment: .leading,spacing:5) {
                             Text(StringConstants.account)
-                                .font(.system(size: 25, weight: .semibold))
+                                .foregroundColor(.white)
+                                .font(.system(size: 22, weight: .semibold))
                             
                             CommonCell(title: "Edit Profile",action: {
                                 router.navigateToAuth(.editProfile)
                             })
-                            CommonCell(title: StringConstants.resetPassword,action: {
-                                alertType  = .resetPassword
-                                alert = true
-                                alertTitle = StringConstants.resetPassword
-                                alertMessage = "\(StringConstants.resetPasswordDes) \(UserSessionManager.getUserData().email )."
-                                alertButtonText = StringConstants.sendEmail
-                            })
+                            if UserSessionManager.getUserData().loginBy == .gmail {
+                                CommonCell(title: StringConstants.resetPassword,action: {
+                                    alertType  = .resetPassword
+                                    alert = true
+                                    alertTitle = StringConstants.resetPassword
+                                    alertMessage = "\(StringConstants.resetPasswordDes) \(UserSessionManager.getUserData().email )."
+                                    alertButtonText = StringConstants.sendEmail
+                                })
+                            }
                             CommonCell(title: "Subscriptions",action: {
                                 router.navigateToAuth(.subscription)
                             })
@@ -77,7 +92,8 @@ struct SettingView: View {
                         
                         VStack(alignment: .leading,spacing:5) {
                             Text(StringConstants.privacy)
-                                .font(.system(size: 25, weight: .semibold))
+                                .foregroundColor(.white)
+                                .font(.system(size: 22, weight: .semibold))
                             
                             CommonCell(title: StringConstants.privacyPolicy,action: {
                                 if let url = URL(string: "https://loremipsum.io/privacy-policy") {
@@ -101,7 +117,8 @@ struct SettingView: View {
                         
                         VStack(alignment: .leading,spacing:5) {
                             Text(StringConstants.securityOptions)
-                                .font(.system(size: 25, weight: .semibold))
+                                .foregroundColor(.white)
+                                .font(.system(size: 22, weight: .semibold))
                             CommonCell(title: StringConstants.logout,action: {
                                 alertType  = .logout
                                 alert = true
@@ -110,7 +127,7 @@ struct SettingView: View {
                                 alertButtonText = StringConstants.logout
                             })
                             
-                            CommonCell(title: StringConstants.delete,textColor:.red,action: {
+                            CommonCell(title: StringConstants.deleteAccount,textColor:.red,isLoading:isDeleteAccount,action: {
                                 alertType  = .delete
                                 alert = true
                                 alertTitle = StringConstants.deleteAccount
@@ -126,6 +143,7 @@ struct SettingView: View {
                     }
                 }
             }
+            .background(Color.themecolor)
             .alert(alertTitle, isPresented: $alert) {
                 if alertType == .logout {
                     Button(StringConstants.cancel, role: .cancel) {}
@@ -158,22 +176,27 @@ struct SettingView: View {
         }
     }
     
-    private func CommonCell(title: String,textColor:Color = .black, placeholder: String = "Type here", action: @escaping () -> Void) -> some View {
+    private func CommonCell(title: String,textColor:Color = .white, placeholder: String = "Type here", isLoading:Bool = false,action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
                 Text(title)
                     .foregroundStyle(textColor)
                     .padding()
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-                    .frame(width: 15, height: 20)
-                    .padding()
+                if isLoading {
+                  ProgressView()
+                        .tint(.pink)
+                        .frame(width: 15, height: 20)
+                } else {
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.gray)
+                        .frame(width: 15, height: 20)
+                        .padding()
+                }
             }
             .frame(height: 50)
-            .background(Color.white)
+            .background(Color.cellcolor)
             .cornerRadius(8)
-            .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
             .accentColor(.black)
             .foregroundColor(.black)
             .font(.system(size: 20))
@@ -183,7 +206,9 @@ struct SettingView: View {
     }
     
     func deleteAccount() {
+        isDeleteAccount = true
         FirebaseAuthentication.shared.deleteUser { result in
+            isDeleteAccount = false
             switch result {
             case .success():
                 router.navigateToAuthRoot()

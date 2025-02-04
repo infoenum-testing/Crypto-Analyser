@@ -11,6 +11,7 @@ struct TabbarView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     var body: some View {
+        let _ = Self._printChanges()
         TabView {
             HomeView()
                 .tabItem {
@@ -31,13 +32,16 @@ struct TabbarView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
-        .tint(Color.midnightBlue)
+        .tint(Color.bordercolor)
         .onAppear(perform: {
-            UITabBar.appearance().unselectedItemTintColor = .gray
-            
-            UITabBar.appearance().backgroundColor = .systemGray4.withAlphaComponent(0.3)
-            
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemPink]
+            let appearance = UITabBarAppearance()
+                        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+                        appearance.backgroundColor = UIColor(Color.cellcolor)
+                        
+                        // Use this appearance when scrolling behind the TabView:
+                        UITabBar.appearance().standardAppearance = appearance
+                        // Use this appearance when scrolled all the way up:
+                        UITabBar.appearance().scrollEdgeAppearance = appearance
         })
     }
 }

@@ -15,7 +15,7 @@ struct LeafLoadingView: View {
             // This ZStack holds the rotating LeafShapes
             ForEach(0..<15) { index in
                 LeafShape()
-                    .fill(Color.black.opacity(Double(index) / 15.0))
+                    .fill(Color.white.opacity(Double(index) / 15.0))
                     .frame(width: 15, height: 40)
                     .foregroundColor(.gray.opacity(12.0 / Double(index)))
                     .offset(y: -65)
@@ -30,7 +30,7 @@ struct LeafLoadingView: View {
             )
             
             Text("Analysing...")
-                .foregroundStyle(.black)
+                .foregroundStyle(.white)
                 .font(.system(size: 15, weight: .semibold))
         }
         .onAppear {

@@ -7,27 +7,42 @@
 
 import Foundation
 
+enum LoginBy:String {
+    case gmail
+    case google
+    case apple
+}
+
 class UserSessionManager {
+    
     private enum Keys {
         static let userName = "userName"
         static let userEmail = "userEmail"
+        static let loginBy = "loginBy"
         static let isLoggedIn = "isLoggedIn"
         static let userSubscriptionData = "userSubscriptionData"
         static let trail = "Trail"
     }
     
     // Save user data to UserDefaults
-    static func saveUserData(name: String, email: String) {
+    static func saveUserData(name: String, email: String,loginBy:LoginBy?) {
         UserDefaults.standard.set(name, forKey: Keys.userName)
         UserDefaults.standard.set(email, forKey: Keys.userEmail)
-        UserDefaults.standard.set(true, forKey: Keys.isLoggedIn)  // Set login status to true
+        UserDefaults.standard.set(true, forKey: Keys.isLoggedIn)
+        if let loginBy {
+            UserDefaults.standard.set(loginBy.rawValue, forKey: Keys.loginBy)
+        }
     }
     
     // Get user data from UserDefaults
-    static func getUserData() -> (name: String, email: String) {
+    static func getUserData() -> (name: String, email: String,loginBy:LoginBy) {
         let name = UserDefaults.standard.string(forKey: Keys.userName) ?? ""
         let email = UserDefaults.standard.string(forKey: Keys.userEmail) ?? ""
-        return (name, email)
+        
+        let loginByString = UserDefaults.standard.string(forKey: Keys.loginBy) ?? ""
+        let loginBy = LoginBy(rawValue: loginByString) ?? .gmail
+        
+        return (name, email, loginBy)
     }
     
     static func getUserEmail() -> (String) {

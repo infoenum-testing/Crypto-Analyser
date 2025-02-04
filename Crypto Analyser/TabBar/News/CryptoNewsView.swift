@@ -9,6 +9,7 @@ import SwiftUI
 import WebKit
 
 struct CryptoNewsView: View {
+    @StateObject var viewModel = CryptoNewsViewModel()
     @State private var newsData:[NewsDetails] = []
     @State private var newsLoading:Bool = false
     @State private var pageIndex:Int = 1
@@ -16,31 +17,46 @@ struct CryptoNewsView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State  var showWebView:Bool = false
-    @State  var selectedNewsUrl:String = ""
+    
     var body: some View {
-        VStack(spacing:1) {
+        VStack(alignment: .leading, spacing:1) {
             Text("Crypto News")
+                .foregroundStyle(.white)
                 .font(.system(size: 25, weight: .semibold))
+                .padding(.leading,20)
             if newsLoading &&  (newsData.count == 0){
-                VStack {
+                HStack {
                     Spacer()
-                    ProgressView()
-                        .controlSize(.large)
-                        .foregroundColor(.white)
+                    VStack {
+                        Spacer()
+                        ProgressView()
+                            .controlSize(.large)
+                            .foregroundColor(.white)
+                            .tint(Color.pink)
+                        Spacer()
+                    }
                     Spacer()
                 }
             } else {
                 ScrollView {
-                    LazyVStack(spacing:15) {
+                    LazyVStack(alignment: .leading,spacing:15) {
                         ForEach(newsData.indices, id: \.self) { index in
                             let news = newsData[index]
-                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "",showWebView:$showWebView,selectedNewsUrl: $selectedNewsUrl)
-                                .onAppear {
-                                    if (newsData.count - 1) == index && !isLast{
-                                        pageIndex += 1
-                                        fetchData(page: pageIndex)
+                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "", newsUrlAction: {
+                                if let urlStr = news.newsUrl {
+                                    viewModel.selectedNewsUrl = urlStr
+                                    if !viewModel.selectedNewsUrl.isEmpty{
+                                        showWebView = true
                                     }
                                 }
+                            })
+                           
+                            .onAppear {
+                                if (newsData.count - 1) == index && !isLast{
+                                    pageIndex += 1
+                                    fetchData(page: pageIndex)
+                                }
+                            }
                         }
                     }
                     .padding(.horizontal,20)
@@ -48,14 +64,12 @@ struct CryptoNewsView: View {
                 }
             }
         }
-        .sheet(isPresented: $showWebView) {
-            if let url = URL(string: selectedNewsUrl) {
-                WebViewContainer(url: url)
-                    .edgesIgnoringSafeArea(.all)
-            } else {
-                Text("Invalid URL")
-            }
-        }
+        .background(Color.themecolor)
+        .fullScreenCover(isPresented: $showWebView, content: {
+            NewsWebView(urlString:  viewModel.selectedNewsUrl)
+                .edgesIgnoringSafeArea(.all)
+            
+        })
         .onAppear {
             fetchData(page: pageIndex)
         }
@@ -94,10 +108,9 @@ struct newsCellView: View {
     let title: String
     let newsUrl: String
     let des: String
-    @Binding  var showWebView:Bool
-    @Binding  var selectedNewsUrl:String
+    var newsUrlAction:() -> Void
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack(alignment: .top) {
                 AsyncImage(url: URL(string: imageUrl)) { image in
                     image.resizable()
@@ -106,18 +119,19 @@ struct newsCellView: View {
                 }
                 .frame(width: 150, height: 100)
                 .clipShape(.rect(cornerRadius: 0))
-                
                 Text(title)
                     .foregroundStyle(.orange)
                     .onTapGesture {
-                        selectedNewsUrl = newsUrl
-                        showWebView = true
+                        newsUrlAction()
                     }
+                    .padding(5)
+                    .frame(maxWidth: .infinity)
             }
             Text(des)
+                .foregroundStyle(.white)
         }
-        .padding(5)
-        .background(Color.gray.opacity(0.05))
+        .padding(8)
+        .background(Color.cellcolor)
         .cornerRadius(8)
     }
 }

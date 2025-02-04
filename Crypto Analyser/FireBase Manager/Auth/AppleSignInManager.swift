@@ -82,11 +82,11 @@ final class FirebaseAppleLoginViewModel: NSObject,ObservableObject {
                         switch result {
                         case .success(let data):
                             if data.exists {
-                                UserSessionManager.saveUserData(name: data.existingName ?? "", email: gmailID)
+                                UserSessionManager.saveUserData(name: data.existingName ?? "", email: gmailID, loginBy: .apple)
                                 print("User already exists in Firestore. Name: \(data.existingName ?? "No name found")")
                             } else {
                                 print("New user added to Firestore.")
-                                UserSessionManager.saveUserData(name: userName, email: gmailID)
+                                UserSessionManager.saveUserData(name: userName, email: gmailID, loginBy: .apple)
                             }
                             completion(.success(authResult))
                         case .failure(let error):

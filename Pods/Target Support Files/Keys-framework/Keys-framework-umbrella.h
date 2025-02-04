@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "CryptoAnalyserKeys.h"
 #import "FlowersKeys.h"
 
 FOUNDATION_EXPORT double KeysVersionNumber;

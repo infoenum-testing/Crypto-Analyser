@@ -11,8 +11,8 @@ import Keys
 
 @MainActor
 class SearchViewModel: ObservableObject {
-    func fetchReferenceCurrencies(search: String, completion: @escaping (Result<[Currency], Error>) -> Void) {
-        let baseURL = "https://api.coinranking.com/v2/reference-currencies"
+    func fetchReferenceCurrencies(search: String, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
+        let baseURL = "https://api.coinranking.com/v2/coins"
         let query = "?search=\(search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
         let urlString = baseURL + query
         
@@ -36,8 +36,9 @@ class SearchViewModel: ObservableObject {
             }
             
             do {
-                let decodedResponse = try JSONDecoder().decode(ReferenceCurrencyResponse.self, from: data)
-                completion(.success(decodedResponse.data.currencies))
+                let decodedResponse = try JSONDecoder().decode(CryptoResponse.self, from: data)
+                print(decodedResponse)
+                completion(.success(decodedResponse))
             } catch {
                 completion(.failure(error))
             }

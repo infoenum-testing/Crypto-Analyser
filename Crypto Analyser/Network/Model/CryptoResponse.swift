@@ -66,3 +66,14 @@ struct Coin: Codable {
         case contractAddresses
     }
 }
+
+struct Stats: Codable {
+
+    let total: Int
+    let totalCoins: Int
+    let totalMarkets: Int
+    let totalExchanges: Int
+    let totalMarketCap: String
+    let total24hVolume: String
+
+}

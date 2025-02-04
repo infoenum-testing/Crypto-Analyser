@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct ImageAnalyserView: View {
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
     let fromSearch:Bool
     let image: UIImage
@@ -18,6 +19,7 @@ struct ImageAnalyserView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var message = ""
+    @State private var confidenceLevel = "0"
     
     @Namespace private var animationNamespace
     
@@ -32,21 +34,21 @@ struct ImageAnalyserView: View {
                     }
                 }, label: {
                     Image(.back)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 })
                 Spacer()
                 Text("Analysed Result")
+                    .foregroundStyle(.white)
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()
                 Text(" ")
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 0)
             .frame(height: 30)
-            .clipped()
             
             ZStack {
-                ScrollView {
-                    VStack {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center) {
                         VStack {
                             if !isDataFound {
                                 Spacer()
@@ -56,20 +58,21 @@ struct ImageAnalyserView: View {
                                     Image(uiImage: image)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: UIScreen.main.bounds.width - 16)
+                                        .frame(width: UIScreen.main.bounds.width - 40)
                                         .frame(maxHeight: UIScreen.main.bounds.height/2.3)
                                         .clipped()
                                     if isLoading {
                                         LeafLoadingView()
                                     }
                                 }
+                                .cornerRadius(8)
+                                    .clipped() 
                             }
                             .frame(maxHeight: UIScreen.main.bounds.height/2.5)
                             .cornerRadius(8)
                             .shadow(color: Color.black, radius: 3, x: 0, y: 0)
-                            .padding(.horizontal, 20)
                             .padding(.top, !isDataFound ? 0 : 10)
-                          
+                            
                             if !isDataFound {
                                 Spacer()
                                 Spacer()
@@ -78,9 +81,9 @@ struct ImageAnalyserView: View {
                         .frame(height: !isDataFound ? UIScreen.main.bounds.height: UIScreen.main.bounds.height/2.5)
                         if isDataFound {
                             Text(message)
+                                .foregroundStyle(.white)
                                 .font(.system(size: 20, weight: .regular))
                                 .multilineTextAlignment(.leading)
-                                .padding(.horizontal, 20)
                                 .padding(.top, 20)
                                 .transition(.opacity)
                         }
@@ -95,6 +98,8 @@ struct ImageAnalyserView: View {
                 refreshUI()
             }
         }
+        .padding(.horizontal, 20)
+        .background(Color.themecolor)
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Message"),
@@ -112,35 +117,30 @@ struct ImageAnalyserView: View {
             isLoading = false
             switch result {
             case .success(let success):
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
-                    if let content = success.choices?.first?.message?.content {
-                        if content.replacingOccurrences(of: " ", with: "").lowercased() == "false" {
-                            alertTitle = StringConstants.invalid
-                            alertMessage = StringConstants.invalidImageAlertMessage
-                            showAlert = true
-                        } else if content.replacingOccurrences(of: " ", with: "").lowercased() == "true" {
-                            alertTitle = ""
-                            alertMessage = "Image detected, but not clear. Please provide a better image."
-                            showAlert = true
-                        } else {
-                            let email = UserSessionManager.getUserData().email
-                            FireBaseResentSearches.shared.addRecentSearch(email: email, image: image, title: "", message: content, completion: { result in
-                                removeLastRecentSearch()
-                                print("Saved in recent Search", result)
-                            })
-                            isItFirst = false
-                            message = content
-                            withAnimation {
-                                isDataFound = true
-                            }
-                            
-                            FirebaseAuthentication.shared.updateTrial(email: email, trail: UserSessionManager.getUserTrail() + 1) { result in
-                                print(result)
-                            }
-                            UserSessionManager.saveUserTrail(count: UserSessionManager.getUserTrail() + 1)
-                        }
+                if let signal = success.signal, signal.replacingOccurrences(of: " ", with: "").lowercased() == "false" {
+                    alertTitle = StringConstants.invalid
+                    alertMessage = StringConstants.invalidImageAlertMessage
+                    showAlert = true
+                } else if let content =  success.techAnalysis ,let level =  success.confidenceLevel,let signal = success.signal{
+                    let email = UserSessionManager.getUserData().email
+                    let confLevel = level.replacingOccurrences(of: "%", with: "")
+                    FireBaseResentSearches.shared.addRecentSearch(email: email, image: image,signal: signal, confidenceLevel: confLevel, message: content, completion: { result in
+                        removeLastRecentSearch()
+                        print("Saved in recent Search", result)
+                    })
+                    isItFirst = false
+                    message = content
+                    confidenceLevel = confLevel
+                    withAnimation {
+                        isDataFound = true
                     }
-//                }
+                    
+                    FirebaseAuthentication.shared.updateTrial(email: email, trail: UserSessionManager.getUserTrail() + 1) { result in
+                        print(result)
+                    }
+                    UserSessionManager.saveUserTrail(count: UserSessionManager.getUserTrail() + 1)
+                }
+                
             case .failure(let error):
                 alertTitle = StringConstants.error
                 alertMessage = "An error occurred: \(error.localizedDescription)"

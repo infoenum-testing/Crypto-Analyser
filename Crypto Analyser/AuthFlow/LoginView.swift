@@ -11,7 +11,7 @@ struct LoginView: View {
     enum FocusedField: Hashable {
         case emailField, password
     }
-    
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
     @FocusState private var activeField: FocusedField?
     
@@ -27,55 +27,76 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             VStack {
-                ScrollView {
-                    Text(StringConstants.loginTitle)
-                        .font(.system(size: 30, weight: .semibold))
-                        .padding(.top, 10)
-                        .padding(.bottom, 30)
-                    
-                    
-                    formField(title: StringConstants.emailTitle, text: $email, focusedField: .emailField, placeholder: StringConstants.emailTitle)
-                        .padding(.horizontal, 20)
-                    
-                    passwordField(title: StringConstants.passwordTitle, text: $password, focusedField: .password, placeholder: StringConstants.passwordTitle, isPasswordVisible: $isPasswordVisible)
-                        .padding(.horizontal, 20)
+                ScrollView(showsIndicators: false) {
                     HStack {
+                        Text(StringConstants.loginTitle)
+                            .foregroundStyle(.white)
+                            .font(.system(size: 30, weight: .semibold))
+                            .padding(.top, 10)
+                            .padding(.bottom, 25)
                         Spacer()
-                        Button(action: {
-                            router.navigateToAuth(.forgotPassword)
-                        }, label: {
-                            Text(StringConstants.forgotPassword)
-                                .font(.system(size: 15, weight: .semibold))
-                        })
-                    }
+                         }
                     .padding(.horizontal, 20)
-                    
+                    VStack {
+                        formField(title: StringConstants.emailTitle, text: $email, focusedField: .emailField, placeholder: StringConstants.emailTitle)
+                            .padding(.horizontal, 10)
+                        
+                        passwordField(title: StringConstants.passwordTitle, text: $password, focusedField: .password, placeholder: StringConstants.passwordTitle, isPasswordVisible: $isPasswordVisible)
+                            .padding(.horizontal, 10)
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                router.navigateToAuth(.forgotPassword)
+                            }, label: {
+                                Text(StringConstants.forgotPassword)
+                                    .foregroundStyle(Color.pink)
+                                    .font(.system(size: 18, weight: .semibold))
+                            })
+                        }
+                        .padding(.horizontal, 10)
+                    }
+                    .padding(.vertical,20)
+                    .padding(.horizontal)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(LinearGradient(
+                                gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ), lineWidth: 4) // Gradient border
+                            .blur(radius: 5) // Glow effect
+                    )
+                    .padding()
                     loginButton
                         .padding(.horizontal, 20)
-                        .padding(.top,UIScreen.main.bounds.height/4)
+                        .padding(.top,UIScreen.main.bounds.height/5)
                     HStack(spacing: 5) {
                         Text(StringConstants.doNotHaveAccount)
+                            .foregroundStyle(.white)
                             .font(.system(size: 15))
                         Button(action: {
                             router.navigateToAuth(.signUp)
                         }, label: {
                             Text(StringConstants.signUpTitle)
-                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundStyle(Color.pink)
+                                .font(.system(size: 18, weight: .semibold))
                         })
                     }
+                    .padding(.top,3)
                     
                     Text(StringConstants.orText)
+                        .foregroundColor(.white)
                         .font(.system(size: 15, weight: .semibold))
                         .padding()
                     
-                    HStack(spacing: 50) {
+                    HStack(spacing: 55) {
                         Button(action: {
                             isLoading = true
                             GoogleSignInManager.shared.signInWithGoogle { result in
                                 isLoading = false
                                 switch result {
                                 case .success((let name,let email)):
-                                    UserSessionManager.saveUserData(name: name, email: email)
+                                    UserSessionManager.saveUserData(name: name, email: email, loginBy: .google)
                                     router.navigateToAuth(.tabBar)
                                 case .failure(let error):
                                     if error.localizedDescription !=  "Cancel" {
@@ -108,6 +129,7 @@ struct LoginView: View {
                         }, label: {
                             Image(.appleIcon)
                                 .resizable()
+                                .foregroundColor(.white)
                                 .frame(width: 40,height: 40)
                         })
                     }
@@ -122,6 +144,7 @@ struct LoginView: View {
                         ProgressView()
                             .controlSize(.large)
                             .foregroundColor(.white)
+                            .tint(Color.pink)
                         //  .scaleEffect(3)
                         Spacer()
                     }
@@ -130,6 +153,7 @@ struct LoginView: View {
                 .background(.black.opacity(0.2))
             }
         }
+        .background(Color.themecolor)
         .toolbar {
             ToolbarItem(placement: .keyboard) {
                 HStack {
@@ -153,18 +177,22 @@ struct LoginView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
-            TextField(placeholder, text: text)
+                .foregroundColor(.white)
+            TextField("", text: text)
+                .placeholder(when: text.wrappedValue.isEmpty) {
+                    Text(placeholder)
+                        .foregroundColor(.gray)
+                }
+                .foregroundColor(.white)
                 .keyboardType(.emailAddress)
                 .textInputAutocapitalization(.never)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.white)
+                .background(Color.cellcolor)
                 .cornerRadius(8)
-                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                .accentColor(.black)
+                .accentColor(.white)
                 .foregroundColor(.black)
                 .font(.system(size: 20))
                 .focused($activeField, equals: focusedField)
@@ -180,16 +208,26 @@ struct LoginView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
+                .foregroundColor(.white)
             HStack {
                 if isPasswordVisible.wrappedValue {
-                    TextField(placeholder, text: text)
-                        .accentColor(.black)
+                    TextField("", text: text)
+                        .placeholder(when: text.wrappedValue.isEmpty) {
+                            Text(placeholder)
+                                .foregroundColor(.gray)
+                        }
+                        .foregroundColor(.white)
+                        .accentColor(.white)
                         .focused($activeField, equals: focusedField)
                         .disableAutocorrection(true)
                 } else {
-                    SecureField(placeholder, text: text)
-                        .accentColor(.black)
+                    SecureField("", text: text)
+                        .placeholder(when: text.wrappedValue.isEmpty) {
+                            Text(placeholder)
+                                .foregroundColor(.gray)
+                        }
+                        .foregroundColor(.white)
+                        .accentColor(.white)
                         .focused($activeField, equals: focusedField)
                         .disableAutocorrection(true)
                 }
@@ -202,14 +240,13 @@ struct LoginView: View {
                     }
                 }) {
                     Image(systemName: !isPasswordVisible.wrappedValue ? "eye.slash.fill" : "eye.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                 }
             }
             .padding()
             .frame(height: 50)
-            .background(Color.white)
+            .background(Color.cellcolor)
             .cornerRadius(8)
-            .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
         }
         .padding(.bottom)
         .onAppear{
@@ -244,10 +281,21 @@ struct LoginView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.midnightBlue)
+            .background(Color.buttonbackground)
             .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(LinearGradient(
+                        gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ), lineWidth: 4)
+                    .blur(radius: 2)
+            )
         })
         .disabled(isLoading)
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
     }
     
     private func validateFields() -> Bool {

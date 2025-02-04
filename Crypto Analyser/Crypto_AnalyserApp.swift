@@ -31,7 +31,8 @@ struct Crypto_AnalyserApp: App {
                     } else {
                         TabbarView()
                     }
-                } .navigationDestination(for: Router.AuthDestination.self) { destination in
+                }
+                .navigationDestination(for: Router.AuthDestination.self) { destination in
                     switch destination {
                     case .signUp:
                         SignUpView()
@@ -65,8 +66,8 @@ struct Crypto_AnalyserApp: App {
                         ImageAnalyserView(fromSearch: fromSearch, image: image)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
-                    case .dataDescription(image:let image,afterAnalyse: let afterAnalyse,title: let title, message: let message):
-                        DataDescriptionView(image:image,afterAnalyse: afterAnalyse, title: title, message: message)
+                    case .dataDescription(image:let image,afterAnalyse: let afterAnalyse,confidenceLevel: let confidenceLevel, message: let message):
+                        DataDescriptionView(image:image,afterAnalyse: afterAnalyse, confidenceLevel: confidenceLevel, message: message)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
                     case .subscription:
@@ -79,7 +80,9 @@ struct Crypto_AnalyserApp: App {
                             .navigationBarHidden(true)
                     }
                 }
+                .background(Color.themecolor)
             }
+            .background(Color.themecolor)
             .navigationBarBackButtonHidden()
             .environmentObject(router)
             .environmentObject(entitlementManager)

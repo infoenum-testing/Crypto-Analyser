@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ForgotPassword: View {
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
     
     @State private var isSaveButtonDisabled: Bool = true
@@ -27,27 +28,46 @@ struct ForgotPassword: View {
                         router.navigateBackInAuth()
                     }, label: {
                         Image(.back)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                     })
                     
                     Spacer()
                 }
                 .padding(.horizontal, 20)
-                
+                HStack {
                 Text(StringConstants.forgotPasswordTitle)
+                    .foregroundColor(.white)
                     .font(.system(size: 30, weight: .semibold))
                     .padding(.top, 10)
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+                
                 HStack {
                     Text(StringConstants.passwordResetDes)
+                        .foregroundColor(.white)
                         .font(.system(size: 18))
                         .padding(.bottom, 30)
                         .padding(.horizontal, 20)
                     Spacer()
                 }
                 .padding(.top, 10)
-                
-                formField(title: StringConstants.emailTitle, text: $email, placeholder: StringConstants.emailTitle)
-                    .padding(.horizontal, 20)
+                VStack {
+                    formField(title: StringConstants.emailTitle, text: $email, placeholder: StringConstants.emailTitle)
+                        .padding(.horizontal, 10)
+                }
+                .padding(.vertical,20)
+                .padding(.horizontal)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(LinearGradient(
+                            gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ), lineWidth: 4) // Gradient border
+                        .blur(radius: 5) // Glow effect
+                )
+                .padding()
                 Spacer()
                 sendButton
                     .padding(.horizontal, 20)
@@ -62,7 +82,7 @@ struct ForgotPassword: View {
                         ProgressView()
                             .controlSize(.large)
                             .foregroundColor(.white)
-                        //                           .scaleEffect(3)
+                            .tint(Color.pink)
                         Spacer()
                     }
                     Spacer()
@@ -70,6 +90,7 @@ struct ForgotPassword: View {
                 .background(.black.opacity(0.2))
             }
         }
+        .background(Color.themecolor)
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(errorTitle),
@@ -102,17 +123,20 @@ struct ForgotPassword: View {
         return VStack(alignment: .leading) {
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
-            TextField(placeholder, text: text)
+                .foregroundColor(.white)
+            TextField("", text: text)
+                .placeholder(when: text.wrappedValue.isEmpty) {
+                    Text(placeholder)
+                        .foregroundColor(.gray)
+                }
                 .keyboardType(.emailAddress)
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.white)
+                .background(Color.cellcolor)
                 .cornerRadius(8)
-                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                .accentColor(.black)
-                .foregroundColor(.black)
+                .accentColor(.white)
+                .foregroundColor(.white)
                 .font(.system(size: 20))
         }
         .padding(.bottom)
@@ -145,10 +169,21 @@ struct ForgotPassword: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.midnightBlue)
+            .background(Color.buttonbackground)
             .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(LinearGradient(
+                        gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ), lineWidth: 4)
+                    .blur(radius: 2)
+            )
         })
         .disabled(isLoading)
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
     }
     
     private func validateFields()-> Bool {

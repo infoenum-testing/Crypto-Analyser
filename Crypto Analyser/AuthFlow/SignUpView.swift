@@ -11,6 +11,7 @@ struct SignUpView: View {
     enum FocusedField: Hashable {
         case nameField, emailField, password, conformPassword
     }
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
     @FocusState private var activeField: FocusedField?
     
@@ -29,40 +30,60 @@ struct SignUpView: View {
     var body: some View {
         ZStack {
             VStack {
-                ScrollView {
-                    Text(StringConstants.signUpTitle)
-                        .font(.system(size: 30, weight: .semibold))
-                        .padding(.top, 10)
-                    
-                    formField(title: StringConstants.nameTitle, text: $name, focusedField: .nameField, placeholder: StringConstants.nameTitle)
-                        .padding(.top, 30)
-                        .padding(.horizontal, 20)
-                    
-                    formField(title: StringConstants.emailTitle, text: $email, focusedField: .emailField, placeholder: StringConstants.emailTitle)
-                        .padding(.horizontal, 20)
-                    
-                    passwordField(title: StringConstants.passwordTitle, text: $password, focusedField: .password, placeholder: StringConstants.passwordTitle, isPasswordVisible: $isPasswordVisible)
-                        .padding(.horizontal, 20)
-                    
-                    passwordField(title: StringConstants.confirmPasswordTitle, text: $conformPassword, focusedField: .conformPassword, placeholder: StringConstants.confirmPasswordTitle, isPasswordVisible: $isConformPasswordVisible)
-                        .padding(.horizontal, 20)
+                ScrollView(showsIndicators: false) {
+                    HStack {
+                        Text(StringConstants.signUpTitle)
+                            .foregroundStyle(Color.white)
+                            .font(.system(size: 30, weight: .semibold))
+                            .padding(.top, 10)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    VStack {
+                        formField(title: StringConstants.nameTitle, text: $name, focusedField: .nameField, placeholder: StringConstants.nameTitle)
+                            .padding(.top, 10)
+                            .padding(.horizontal, 10)
+                        
+                        formField(title: StringConstants.emailTitle, text: $email, focusedField: .emailField, placeholder: StringConstants.emailTitle)
+                            .padding(.horizontal, 10)
+                        
+                        passwordField(title: StringConstants.passwordTitle, text: $password, focusedField: .password, placeholder: StringConstants.passwordTitle, isPasswordVisible: $isPasswordVisible)
+                            .padding(.horizontal, 10)
+                        
+                        passwordField(title: StringConstants.confirmPasswordTitle, text: $conformPassword, focusedField: .conformPassword, placeholder: StringConstants.confirmPasswordTitle, isPasswordVisible: $isConformPasswordVisible)
+                            .padding(.horizontal, 10)
+                    }
+                    .padding(15)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(LinearGradient(
+                                gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ), lineWidth: 4) // Gradient border
+                            .blur(radius: 5) // Glow effect
+                    )
+                    .padding()
                     
                     Spacer()
                     
                     signUpButton
                         .padding(.horizontal, 20)
-                        .padding(.top,20)
+                        .padding(.top,30)
                     HStack(spacing: 5) {
                         Text(StringConstants.alreadyHaveAnAccount)
+                            .foregroundStyle(Color.white)
                             .font(.system(size: 15))
                         Button(action: {
                             router.navigateBackInAuth()
                         }, label: {
                             Text(StringConstants.loginTitle)
-                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundStyle(.pink)
+                                .font(.system(size: 18, weight: .semibold))
                         })
                     }
-
+                    .padding(.top,3)
+                    
                 }
             }
             if isLoading {
@@ -73,7 +94,7 @@ struct SignUpView: View {
                         ProgressView()
                             .controlSize(.large)
                             .foregroundColor(.white)
-                        //   .scaleEffect(3)
+                            .tint(Color.pink)
                         Spacer()
                     }
                     Spacer()
@@ -82,9 +103,9 @@ struct SignUpView: View {
             }
         }
         .toolbar {
-              ToolbarItem(placement: .keyboard) {
+            ToolbarItem(placement: .keyboard) {
                 HStack {
-                  Spacer()
+                    Spacer()
                     Button(action: {
                         activeField = nil
                     }, label: {
@@ -93,13 +114,14 @@ struct SignUpView: View {
                             .font(.system(size: 18, weight: .regular))
                     })
                 }
-              }
             }
+        }
         .alert(isPresented: $showAlert) {
             Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)))
         }
         .toolbarBackground(Color.white, for: .navigationBar)
         .toolbarColorScheme(.light, for: .navigationBar)
+        .background(Color.themecolor)
     }
     
     private func formField(title: String, text: Binding<String>, focusedField: FocusedField, placeholder: String = "Type here") -> some View {
@@ -108,18 +130,21 @@ struct SignUpView: View {
         return VStack(alignment: .leading) {
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
-            TextField(placeholder, text: text)
+                .foregroundColor(.white)
+            TextField("", text: text)
+                .placeholder(when: text.wrappedValue.isEmpty) {
+                    Text(placeholder)
+                        .foregroundColor(.gray)
+                }
                 .keyboardType(keyboardType)
                 .textInputAutocapitalization(autocapitalization)
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.white)
+                .background(Color.cellcolor)
                 .cornerRadius(8)
-                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                .accentColor(.black)
-                .foregroundColor(.black)
+                .accentColor(.white)
+                .foregroundColor(.white)
                 .font(.system(size: 20))
                 .focused($activeField, equals: focusedField)
                 .onSubmit {
@@ -128,7 +153,7 @@ struct SignUpView: View {
                     } else if focusedField == .emailField {
                         activeField = .password
                     }
-                  }
+                }
         }
         .padding(.bottom)
     }
@@ -137,11 +162,15 @@ struct SignUpView: View {
         VStack(alignment: .leading) {
             Text(title)
                 .font(.system(size: 20))
-                .foregroundColor(.black)
+                .foregroundColor(.white)
             HStack {
                 if isPasswordVisible.wrappedValue {
-                    TextField(placeholder, text: text)
-                        .accentColor(.black)
+                    TextField("", text: text)
+                        .placeholder(when: text.wrappedValue.isEmpty) {
+                            Text(placeholder)
+                                .foregroundColor(.gray)
+                        }
+                        .accentColor(.white)
                         .focused($activeField, equals: focusedField)
                         .onSubmit {
                             if focusedField == .password {
@@ -149,8 +178,12 @@ struct SignUpView: View {
                             }
                         }
                 } else {
-                    SecureField(placeholder, text: text)
-                        .accentColor(.black)
+                    SecureField("", text: text)
+                        .placeholder(when: text.wrappedValue.isEmpty) {
+                            Text(placeholder)
+                                .foregroundColor(.gray)
+                        }
+                        .accentColor(.white)
                         .focused($activeField, equals: focusedField)
                         .onSubmit {
                             if focusedField == .password {
@@ -167,14 +200,13 @@ struct SignUpView: View {
                     }
                 }) {
                     Image(systemName: !isPasswordVisible.wrappedValue ? "eye.slash.fill" : "eye.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                 }
             }
             .padding()
             .frame(height: 50)
-            .background(Color.white)
+            .background(Color.cellcolor)
             .cornerRadius(8)
-            .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
         }
         .padding(.bottom)
     }
@@ -194,22 +226,32 @@ struct SignUpView: View {
                         errorMessage = "Registration failed: \(error.localizedDescription)"
                         showAlert = true
                     }
-                    
                 }
             }
         }, label: {
             HStack {
-              Text(StringConstants.signUpTitle)
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundColor(.white)
+                Text(StringConstants.signUpTitle)
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
             }
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.midnightBlue)
+            .background(Color.buttonbackground)
             .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(LinearGradient(
+                        gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ), lineWidth: 4)
+                    .blur(radius: 2)
+            )
         })
         .disabled(isLoading)
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
     }
     
     private func validateFields() -> Bool {

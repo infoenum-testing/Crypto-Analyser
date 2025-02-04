@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 extension UIImage {
     
@@ -49,5 +50,18 @@ extension String {
         }
         // Create a UIImage from the Data
         return UIImage(data: imageData)
+    }
+}
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content
+    ) -> some View {
+        ZStack(alignment: alignment) {
+            if shouldShow { placeholder() }
+            self
+        }
     }
 }

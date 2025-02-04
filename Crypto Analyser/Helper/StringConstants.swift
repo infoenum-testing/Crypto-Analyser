@@ -72,7 +72,7 @@ struct StringConstants {
     static let logout = "Logout"
     static let logoutDes = "Are you sure you want to log out?"
     
-    static let setting = "Setting"
+    static let setting = "Settings"
     static let account = "Account"
     static let accountInformation = "Account information"
     static let resetPasswordDes = "Are you sure you want to reset your password? A reset link will be sent to"

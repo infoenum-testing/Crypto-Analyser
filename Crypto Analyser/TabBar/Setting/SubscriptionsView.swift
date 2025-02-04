@@ -21,7 +21,8 @@ struct SubscriptionsView: View {
     @State private var emptyProductAlert: Bool = false
     @State private var isShowAlert = false
     @State private var alertMessage = ""
-    //    private let features: [String] = ["Remove all ads", "Daily new content", "Other cool features", "Follow for more tutorials"]
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
+    
     // MARK: - Layout
     var body: some View {
         VStack {
@@ -30,7 +31,7 @@ struct SubscriptionsView: View {
                     router.navigateBackInAuth()
                 }, label: {
                     Image(.back)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 })
                 .disabled(subscriptionsManager.isLoading)
                 Spacer()
@@ -62,6 +63,7 @@ struct SubscriptionsView: View {
         .alert("Please select a product before purchasing.", isPresented: $emptyProductAlert) {
             Button("OK", role: .cancel) { }
         }
+        .background(Color.themecolor)
     }
     
     // MARK: - Views
@@ -73,7 +75,6 @@ struct SubscriptionsView: View {
             
             Text("You've Unlocked Pro Access")
                 .font(.system(size: 30.0, weight: .bold))
-                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 30)
         }
@@ -90,28 +91,31 @@ struct SubscriptionsView: View {
                             VStack {
                                 HStack {
                                     Text("Status")
+                                        .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
                                         ProgressView()
                                     } else {
                                         if let subscriptionPayload = subscriptionsManager.latestPayload , let _ = subscriptionPayload.productId , let dateStr = subscriptionPayload.subscriptionEndDate , let date = convertToDate(from: dateStr) ,date >= Date(){
                                             Text("Active")
-                                                .foregroundStyle(.blue)
+                                                .foregroundStyle(.pink)
                                                 .onAppear {
                                                     print(date)
                                                     print(Date())
                                                 }
                                         } else {
                                             Text("Inactive")
-                                                .foregroundStyle(.blue)
+                                                .foregroundStyle(.pink)
                                         }
                                     }
                                 }
                                 Divider()
+                                    .background(.white)
                             }
                             VStack {
                                 HStack {
                                     Text("Plan")
+                                        .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
                                         ProgressView()
@@ -119,40 +123,42 @@ struct SubscriptionsView: View {
                                         if let subscriptionPayload = subscriptionsManager.latestPayload, let plane = subscriptionPayload.productId {
                                             if plane == IAPConstants.Products.monthlySubscription {
                                                 Text("Monthly")
-                                                    .foregroundStyle(.blue)
+                                                    .foregroundStyle(.pink)
                                             } else {
                                                 Text("Yearly")
-                                                    .foregroundStyle(.blue)
+                                                    .foregroundStyle(.pink)
                                             }
                                         } else {
                                             Text("Free")
-                                                .foregroundStyle(.blue)
+                                                .foregroundStyle(.pink)
                                         }
                                     }
                                     
                                 }
                                 Divider()
+                                    .background(.white)
                             }
                             VStack {
                                 HStack {
                                     Text("Renew Date")
+                                        .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
                                         ProgressView()
                                     } else {
                                         if let subscriptionPayload  = subscriptionsManager.latestPayload, let date = subscriptionPayload.subscriptionEndDate {
                                             Text(formatDate(from: date) ?? "None")
-                                                .foregroundStyle(.blue)
+                                                .foregroundStyle(.pink)
                                         } else {
                                             Text("None")
-                                                .foregroundStyle(.blue)
+                                                .foregroundStyle(.pink)
                                         }
                                     }
                                 }
                                 Divider()
+                                    .background(.white)
                             }
                         }
-                        .padding(.horizontal,20)
                         .padding(.top, 20)
                         .padding(.bottom, 30)
                         productsListView
@@ -172,12 +178,10 @@ struct SubscriptionsView: View {
                             }
                             .font(.system(size: 16.0, weight: .semibold, design: .rounded))
                             .frame(height: 16, alignment: .center)
-                            .foregroundColor(.midnightBlue)
+                            .foregroundColor(.white)
                             .padding(.top,10)
                             .disabled(subscriptionsManager.isLoading)
                         }
-                        
-                        
                     }
                     Spacer()
                 }
@@ -185,6 +189,7 @@ struct SubscriptionsView: View {
             } else {
                 Spacer()
                 ProgressView()
+                    .tint(Color.pink)
                     .progressViewStyle(.circular)
                     .scaleEffect(1.5)
                     .ignoresSafeArea(.all)
@@ -212,6 +217,7 @@ struct SubscriptionsView: View {
         }
         
     }
+    
     private func formatDate(from inputDateString: String) -> String? {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
@@ -229,35 +235,15 @@ struct SubscriptionsView: View {
     private var proAccessView: some View {
         HStack() {
             Text("Subscription")
+                .foregroundStyle(.white)
                 .font(.system(size: 33.0, weight: .bold))
-                .fontDesign(.rounded)
                 .multilineTextAlignment(.center)
             Spacer()
         }
-        .padding(.horizontal,20)
     }
     
-    //    private var featuresView: some View {
-    //        List(features, id: \.self) { feature in
-    //            HStack(alignment: .center) {
-    //                Image(systemName: "checkmark.circle")
-    //                    .font(.system(size: 22.5, weight: .medium))
-    //                    .foregroundStyle(.midnightBlue)
-    //
-    //                Text(feature)
-    //                    .font(.system(size: 17.0, weight: .semibold, design: .rounded))
-    //                    .multilineTextAlignment(.leading)
-    //            }
-    //            .listRowSeparator(.hidden)
-    //            .frame(height: 35)
-    //        }
-    //        .scrollDisabled(true)
-    //        .listStyle(.plain)
-    //        .padding(.vertical, 20)
-    //    }
-    
     private var productsListView: some View {
-        List(subscriptionsManager.products, id: \.self) { product in
+        ForEach(subscriptionsManager.products, id: \.self) { product in
             if let subscriptionPayload = subscriptionsManager.latestPayload , let plan = subscriptionPayload.productId {
                 if product.id != plan {
                     SubscriptionItemView(product: product, selectedProduct: $subscriptionsManager.selectedProduct)
@@ -267,11 +253,12 @@ struct SubscriptionsView: View {
             } else {
                 SubscriptionItemView(product: product, selectedProduct: $subscriptionsManager.selectedProduct)
             }
+            
         }
         .scrollDisabled(true)
         .listStyle(.plain)
         .listRowSpacing(2.5)
-        .frame(height: CGFloat(subscriptionsManager.products.count) * 90, alignment: .bottom)
+        
     }
     
     private func convertToDate(from dateString: String) -> Date? {
@@ -295,7 +282,7 @@ struct SubscriptionsView: View {
                     Text("Terms & Conditions")
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
                         .frame(height: 15, alignment: .center)
-                        .foregroundColor(.midnightBlue)
+                        .foregroundColor(.white)
                 }
                 
                 Spacer()
@@ -308,7 +295,7 @@ struct SubscriptionsView: View {
                     Text("Privacy Policy")
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
                         .frame(height: 15, alignment: .center)
-                        .foregroundColor(.midnightBlue)
+                        .foregroundColor(.white)
                 }
             }
             
@@ -333,30 +320,42 @@ struct SubscriptionsView: View {
                 print("Please select a product before purchasing.")
             }
         }) {
-            RoundedRectangle(cornerRadius: 12.5)
-                .foregroundColor( subscriptionsManager.selectedProduct == nil ? .midnightBlue.opacity(0.4) : .midnightBlue)
-                .overlay {
-                    VStack {
-                        if subscriptionsManager.isLoading && isContinue {
-                            ProgressView()
-                                .tint(.white)
-                        } else {
-                            Text(subscriptionsManager.title)
-                                .foregroundStyle(.white)
-                                .font(.system(size: 16.5, weight: .semibold, design: .rounded))
+            HStack {
+                RoundedRectangle(cornerRadius: 12.5)
+                    .foregroundColor( subscriptionsManager.selectedProduct == nil ? .buttonbackground.opacity(0.4) : .buttonbackground)
+                    .overlay {
+                        ZStack {
+                            if subscriptionsManager.isLoading && isContinue {
+                                ProgressView()
+                                    .tint(.white)
+                            } else {
+                                Text(subscriptionsManager.title)
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 16.5, weight: .semibold, design: .rounded))
+                            }
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(LinearGradient(
+                                    gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ), lineWidth: 4)
+                                .blur(radius: 2)
+                                .frame(height: 46)
                         }
                     }
-                }
-                .padding(.horizontal, 20)
-                .frame(height: 46)
-                .disabled(subscriptionsManager.selectedProduct == nil)
-                .onChange(of: subscriptionsManager.isLoading, perform: { value in
-                    if value == false {
-                        isRestore = false
-                        isContinue = false
-                    }
-                })
+                    .padding(.horizontal,2.5)
+                    .frame(height: 46)
+                    .disabled(subscriptionsManager.selectedProduct == nil)
+                    .onChange(of: subscriptionsManager.isLoading, perform: { value in
+                        if value == false {
+                            isRestore = false
+                            isContinue = false
+                        }
+                    })
+            }
         }
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
     }
     
     
@@ -370,22 +369,24 @@ struct SubscriptionsView: View {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 12.5)
-                    .stroke(selectedProduct == product ? .midnightBlue : .gray, lineWidth: 2.0)
+                    .stroke(selectedProduct == product ? .white : .clear, lineWidth: 2.0)
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.5)))
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 8.5) {
-                        Text(product.displayName)
-                            .font(.system(size: 16.0, weight: .semibold, design: .rounded))
+                        Text(product.displayName == "AutoRenewableOneYear" ? "Yearly" : "Monthly")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 18.0, weight: .semibold, design: .rounded))
                             .multilineTextAlignment(.leading)
                         
                         Text("Get full access for just \(product.displayPrice)")
+                            .foregroundStyle(.white)
                             .font(.system(size: 14.0, weight: .regular, design: .rounded))
                             .multilineTextAlignment(.leading)
                     }
                     Spacer()
                     Image(systemName: selectedProduct == product ? "checkmark.circle.fill" : "circle")
-                        .foregroundColor(selectedProduct == product ? .midnightBlue : .gray)
+                        .foregroundColor(selectedProduct == product ? .white : .gray)
                 }
                 .padding(.horizontal, 20)
                 .frame(height: 65, alignment: .center)
@@ -395,6 +396,9 @@ struct SubscriptionsView: View {
             }
             .disabled(subscriptionsManager.isViewDisabled(title: subscriptionsManager.title, product: product.id))
             .listRowSeparator(.hidden)
+            .frame(height: 65, alignment: .center)
+            .padding(.vertical,5)
+            .padding(.horizontal,1)
         }
     }
 }

@@ -28,13 +28,15 @@ struct HomeView: View {
     @State private var trail:Int?
     @StateObject var viewModel = ChatGPTData()
     
+    @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
+    
     var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 VStack(alignment: .leading) {
                     HStack {
-                        Spacer()
                         Text(StringConstants.analyseCrypto)
+                            .foregroundStyle(.white)
                             .font(.system(size: 25, weight: .semibold))
                         Spacer()
                     }
@@ -67,7 +69,7 @@ struct HomeView: View {
                             .lineLimit(1)
                             .frame(maxWidth: .infinity)
                         customButton(imageName: "magnifyingglass", title: StringConstants.searchForCoin, action: {
-                            if /*let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive*/ true{
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
                                 router.navigateToAuth(.searchCoin)
                             } else {
                                 showAlert = true
@@ -75,97 +77,121 @@ struct HomeView: View {
                             }
                         })
                         .frame(maxWidth: .infinity)
-                        //                        Spacer()
+                        //  Spacer()
                     }
                 }
                 .padding(.horizontal,20)
                 
                 Text(StringConstants.recentSearches)
-                    .font(.system(size: 20, weight: .semibold))
+                    .font(.system(size: 20, weight: .regular))
                     .padding(.bottom,5)
                     .padding(.horizontal,20)
-                if recentSearchIsLoading || resentSearches.count == 0{
-                    HStack {
-                        Spacer()
-                        if recentSearchIsLoading {
-                            VStack {
-                                Spacer()
-                                ProgressView()
-                                    .controlSize(.large)
-                                    .foregroundColor(.white)
-                                Spacer()
+                    .foregroundStyle(.white)
+                VStack {
+                    if recentSearchIsLoading || resentSearches.count == 0{
+                        HStack {
+                            Spacer()
+                            if recentSearchIsLoading {
+                                VStack {
+                                    Spacer()
+                                    ProgressView()
+                                        .controlSize(.large)
+                                        .tint(Color.pink)
+                                    Spacer()
+                                }
+                            } else {
+                                VStack(alignment:.center, spacing: 5) {
+                                    Spacer()
+                                    Text("No recent search available")
+                                        .font(.title2)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                    Text("Please Search by using the options above.")
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                    Spacer()
+                                }
                             }
-                        } else {
-                            VStack(alignment:.center, spacing: 5) {
-                                Spacer()
-                                Text("No recent search available")
-                                    .font(.title2)
-                                    .foregroundColor(.gray)
-                                Text("Please Search by using the options above.")
-                                    .font(.body)
-                                    .foregroundColor(.secondary)
-                                Spacer()
-                            }
+                            Spacer()
                         }
-                        Spacer()
-                    }
-                    .padding(.horizontal,20)
-                }  else {
-                    ScrollView(showsIndicators: false) {
-                        VStack(alignment:.leading) {
-                            ForEach(resentSearches, id: \.id) { item in
-                                let message = item.message
-                                VStack(alignment: .leading,spacing: 0) {
-                                    HStack(alignment: .center, spacing: 0) {
-                                        Text(message.replacingOccurrences(of: "\n", with: ""))
-                                            .lineLimit(3)
-                                            .font(.system(size: 15, weight: .regular))
-                                        Spacer()
-                                        Button(action: {
-                                            itemToDelete = item
-                                            showAlert = true
-                                            alertType = .delete
-                                        }, label: {
-                                            if itemToDelete?.id == item.id && !showAlert{
-                                                ProgressView()
-                                            } else {
-                                                Image(systemName: "trash")
-                                                    .resizable()
-                                                    .foregroundStyle(.red.opacity(0.8))
-                                                    .frame(width: 20, height: 20, alignment: .center)
-                                            }
-                                        })
-                                        .frame(width: 20, height: 20)
-                                        
+                        .padding(.horizontal,20)
+                    }  else {
+                        ScrollView(showsIndicators: false) {
+                            VStack(alignment:.leading) {
+                                ForEach(resentSearches, id: \.id) { item in
+                                    let confidenceLavel = item.confidenceLavel
+                                    let message = item.message
+                                    VStack(alignment: .leading,spacing: 0) {
+                                        HStack(alignment: .center, spacing: 0) {
+                                            Text(message.replacingOccurrences(of: "\n", with: ""))
+                                                .foregroundStyle(.white)
+                                                .lineLimit(3)
+                                                .font(.system(size: 15, weight: .regular))
+                                            Spacer()
+                                            Button(action: {
+                                                itemToDelete = item
+                                                showAlert = true
+                                                alertType = .delete
+                                            }, label: {
+                                                if itemToDelete?.id == item.id && !showAlert{
+                                                    ProgressView()
+                                                        .tint(Color.pink)
+                                                } else {
+                                                    Image(systemName: "trash")
+                                                        .resizable()
+                                                        .foregroundStyle(.red.opacity(0.8))
+                                                        .frame(width: 20, height: 20, alignment: .center)
+                                                }
+                                            })
+                                            .frame(width: 20, height: 20)
+                                            
+                                        }
+                                        .padding(.horizontal,8)
                                     }
-                                    .padding(.horizontal,8)
+                                    .padding(.vertical,8)
+                                    .background(Color.cellcolor)
+                                    .cornerRadius(8)
+                                    .accentColor(.black)
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20))
+                                    .onTapGesture {
+                                        router.navigateToAuth(.dataDescription(image: item.image ?? UIImage(),afterAnalyse: false,confidenceLevel:confidenceLavel, message: message))
+                                    }
+                                    .transition(.move(edge: .leading))
                                 }
-                                .padding(.vertical,8)
-                                .background(Color.white)
-                                .cornerRadius(8)
-                                .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-                                .accentColor(.black)
-                                .foregroundColor(.black)
-                                .font(.system(size: 20))
-                                .onTapGesture {
-                                    router.navigateToAuth(.dataDescription(image: item.image ?? UIImage(),afterAnalyse: false,title: nil, message: message))
-                                }
-                                .transition(.move(edge: .leading))
                             }
+                            .padding(.top,15)
+                            .padding(.horizontal,12)
                         }
-                        .padding(.top,2)
-                        .padding(.horizontal,6)
+                        .padding(.horizontal,14)
+                        
                     }
-                    .padding(.horizontal,14)
                 }
+                .padding(.top,10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(LinearGradient(
+                            gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ), lineWidth: 4) // Gradient border
+                        .blur(radius: 5) // Glow effect
+                        .mask(
+                            VStack(spacing: 0) {
+                                RoundedRectangle(cornerRadius: 40)
+                                Rectangle()
+                                    .frame(height: 18)
+                                    .opacity(0)
+                            }
+                        )
+                )
+                .padding(.horizontal,14)
             }
             .fullScreenCover(isPresented: $isGallery) {
                 GalleryView(isGallery: $isGallery, capturedImage: $image)
             }
             .fullScreenCover(isPresented: $isCamera) {
-                //              CameraView(isCamera: $isCamera, captureImage: { image in
-                //                  self.image = image
-                //              })
 #if targetEnvironment(simulator)
                 VStack {
                     Text("simulator")
@@ -202,11 +228,12 @@ struct HomeView: View {
                 }
             }
         }
+        .background(Color.themecolor)
         .onAppear {
             fetchRecentSearches()
             getUserTrails()
         }
-        .onChange(of: image) { _ ,value in
+        .onChange(of: image) { value in
             if let value {
                 router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
             }
@@ -221,19 +248,32 @@ struct HomeView: View {
                 Image(systemName: imageName)
                     .resizable()
                     .scaledToFit()
+                    .foregroundStyle(.white)
                     .frame(width: 25, height: 25, alignment: .center)
                 Text(title)
                     .font(.system(size: 12, weight: .regular))
+                    .foregroundStyle(.white)
             }
         })
-        .frame(width: 90, height: 80)
-        .background(Color.white)
-        .cornerRadius(8)
-        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
+        .frame(width: 90, height: 90)
+        .background(Color.buttonbackground)
+        .cornerRadius(45)
+        .overlay(
+            RoundedRectangle(cornerRadius: 45)
+                .stroke(LinearGradient(
+                    gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ), lineWidth: 4)
+                .blur(radius: 2)
+        )
         .accentColor(.black)
         .foregroundColor(.black)
         .font(.system(size: 20))
         .padding(.bottom)
+        .onAppear {borderAnimationViewModel.startColorAnimation()}
+        .onDisappear {borderAnimationViewModel.stopColorAnimation()}
+        
     }
     
     private func getUserTrails() {

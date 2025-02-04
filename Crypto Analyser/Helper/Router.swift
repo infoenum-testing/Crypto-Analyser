@@ -55,7 +55,7 @@ final class Router: ObservableObject {
         case searchCoin
         case searchView(symbol:String)
         case imageAnalyser(image: UIImage,fromSearch: Bool)
-        case dataDescription(image: UIImage,afterAnalyse:Bool,title: String?, message: String)
+        case dataDescription(image: UIImage,afterAnalyse:Bool,confidenceLevel: String, message: String)
         case subscription
 
         // Custom hashable implementation
@@ -78,10 +78,10 @@ final class Router: ObservableObject {
             case .imageAnalyser(let image,let fromSearch):
                 hasher.combine(image.pngData()?.hashValue ?? 0)
                 hasher.combine(fromSearch)
-            case .dataDescription(let image,let afterAnalyse, let title, let message):
+            case .dataDescription(let image,let afterAnalyse, let confidenceLevel, let message):
                 hasher.combine(image.pngData()?.hashValue ?? 0)
                 hasher.combine(afterAnalyse)
-                hasher.combine(title)
+                hasher.combine(confidenceLevel)
                 hasher.combine(message)
             case .subscription:
                 hasher.combine("subscription")

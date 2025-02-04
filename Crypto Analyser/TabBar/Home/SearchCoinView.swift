@@ -21,9 +21,10 @@ struct SearchCoinView: View {
                     router.navigateBackInAuth()
                 }, label: {
                     Image(.back)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 })
                 searchBarView
+                    .padding(.leading,5)
             }
             .padding(.horizontal, 20)
             if let coins , !coins.isEmpty{
@@ -49,10 +50,12 @@ struct SearchCoinView: View {
                     ProgressView()
                         .controlSize(.large)
                         .foregroundColor(.white)
+                        .tint(Color.pink)
                     Spacer()
                 }
             }
         }
+        .background(Color.themecolor)
         .onAppear {
             searchText = ""
             refreshUI()
@@ -61,8 +64,8 @@ struct SearchCoinView: View {
             if !value.isEmpty {
                 viewModel.fetchReferenceCurrencies(search: value) { result in
                     switch result {
-                    case .success(let currencies):
-                        coins = currencies.map { from(currency: $0) }
+                    case .success(let data):
+                        coins = data.data.coins
                     case .failure(let error):
                         showAlert = true
                         alertMessage = "\(error.localizedDescription)"
@@ -94,48 +97,33 @@ struct SearchCoinView: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .resizable()
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.white)
                     .frame(width: 18, height: 18)
                     .padding(.horizontal,5)
-                TextField("Search...", text: $searchText)
-                //              .focused($isTextFieldFocused)
+                TextField("", text: $searchText)
                     .autocorrectionDisabled()
+                    .accentColor(.white)
+                    .foregroundColor(.white)
+                    .placeholder(when: $searchText.wrappedValue.isEmpty) {
+                        Text("Search...")
+                            .foregroundColor(.gray)
+                    }
                 if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                     Button {
                         searchText = ""
                     } label: {
                         Image(systemName: "multiply.circle")
                             .resizable()
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.white)
                             .frame(width: 18, height: 18)
                             .padding(.horizontal,5)
                     }
                 }
             }.padding(8)
-        }.background(Color(.systemGray6))
+        }.background(Color(.cellcolor))
             .cornerRadius(10)
     }
-    
-    func from(currency: Currency) -> Coin {
-        return Coin(
-            uuid: currency.uuid,
-            symbol: currency.symbol,
-            name: currency.name,
-            color: nil,  // No corresponding value in Currency
-            iconURL: currency.iconUrl,
-            marketCap: nil, // No corresponding value
-            price: nil, // No corresponding value
-            listedAt: nil, // No corresponding value
-            tier: nil, // No corresponding value
-            change: nil, // No corresponding value
-            rank: nil, // No corresponding value
-            sparkline: nil, // No corresponding value
-            lowVolume: nil, // No corresponding value
-            coinRankingURL: nil, // No corresponding value
-            btcPrice: nil, // No corresponding value
-            contractAddresses: nil // No corresponding value
-        )
-    }
+
 }
 
 #Preview {
@@ -145,7 +133,6 @@ struct SearchCoinView: View {
 struct CoinRowView: View {
     let coin:Coin
     var body: some View {
-        
         VStack{
             HStack {
                 ZStack {
@@ -166,27 +153,46 @@ struct CoinRowView: View {
                 .padding(.trailing,20)
                 VStack {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(coin.symbol)
-                        //                            .font(.Roboto(size: 16, weight: .semibold ))
-                        //                            .foregroundColor(.appBlackColor)
-                            .padding(.bottom,5)
                         Text(coin.name)
-                        //                            .font(.Roboto(size: 14, weight: .regular))
-                            .foregroundColor(.black).opacity(0.5)
+                            .foregroundStyle(.white)
+                            .padding(.bottom,5)
+                            .font(.system(size: 17, weight: .semibold))
+                        Text(coin.symbol)
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .regular))
                     }
                     .padding(.top,5)
                 }.frame(height: 50)
                 Spacer()
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
+                if let priceStr = coin.price,let price = Double(priceStr) {
+                    let formattedStr = price >= 1 ? String(format: "%.2f", price) : String(format: "%.7f", price)
+                    VStack(alignment: .trailing,spacing:2) {
+                        HStack(spacing:3) {
+                            Text("$")
+                                .foregroundStyle(.white)
+                                .padding(.bottom,5)
+                                .font(.system(size: 18, weight: .semibold))
+                            
+                            Text(formattedStr)
+                                .foregroundStyle(.blue)
+                                .padding(.bottom,5)
+                                .font(.system(size: 18, weight: .semibold))
+                        }
+                        if let change = coin.change ,let price = Double(change){
+                            Text(change)
+                                .foregroundStyle(price < 0 ? .red : .green)
+                                .font(.system(size: 18, weight: .semibold))
+                                .multilineTextAlignment(.trailing)
+                                 
+                        }
+                    }
+                }
             }
             .padding(.horizontal)
             .padding(.vertical,5)
         }
-        .frame(height: 55)
-        .background(.white)
+        .frame(height: 60)
+        .background(.cellcolor)
         .cornerRadius(16)
-        .shadow(color: Color.gray.opacity(0.4), radius: 4, x: 0, y: 4)
-        
     }
 }
