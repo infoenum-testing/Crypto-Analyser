@@ -29,11 +29,13 @@ struct SearchCoinView: View {
             .padding(.horizontal, 20)
             if let coins , !coins.isEmpty{
                 ScrollView(showsIndicators: false) {
-                    ForEach(coins, id: \.symbol) { coin in
-                        CoinRowView(coin: coin)
-                            .onTapGesture {
-                                router.navigateToAuth(.searchView(symbol: coin.symbol))
-                            }
+                    VStack {
+                        ForEach(coins, id: \.symbol) { coin in
+                            CoinRowView(coin: coin)
+                                .onTapGesture {
+                                    router.navigateToAuth(.searchView(symbol: coin.symbol))
+                                }
+                        }
                     }
                     .padding(.top,2)
                     .padding(.horizontal,20)
@@ -132,25 +134,43 @@ struct SearchCoinView: View {
 
 struct CoinRowView: View {
     let coin:Coin
+    @State private var isLoading = true
     var body: some View {
         VStack{
             HStack {
-                ZStack {
-                    HStack {
-                        AsyncImage(url: URL(string: coin.iconURL)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ZStack {
-                                Color.gray
-                                ProgressView()
-                            }
-                        }
-                        .scaledToFill()
-                        .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                    }
-                }
-                .padding(.trailing,20)
+                HStack {
+                    if let url = URL(string: coin.iconURL) {
+                               if url.pathExtension.lowercased() == "svg" {
+                                   ZStack {
+                                       SVGWebView(url: url, isLoading: $isLoading)
+                                           .frame(width: 45, height: 45)
+                                           .clipShape(Circle())
+                                       
+                                       if isLoading {
+                                           ZStack {
+                                               Color.gray
+                                               ProgressView()
+                                           }
+                                           .frame(width: 45, height: 45)
+                                           .clipShape(Circle())
+                                       }
+                                   }
+                               } else {
+                                   AsyncImage(url: url) { image in
+                                       image.resizable()
+                                   } placeholder: {
+                                       ZStack {
+                                           Color.gray
+                                           ProgressView()
+                                       }
+                                   }
+                                   .scaledToFill()
+                                   .frame(width: 45, height: 45)
+                                   .clipShape(Circle())
+                               }
+                           }
+                       }
+                       .padding(.trailing, 10)
                 VStack {
                     VStack(alignment: .leading, spacing: 0) {
                         Text(coin.name)
@@ -196,3 +216,4 @@ struct CoinRowView: View {
         .cornerRadius(16)
     }
 }
+

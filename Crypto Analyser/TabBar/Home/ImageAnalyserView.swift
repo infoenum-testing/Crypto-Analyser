@@ -134,11 +134,10 @@ struct ImageAnalyserView: View {
                     withAnimation {
                         isDataFound = true
                     }
-                    
-                    FirebaseAuthentication.shared.updateTrial(email: email, trail: UserSessionManager.getUserTrail() + 1) { result in
+                    let trail = FirebaseAuthentication.shared.trail ?? 0
+                    FirebaseAuthentication.shared.updateTrial(email: email, trail:  trail + 1) { result in
                         print(result)
                     }
-                    UserSessionManager.saveUserTrail(count: UserSessionManager.getUserTrail() + 1)
                 }
                 
             case .failure(let error):

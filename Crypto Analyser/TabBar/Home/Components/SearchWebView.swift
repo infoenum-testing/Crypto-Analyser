@@ -12,7 +12,7 @@ struct SearchWebView: View {
     @Binding var screenshot: UIImage?
     @Binding var capture: Bool
     let symbol:String
-//    var htmlContent =
+    //    var htmlContent =
     var body: some View {
         VStack {
             ChartWebView(htmlContent: """
@@ -57,10 +57,10 @@ struct SearchWebView: View {
     </body>
     </html>
     """)
-                .edgesIgnoringSafeArea(.all)
-                .onChange(of: capture, perform: { _ in
-                    captureScreenshot()
-                })
+            .edgesIgnoringSafeArea(.all)
+            .onChange(of: capture, perform: { _ in
+                captureScreenshot()
+            })
         }
         .background(Color.themecolor)
     }
@@ -95,6 +95,8 @@ struct ChartWebView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
         return webView
     }
     

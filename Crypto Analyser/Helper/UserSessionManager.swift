@@ -79,11 +79,4 @@ class UserSessionManager {
         }
         return nil
     }
-    
-    static func saveUserTrail(count: Int) {
-        UserDefaults.standard.set(count, forKey: Keys.trail)
-    }
-    static func getUserTrail() -> Int {
-        return UserDefaults.standard.integer(forKey: Keys.trail)
-    }
 }

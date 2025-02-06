@@ -11,6 +11,7 @@ struct HomeView: View {
     enum AlertType {
         case delete
         case purchase
+        case error
     }
     @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
@@ -25,6 +26,8 @@ struct HomeView: View {
     @State private var resentSearches:[SearchDetails] = []
     @State private var showAlert = false
     @State private var itemToDelete: SearchDetails?
+    @State private var alertType: AlertType = .delete
+    @State private var alertMessage = ""
     @State private var trail:Int?
     
     @StateObject var viewModel = ChatGPTData()
@@ -40,11 +43,15 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 25, weight: .semibold))
                         Spacer()
+                        if subscriptionsManager.isPlanActive == nil || trail == nil {
+                            ProgressView()
+                                .tint(Color.themecolor)
+                        }
                     }
                     HStack {
-                        //                        Spacer()
+                        //   Spacer()
                         customButton(imageName: "camera", title: StringConstants.takeAPic, action: {
-                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 isCamera = true
                             } else {
                                 showAlert = true
@@ -68,7 +75,7 @@ struct HomeView: View {
                             .lineLimit(1)
                             .frame(maxWidth: .infinity)
                         customButton(imageName: "magnifyingglass", title: StringConstants.searchForCoin, action: {
-                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 router.navigateToAuth(.searchCoin)
                             } else {
                                 showAlert = true
@@ -167,6 +174,7 @@ struct HomeView: View {
             }
             
         }
+        .disabled(subscriptionsManager.isPlanActive == nil || trail == nil)
         .background(Color.themecolor)
         .onAppear {
             fetchCoins()
@@ -234,10 +242,53 @@ struct HomeView: View {
             switch result {
             case .success(let trialCount):
                 self.trail = trialCount
-                UserSessionManager.saveUserTrail(count: trialCount)
+                FirebaseAuthentication.shared.trail = trialCount
             case .failure(let error):
-                self.trail = 0
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
+            
                 print("Error fetching trial: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private  func fetchRecentSearches() {
+        recentSearchIsLoading = true
+        let email = UserSessionManager.getUserData().email
+        FireBaseResentSearches.shared.fetchRecentSearches(for: email) { result in
+            recentSearchIsLoading = false
+            switch result {
+            case .success(let recentSearches):
+                self.resentSearches = recentSearches.sorted(by: { $0.date > $1.date })
+            case .failure(let error):
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
+                print("Failed to fetch recent searches: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func removeRecentSearch(id:String) {
+        let email = UserSessionManager.getUserData().email
+        FireBaseResentSearches.shared.removeRecentSearch(for: email, documentID: id) { result in
+            switch result {
+            case .success:
+                removeItem(withId: id)
+            case .failure(let error):
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
+                print("Failed to remove recent search: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func removeItem(withId id: String) {
+        if let index = resentSearches.firstIndex(where: { $0.id == id }) {
+            withAnimation {
+                resentSearches.remove(at: index)
             }
         }
     }

@@ -66,8 +66,9 @@ class GoogleSignInManager {
                 // Extract user information (e.g., name, email) from the Firebase user
                 let name = user.displayName ?? "Unknown"  // Optional, might be nil
                 let email = user.email ?? "No email"     // Optional, might be nil
-                
+                let trail = 0
                 self.db.collection("users").document(email).setData([
+                    "Trial": trail,
                     "name": name,
                     "uid": user.uid
                 ]) { error in
