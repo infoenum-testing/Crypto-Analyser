@@ -38,6 +38,7 @@ struct SignUpView: View {
                             .padding(.top, 10)
                         Spacer()
                     }
+                    
                     .padding(.horizontal, 20)
                     VStack {
                         formField(title: StringConstants.nameTitle, text: $name, focusedField: .nameField, placeholder: StringConstants.nameTitle)

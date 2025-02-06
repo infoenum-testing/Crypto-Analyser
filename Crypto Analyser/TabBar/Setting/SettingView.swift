@@ -187,6 +187,7 @@ struct SettingView: View {
                   ProgressView()
                         .tint(.pink)
                         .frame(width: 15, height: 20)
+                        .padding(.trailing)
                 } else {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.gray)

@@ -129,6 +129,7 @@ final class FirebaseAppleLoginViewModel: NSObject,ObservableObject {
             } else {
                 // Document does not exist, add it to Firestore
                 userDocument.setData([
+                    "Trial":0,
                     "name": name,
                     "uid": uid
                 ]) { error in

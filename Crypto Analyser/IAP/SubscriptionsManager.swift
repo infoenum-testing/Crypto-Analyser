@@ -161,6 +161,8 @@ extension SubscriptionsManager {
                self.entitlementManager?.hasPro = !self.purchasedProductIDs.isEmpty
                self.returnPurchaseTitle()
                 })
+        } else {
+            self.isPlanActive = false
         }
        
        

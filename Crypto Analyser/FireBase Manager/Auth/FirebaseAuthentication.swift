@@ -13,6 +13,7 @@ import GoogleSignIn
 class FirebaseAuthentication {
     static let shared = FirebaseAuthentication()
     let db = Firestore.firestore()
+    var trail:Int = 0
     
     func registerUser(email: String, password: String, name: String, completion: @escaping (Result<Void, Error>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -28,6 +29,7 @@ class FirebaseAuthentication {
             
             let userEmail = user.email ?? ""
             self.db.collection("users").document(userEmail).setData([
+                "Trial": 0,
                 "name": name,
                 "uid": user.uid
             ]) { error in
@@ -155,7 +157,7 @@ class FirebaseAuthentication {
                 if let trial = document.data()?["Trial"] as? Int {
                     completion(.success(trial))
                 } else {
-                    completion(.failure(NSError(domain: "Firestore", code: -1, userInfo: [NSLocalizedDescriptionKey: "Trial field not found or invalid"])))
+                    completion(.failure(NSError(domain: "Firestore", code: -1, userInfo: [NSLocalizedDescriptionKey: "Not found"])))
                 }
             } else {
                 completion(.failure(NSError(domain: "Firestore", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document does not exist"])))

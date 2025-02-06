@@ -11,6 +11,7 @@ struct HomeView: View {
     enum AlertType {
         case delete
         case purchase
+        case error
     }
     @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
@@ -25,6 +26,7 @@ struct HomeView: View {
     @State private var showAlert = false
     @State private var itemToDelete: SearchDetails?
     @State private var alertType: AlertType = .delete
+    @State private var alertMessage = ""
     @State private var trail:Int?
     @StateObject var viewModel = ChatGPTData()
     
@@ -39,11 +41,15 @@ struct HomeView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 25, weight: .semibold))
                         Spacer()
+                        if subscriptionsManager.isPlanActive == nil || trail == nil {
+                            ProgressView()
+                                .tint(Color.themecolor)
+                        }
                     }
                     HStack {
-                        //                        Spacer()
+                        //   Spacer()
                         customButton(imageName: "camera", title: StringConstants.takeAPic, action: {
-                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 isCamera = true
                             } else {
                                 showAlert = true
@@ -69,7 +75,7 @@ struct HomeView: View {
                             .lineLimit(1)
                             .frame(maxWidth: .infinity)
                         customButton(imageName: "magnifyingglass", title: StringConstants.searchForCoin, action: {
-                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
+                            if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 router.navigateToAuth(.searchCoin)
                             } else {
                                 showAlert = true
@@ -216,7 +222,7 @@ struct HomeView: View {
                             itemToDelete = nil
                         }
                     )
-                } else {
+                } else if alertType == .purchase  {
                     Alert(
                         title: Text("Free Trial Ended"),
                         message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
@@ -225,9 +231,16 @@ struct HomeView: View {
                         },
                         secondaryButton: .cancel(Text("Cancel"))
                     )
+                } else {
+                    Alert(
+                        title: Text(StringConstants.error),
+                        message: Text(alertMessage),
+                        dismissButton: .default(Text("OK"), action: {})
+                    )
                 }
             }
         }
+        .disabled(subscriptionsManager.isPlanActive == nil || trail == nil)
         .background(Color.themecolor)
         .onAppear {
             fetchRecentSearches()
@@ -282,9 +295,12 @@ struct HomeView: View {
             switch result {
             case .success(let trialCount):
                 self.trail = trialCount
-                UserSessionManager.saveUserTrail(count: trialCount)
+                FirebaseAuthentication.shared.trail = trialCount
             case .failure(let error):
-                self.trail = 0
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
+            
                 print("Error fetching trial: \(error.localizedDescription)")
             }
         }
@@ -299,6 +315,9 @@ struct HomeView: View {
             case .success(let recentSearches):
                 self.resentSearches = recentSearches.sorted(by: { $0.date > $1.date })
             case .failure(let error):
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
                 print("Failed to fetch recent searches: \(error.localizedDescription)")
             }
         }
@@ -311,6 +330,9 @@ struct HomeView: View {
             case .success:
                 removeItem(withId: id)
             case .failure(let error):
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
                 print("Failed to remove recent search: \(error.localizedDescription)")
             }
         }
