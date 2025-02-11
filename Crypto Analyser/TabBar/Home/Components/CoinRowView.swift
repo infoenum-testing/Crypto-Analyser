@@ -15,22 +15,6 @@ struct CoinRowView: View {
             HStack {
                 HStack {
                     if let url = URL(string: coin.iconURL) {
-                        if url.pathExtension.lowercased() == "svg" {
-                            ZStack {
-                                SVGWebView(url: url, isLoading: $isLoading)
-                                    .frame(width: 45, height: 45)
-                                    .clipShape(Circle())
-                                
-                                if isLoading {
-                                    ZStack {
-                                        Color.gray
-                                        ProgressView()
-                                    }
-                                    .frame(width: 45, height: 45)
-                                    .clipShape(Circle())
-                                }
-                            }
-                        } else {
                             AsyncImage(url: url) { image in
                                 image.resizable()
                             } placeholder: {
@@ -42,7 +26,7 @@ struct CoinRowView: View {
                             .scaledToFill()
                             .frame(width: 45, height: 45)
                             .clipShape(Circle())
-                        }
+                        
                     }
                 }
                 .padding(.trailing, 10)

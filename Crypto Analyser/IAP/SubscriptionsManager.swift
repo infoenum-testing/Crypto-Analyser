@@ -17,7 +17,6 @@ class SubscriptionsManager: NSObject, ObservableObject, SKRequestDelegate {
     @Published  var selectedProduct: Product? = nil
     @Published var products: [Product] = []
     @Published var  title = "Continue"
-    @Published var isAlreadyPurchsedByOtherUser: Bool?
     @Published var latestPayload: SubscriptionPayload?
     @Published var isPlanActive: Bool?
     @Published var latestTransactionId: String?
@@ -82,7 +81,6 @@ extension SubscriptionsManager {
                 
                 
                 await transaction.finish()
-                callRefreshReceipt()
                 await saveTransactionToFirebase(transaction: payload)
                 await self.updatePurchasedProducts()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -158,10 +156,10 @@ extension SubscriptionsManager {
         if let payload = tempLatestPayload {
             checkIfTransactionExists(originalTransactionId: payload.originalTransactionId ?? "", userEmail: email) { exists in
                 if exists {
-                    self.isAlreadyPurchsedByOtherUser = true
+                    self.isPlanActive = false
+                    self.latestPayload = nil
                     print("Transaction already exists for another user!")
                 } else {
-                    self.isAlreadyPurchsedByOtherUser = false
                     print("Transaction is unique; proceed with saving.")
                     self.updateSubscriptionDetails(for: email, newSubscription: payload, completion: { result in
                         switch result {
@@ -174,7 +172,6 @@ extension SubscriptionsManager {
                                 self.isPlanActive = false
                             }
                         case .failure(_):
-                            print("update apple id")
                             self.isPlanActive = false
                             self.purchasedProductIDs.removeAll()
                             self.latestPayload = nil
@@ -193,16 +190,6 @@ extension SubscriptionsManager {
         let request = SKReceiptRefreshRequest(receiptProperties: nil)
         request.delegate = self // Make sure you implement SKRequestDelegate
         request.start()
-    }
-    
-    func callRefreshReceipt() {
-        Task {
-            do {
-                try await refreshReceipt()
-            } catch {
-                print("Error refreshing receipt: \(error.localizedDescription)")
-            }
-        }
     }
     
     func checkActiveSubscription() async -> Bool {

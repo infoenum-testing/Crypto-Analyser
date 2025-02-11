@@ -18,7 +18,6 @@ struct TabbarView: View {
                     Label("Home", systemImage: "house")
                 }
                 . task {
-                    subscriptionsManager.callRefreshReceipt()
                     await subscriptionsManager.updatePurchasedProducts()
                 }
             

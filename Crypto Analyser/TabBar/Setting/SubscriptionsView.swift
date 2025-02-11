@@ -15,6 +15,7 @@ struct SubscriptionsView: View {
     @EnvironmentObject var router: Router
     //  @State private var selectedProduct: Product? = nil
     @State private var subscriptionPayload: SubscriptionPayload?
+    @State private var isOnAppear: Bool = false
     @State private var isLoading: Bool = false
     @State private var isContinue: Bool = false
     @State private var isRestore: Bool = false
@@ -46,7 +47,7 @@ struct SubscriptionsView: View {
                 .onAppear {
                     Task {
                         await subscriptionsManager.loadProducts()
-                        print(subscriptionsManager.purchasedProductIDs)
+                        await subscriptionsManager.updatePurchasedProducts()
                         subscriptionsManager.returnPurchaseTitle()
                         subscriptionsManager.fetchActiveProducts(originalTransactionId: "2000000821674742", isSandbox: true) { result in
                             switch result {
@@ -73,7 +74,7 @@ struct SubscriptionsView: View {
     //                Image(systemName: "crown.fill")
     //                    .foregroundStyle(.yellow)
     //                    .font(Font.system(size: 100))
-    //    
+    //
     //                Text("You've Unlocked Pro Access")
     //                    .font(.system(size: 30.0, weight: .bold))
     //                    .multilineTextAlignment(.center)
