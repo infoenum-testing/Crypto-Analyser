@@ -13,6 +13,7 @@ struct HomeView: View {
         case purchase
         case error
     }
+    
     @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
     
@@ -213,8 +214,8 @@ struct HomeView: View {
             .alert(isPresented: $showAlert) {
                 if alertType == .delete {
                     Alert(
-                        title: Text("Delete?"),
-                        message: Text("Are you sure you want to delete search.."),
+                        title: Text(StringConstants.deleteSearch),
+                        message: Text(StringConstants.areYouSureYouWant),
                         primaryButton: .destructive(Text("Delete")) {
                             removeRecentSearch(id:itemToDelete?.id ?? "")
                         },
@@ -224,8 +225,8 @@ struct HomeView: View {
                     )
                 } else if alertType == .purchase  {
                     Alert(
-                        title: Text("Free Trial Ended"),
-                        message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
+                        title: Text(StringConstants.freeTrialEnded),
+                        message: Text(StringConstants.freeTrialEndedDes),
                         primaryButton: .default(Text("Buy Now")) {
                             router.navigateToAuth(.subscription)
                         },
@@ -300,7 +301,7 @@ struct HomeView: View {
                 alertType = .error
                 showAlert = true
                 alertMessage = "\(error.localizedDescription)"
-            
+                
                 print("Error fetching trial: \(error.localizedDescription)")
             }
         }

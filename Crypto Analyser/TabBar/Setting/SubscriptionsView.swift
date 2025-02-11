@@ -60,26 +60,27 @@ struct SubscriptionsView: View {
                     }
                 }
         }
-        .alert("Please select a product before purchasing.", isPresented: $emptyProductAlert) {
-            Button("OK", role: .cancel) { }
+        .alert(StringConstants.pleaseSelectProduct, isPresented: $emptyProductAlert) {
+            Button(StringConstants.ok, role: .cancel) { }
         }
         .background(Color.themecolor)
     }
     
     // MARK: - Views
-    private var hasSubscriptionView: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "crown.fill")
-                .foregroundStyle(.yellow)
-                .font(Font.system(size: 100))
-            
-            Text("You've Unlocked Pro Access")
-                .font(.system(size: 30.0, weight: .bold))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 30)
-        }
-        .ignoresSafeArea(.all)
-    }
+    
+    //        private var hasSubscriptionView: some View {
+    //            VStack(spacing: 20) {
+    //                Image(systemName: "crown.fill")
+    //                    .foregroundStyle(.yellow)
+    //                    .font(Font.system(size: 100))
+    //    
+    //                Text("You've Unlocked Pro Access")
+    //                    .font(.system(size: 30.0, weight: .bold))
+    //                    .multilineTextAlignment(.center)
+    //                    .padding(.horizontal, 30)
+    //            }
+    //            .ignoresSafeArea(.all)
+    //        }
     
     private var subscriptionOptionsView: some View {
         VStack(alignment: .center, spacing: 12.5) {
@@ -90,22 +91,25 @@ struct SubscriptionsView: View {
                         VStack(spacing:20) {
                             VStack {
                                 HStack {
-                                    Text("Status")
+                                    Text(StringConstants.status)
                                         .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
                                         ProgressView()
                                     } else {
                                         if let subscriptionPayload = subscriptionsManager.latestPayload , let _ = subscriptionPayload.productId , let dateStr = subscriptionPayload.subscriptionEndDate , let date = convertToDate(from: dateStr) ,date >= Date(){
-                                            Text("Active")
+                                            Text(StringConstants.active)
                                                 .foregroundStyle(.pink)
                                                 .onAppear {
                                                     print(date)
                                                     print(Date())
                                                 }
                                         } else {
-                                            Text("Inactive")
+                                            Text(StringConstants.inActive)
                                                 .foregroundStyle(.pink)
+                                                .task {
+                                                    await subscriptionsManager.updatePurchasedProducts()
+                                                }
                                         }
                                     }
                                 }
@@ -114,7 +118,7 @@ struct SubscriptionsView: View {
                             }
                             VStack {
                                 HStack {
-                                    Text("Plan")
+                                    Text(StringConstants.plan)
                                         .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
@@ -122,14 +126,14 @@ struct SubscriptionsView: View {
                                     } else {
                                         if let subscriptionPayload = subscriptionsManager.latestPayload, let plane = subscriptionPayload.productId {
                                             if plane == IAPConstants.Products.monthlySubscription {
-                                                Text("Monthly")
+                                                Text(StringConstants.monthly)
                                                     .foregroundStyle(.pink)
                                             } else {
-                                                Text("Yearly")
+                                                Text(StringConstants.yearly)
                                                     .foregroundStyle(.pink)
                                             }
                                         } else {
-                                            Text("Free")
+                                            Text(StringConstants.free)
                                                 .foregroundStyle(.pink)
                                         }
                                     }
@@ -140,17 +144,17 @@ struct SubscriptionsView: View {
                             }
                             VStack {
                                 HStack {
-                                    Text("Renew Date")
+                                    Text(StringConstants.renewDate)
                                         .foregroundStyle(.white)
                                     Spacer()
                                     if isLoading {
                                         ProgressView()
                                     } else {
                                         if let subscriptionPayload  = subscriptionsManager.latestPayload, let date = subscriptionPayload.subscriptionEndDate {
-                                            Text(formatDate(from: date) ?? "None")
+                                            Text(formatDate(from: date) ?? StringConstants.none)
                                                 .foregroundStyle(.pink)
                                         } else {
-                                            Text("None")
+                                            Text(StringConstants.none)
                                                 .foregroundStyle(.pink)
                                         }
                                     }
@@ -167,10 +171,10 @@ struct SubscriptionsView: View {
                             purchaseButtonView
                                 .padding(.top,20)
                                 .alert(isPresented: $isShowAlert) {
-                                    Alert(title: Text("Purchase Alert"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                                    Alert(title: Text(StringConstants.purchaseAlert), message: Text(alertMessage), dismissButton: .default(Text(StringConstants.ok)))
                                 }
                             
-                            Button("Restore Purchases") {
+                            Button(StringConstants.restorePurchases) {
                                 Task {
                                     isRestore = true
                                     await subscriptionsManager.restorePurchases()
@@ -234,7 +238,7 @@ struct SubscriptionsView: View {
     
     private var proAccessView: some View {
         HStack() {
-            Text("Subscription")
+            Text(StringConstants.subscription)
                 .foregroundStyle(.white)
                 .font(.system(size: 33.0, weight: .bold))
                 .multilineTextAlignment(.center)
@@ -253,12 +257,10 @@ struct SubscriptionsView: View {
             } else {
                 SubscriptionItemView(product: product, selectedProduct: $subscriptionsManager.selectedProduct)
             }
-            
         }
         .scrollDisabled(true)
         .listStyle(.plain)
         .listRowSpacing(2.5)
-        
     }
     
     private func convertToDate(from dateString: String) -> Date? {
@@ -275,11 +277,11 @@ struct SubscriptionsView: View {
             
             HStack {
                 Button {
-                    if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                    if let url = URL(string: StringConstants.privacyPolicyURL) {
                         UIApplication.shared.open(url)
                     }
                 } label: {
-                    Text("Terms & Conditions")
+                    Text(StringConstants.termsAndConditions)
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
                         .frame(height: 15, alignment: .center)
                         .foregroundColor(.white)
@@ -288,11 +290,11 @@ struct SubscriptionsView: View {
                 Spacer()
                 
                 Button {
-                    if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                    if let url = URL(string: StringConstants.privacyPolicyURL) {
                         UIApplication.shared.open(url)
                     }
                 } label: {
-                    Text("Privacy Policy")
+                    Text(StringConstants.privacyPolicy)
                         .font(.system(size: 14.0, weight: .regular, design: .rounded))
                         .frame(height: 15, alignment: .center)
                         .foregroundColor(.white)
@@ -308,7 +310,7 @@ struct SubscriptionsView: View {
             if let selectedProduct = subscriptionsManager.selectedProduct {
                 if let  _ = subscriptionsManager.latestTransactionId ,subscriptionsManager.latestPayload == nil  {
                     isShowAlert = true
-                    alertMessage = "This item has already been purchased by another user from this Apple ID"
+                    alertMessage = StringConstants.alreadyPurchasedDes
                 } else {
                     Task {
                         isContinue = true
@@ -374,7 +376,7 @@ struct SubscriptionsView: View {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 8.5) {
-                        Text(product.displayName == "AutoRenewableOneYear" ? "Yearly" : "Monthly")
+                        Text(product.displayName == "AutoRenewableOneYear" ? StringConstants.yearly : StringConstants.monthly)
                             .foregroundStyle(.white)
                             .font(.system(size: 18.0, weight: .semibold, design: .rounded))
                             .multilineTextAlignment(.leading)
@@ -402,6 +404,7 @@ struct SubscriptionsView: View {
         }
     }
 }
+
 //#Preview {
 //    SubscriptionsView()
 //}

@@ -36,7 +36,7 @@ struct EditProfileView: View {
                             .foregroundColor(.white)
                     })
                     Spacer()
-                    Text("Edit Profile")
+                    Text(StringConstants.editProfile)
                         .foregroundStyle(Color.white)
                         .font(.system(size: 25, weight: .semibold))
                     
@@ -141,7 +141,7 @@ struct EditProfileView: View {
             }
         }, label: {
             HStack {
-                Text("Save")
+                Text(StringConstants.save)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
             }

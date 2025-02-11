@@ -109,7 +109,7 @@ struct ForgotPassword: View {
                     Button(action: {
                         KeyboardUtility.hideKeyboard()
                     }, label: {
-                        Text("Done")
+                        Text(StringConstants.done)
                             .foregroundStyle(.blue)
                             .font(.system(size: 18, weight: .regular))
                             

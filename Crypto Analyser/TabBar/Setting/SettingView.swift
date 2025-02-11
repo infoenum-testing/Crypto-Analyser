@@ -37,7 +37,7 @@ struct SettingView: View {
                     VStack {
                         HStack(spacing:5) {
                             VStack(alignment: .leading) {
-                                let name = UserSessionManager.getUserData().name 
+                                let name = UserSessionManager.getUserData().name
                                 Text(name)
                                     .foregroundColor(.white)
                                     .font(.system(size: 22, weight: .semibold))
@@ -72,7 +72,7 @@ struct SettingView: View {
                                 .foregroundColor(.white)
                                 .font(.system(size: 22, weight: .semibold))
                             
-                            CommonCell(title: "Edit Profile",action: {
+                            CommonCell(title: StringConstants.editProfile,action: {
                                 router.navigateToAuth(.editProfile)
                             })
                             if UserSessionManager.getUserData().loginBy == .gmail {
@@ -84,7 +84,7 @@ struct SettingView: View {
                                     alertButtonText = StringConstants.sendEmail
                                 })
                             }
-                            CommonCell(title: "Subscriptions",action: {
+                            CommonCell(title: StringConstants.subscriptions,action: {
                                 router.navigateToAuth(.subscription)
                             })
                         }
@@ -96,19 +96,19 @@ struct SettingView: View {
                                 .font(.system(size: 22, weight: .semibold))
                             
                             CommonCell(title: StringConstants.privacyPolicy,action: {
-                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                                if let url = URL(string: StringConstants.privacyPolicyURL) {
                                     UIApplication.shared.open(url)
                                 }
                             })
                             
                             CommonCell(title: StringConstants.termsAndConditions,action: {
-                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                                if let url = URL(string: StringConstants.privacyPolicyURL) {
                                     UIApplication.shared.open(url)
                                 }
                             })
                             
                             CommonCell(title: StringConstants.helpAndSupport,action: {
-                                if let url = URL(string: "https://loremipsum.io/privacy-policy") {
+                                if let url = URL(string: StringConstants.privacyPolicyURL) {
                                     UIApplication.shared.open(url)
                                 }
                             })
@@ -184,7 +184,7 @@ struct SettingView: View {
                     .padding()
                 Spacer()
                 if isLoading {
-                  ProgressView()
+                    ProgressView()
                         .tint(.pink)
                         .frame(width: 15, height: 20)
                         .padding(.trailing)
@@ -221,7 +221,7 @@ struct SettingView: View {
                 UserSessionManager.clearUserData()
             }
         }
-       
+        
     }
 }
 

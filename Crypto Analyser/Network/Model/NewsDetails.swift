@@ -38,8 +38,8 @@ struct CryptoNewsResponse: Codable {
     let data: [NewsDetails]
 }
 
-func fetchCryptoNews(section: String = "general", items: Int = 10, page: Int = 1, apiKey: String = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu", completion: @escaping (Result<[NewsDetails], Error>) -> Void) {
-    var components = URLComponents(string: "https://cryptonews-api.com/api/v1/category")
+func fetchCryptoNews(section: String = "general", items: Int = 10, page: Int = 1, apiKey: String = StringConstants.newsApiToken, completion: @escaping (Result<[NewsDetails], Error>) -> Void) {
+    var components = URLComponents(string: StringConstants.newsApiUrl)
     
     components?.queryItems = [
         URLQueryItem(name: "section", value: section),

@@ -84,6 +84,7 @@ struct AccountInformationView: View {
            
         }
     }
+    
     private func CommonCell(title: String,textColor:Color = .black, placeholder: String = "Type here", action: @escaping () -> Void) -> some View {
         Button(action: action) {
             HStack {
@@ -105,7 +106,7 @@ struct AccountInformationView: View {
             .font(.system(size: 20))
             .padding(.bottom)
         }
-        .buttonStyle(PlainButtonStyle()) // Removes default button appearance
+        .buttonStyle(PlainButtonStyle()) 
     }
 }
 

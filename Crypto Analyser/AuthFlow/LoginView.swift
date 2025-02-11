@@ -161,7 +161,7 @@ struct LoginView: View {
                     Button(action: {
                        activeField = nil
                     }, label: {
-                        Text("Done")
+                        Text(StringConstants.done)
                             .foregroundStyle(.blue)
                             .font(.system(size: 18, weight: .regular))
                     })

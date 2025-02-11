@@ -37,7 +37,7 @@ struct ImageAnalyserView: View {
                         .foregroundColor(.white)
                 })
                 Spacer()
-                Text("Analysed Result")
+                Text(StringConstants.analysedResult)
                     .foregroundStyle(.white)
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()
@@ -102,9 +102,9 @@ struct ImageAnalyserView: View {
         .background(Color.themecolor)
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text("Message"),
+                title: Text(StringConstants.message),
                 message: Text(alertMessage),
-                dismissButton: .default(Text("OK"), action: {
+                dismissButton: .default(Text(StringConstants.ok), action: {
                     router.navigateBackInAuth()
                 })
             )

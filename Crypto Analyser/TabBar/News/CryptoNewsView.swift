@@ -20,7 +20,7 @@ struct CryptoNewsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing:1) {
-            Text("Crypto News")
+            Text(StringConstants.cryptoNews)
                 .foregroundStyle(.white)
                 .font(.system(size: 25, weight: .semibold))
                 .padding(.leading,20)
@@ -42,7 +42,7 @@ struct CryptoNewsView: View {
                     LazyVStack(alignment: .leading,spacing:15) {
                         ForEach(newsData.indices, id: \.self) { index in
                             let news = newsData[index]
-                            newsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "", newsUrlAction: {
+                            NewsCellView(imageUrl: news.imageUrl ?? "", title: news.title ?? "", newsUrl: news.newsUrl ?? "", des: news.text ?? "", newsUrlAction: {
                                 if let urlStr = news.newsUrl {
                                     viewModel.selectedNewsUrl = urlStr
                                     if !viewModel.selectedNewsUrl.isEmpty{
@@ -77,7 +77,7 @@ struct CryptoNewsView: View {
             Alert(
                 title: Text(StringConstants.error),
                 message: Text(alertMessage),
-                dismissButton: .default(Text("OK"), action: {})
+                dismissButton: .default(Text(StringConstants.ok), action: {})
             )
         }
     }
@@ -101,38 +101,5 @@ struct CryptoNewsView: View {
 
 #Preview {
     CryptoNewsView()
-}
-
-struct newsCellView: View {
-    let imageUrl: String
-    let title: String
-    let newsUrl: String
-    let des: String
-    var newsUrlAction:() -> Void
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack(alignment: .top) {
-                AsyncImage(url: URL(string: imageUrl)) { image in
-                    image.resizable()
-                } placeholder: {
-                    Color.gray
-                }
-                .frame(width: 150, height: 100)
-                .clipShape(.rect(cornerRadius: 0))
-                Text(title)
-                    .foregroundStyle(.orange)
-                    .onTapGesture {
-                        newsUrlAction()
-                    }
-                    .padding(5)
-                    .frame(maxWidth: .infinity)
-            }
-            Text(des)
-                .foregroundStyle(.white)
-        }
-        .padding(8)
-        .background(Color.cellcolor)
-        .cornerRadius(8)
-    }
 }
 
