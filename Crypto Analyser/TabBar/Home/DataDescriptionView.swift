@@ -24,7 +24,7 @@ struct DataDescriptionView: View {
                         .foregroundColor(.white)
                 })
                 Spacer()
-                Text("Analysed Result")
+                Text(StringConstants.analysedResult)
                     .foregroundColor(.white)
                     .font(.system(size: 25, weight: .semibold))
                 Spacer()

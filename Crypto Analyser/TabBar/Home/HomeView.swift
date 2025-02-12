@@ -13,6 +13,7 @@ struct HomeView: View {
         case purchase
         case error
     }
+    
     @EnvironmentObject var subscriptionsManager: SubscriptionsManager
     @EnvironmentObject var router: Router
     
@@ -247,7 +248,7 @@ struct HomeView: View {
                 alertType = .error
                 showAlert = true
                 alertMessage = "\(error.localizedDescription)"
-            
+                
                 print("Error fetching trial: \(error.localizedDescription)")
             }
         }

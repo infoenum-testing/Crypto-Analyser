@@ -10,5 +10,5 @@ import Foundation
 class CryptoNewsViewModel:ObservableObject {
     
     @Published  var selectedNewsUrl: String = ""
-
+    
 }

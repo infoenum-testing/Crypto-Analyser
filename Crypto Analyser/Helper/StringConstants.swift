@@ -10,9 +10,22 @@ import UIKit
 
 struct StringConstants {
     static let cryptoAnalyser = "CryptoAnalyser"
+    
     static let chatGPTApiUrl = "https://api.openai.com/v1/chat/completions"
     static let newsApiUrl = "https://cryptonews-api.com/api/v1/category"
     static let newsApiToken = "yhck3vg1nq37g8djvm0qfhp7xlmwdztqd6i9qgzu"
+    static let privacyPolicyURL = "https://loremipsum.io/privacy-policy"
+    
+    // Alart
+    static let message = "Message"
+    static let ok = "OK"
+    static let deleteSearch = "Delete?"
+    static let areYouSureYouWant = "Are you sure you want to delete search.."
+    static let freeTrialEnded = "Free Trial Ended"
+    static let freeTrialEndedDes = "You've used all 3 free trials. Unlock full access by purchasing the feature."
+    static let pleaseSelectProduct = "Please select a product before purchasing."
+    static let purchaseAlert = "Purchase Alert"
+    static let alreadyPurchasedDes = "This item has already been purchased by another user from this Apple ID"
     
     // Sign Up
     static let signUpTitle = "Sign Up"
@@ -32,6 +45,7 @@ struct StringConstants {
     static let alreadyHaveAnAccount = "Already have an account?"
     static let orText = "Or"
     static let oKText = "OK"
+   
     
     // Login
     static let loginTitle = "Login"
@@ -40,6 +54,7 @@ struct StringConstants {
     static let doNotHaveAccount = "Don't have an account?"
     static let invalidEmailError = "Invalid email address"
     static let passwordEmptyError = "Password cannot be empty."
+    static let done = "Done"
     
     // Forgot Password
     static let forgotPasswordTitle = "Forgot Password"
@@ -58,11 +73,20 @@ struct StringConstants {
     static let searchForCoin = "Search for a coin"
     static let recentSearches = "Recent Searches"
     static let qualityCoins = "Quality Coins"
+    static let analysedResult = "Analysed Result"
+    static let noDataAvailable = "No Data Availble"
+    static let search_ = "Search..."
+    static let searchCoin = "Search Coin"
+    static let analyse = "Analyse"
+    
     
     // ImageAnalyse
     static let invalid = "Invalid"
     static let invalidImageAlertMessage = "The provided image is not a crypto chart. Please upload a valid crypto chart for analysis."
     static let error = "Error"
+    
+    // News
+    static let cryptoNews = "Crypto News"
     
     // Setting
     static let deleteAccount = "Delete Account"
@@ -83,7 +107,22 @@ struct StringConstants {
     static let termsAndConditions = "Terms & Conditions"
     static let helpAndSupport = "Help & support"
     static let securityOptions = "Security Options"
-
+    static let editProfile = "Edit Profile"
+    static let save = "Save"
+    
+    static let subscriptions = "Subscriptions"
+    static let subscription = "Subscription"
+    static let status = "Status"
+    static let active = "Active"
+    static let inActive = "Inactive"
+    static let plan = "Plan"
+    static let monthly = "Monthly"
+    static let yearly = "Yearly"
+    static let free = "Free"
+    static let renewDate = "Renew Date"
+    static let none = "None"
+    static let restorePurchases = "Restore Purchases"
+    
 }
 
 

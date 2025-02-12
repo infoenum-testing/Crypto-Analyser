@@ -17,10 +17,6 @@ struct GalleryView: View {
     }
 }
 
-//#Preview {
-//    GalleryView()
-//}
-
 struct ImagePickerView: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
     @Binding var isPresented: Bool

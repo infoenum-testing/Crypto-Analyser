@@ -27,7 +27,7 @@ struct SearchView: View {
                             .foregroundColor(.white)
                     })
                     Spacer()
-                    Text("Search Coin")
+                    Text(StringConstants.searchCoin)
                         .foregroundColor(.white)
                         .font(.system(size: 25, weight: .semibold))
                     Spacer()
@@ -54,7 +54,7 @@ struct SearchView: View {
             capture.toggle()
         }, label: {
             HStack {
-                Text("Analyse")
+                Text(StringConstants.analyse)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
             }
