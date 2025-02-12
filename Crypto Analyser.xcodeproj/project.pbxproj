@@ -119,6 +119,8 @@
 		E9868ED32D17051B007ACB26 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9868ED22D17051B007ACB26 /* GoogleSignInSwift */; };
 		E9868ED42D170552007ACB26 /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9868E5D2D16BBBF007ACB26 /* FirebaseAuthentication.swift */; };
 		E9868ED52D170555007ACB26 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9868E992D16F75F007ACB26 /* GoogleSignInManager.swift */; };
+		E986B37A2D5C6DE8006BB213 /* SVGWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986B3792D5C6DE8006BB213 /* SVGWebView.swift */; };
+		E986B37B2D5C6DE8006BB213 /* SVGWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E986B3792D5C6DE8006BB213 /* SVGWebView.swift */; };
 		E9875F112D2929610017B4A7 /* UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875F102D2929610017B4A7 /* UiImage+Extension.swift */; };
 		E9875F122D2929610017B4A7 /* UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9875F102D2929610017B4A7 /* UiImage+Extension.swift */; };
 		E9890E5D2D48AA5400FBE71C /* SearchCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */; };
@@ -192,6 +194,7 @@
 		E9868E5F2D16E848007ACB26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9868E992D16F75F007ACB26 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		E9868E9D2D1701A7007ACB26 /* UserSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionManager.swift; sourceTree = "<group>"; };
+		E986B3792D5C6DE8006BB213 /* SVGWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGWebView.swift; sourceTree = "<group>"; };
 		E9875F102D2929610017B4A7 /* UiImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiImage+Extension.swift"; sourceTree = "<group>"; };
 		E9890E5C2D48AA5400FBE71C /* SearchCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoinView.swift; sourceTree = "<group>"; };
 		E9890E5F2D48CC9D00FBE71C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -400,6 +403,7 @@
 				E97D15AC2D1AD0C0005A9A3F /* GalleryView.swift */,
 				E94F141A2D2FBBF100F41BBB /* SearchWebView.swift */,
 				E97DA4B32D59DAFF0023953E /* CoinRowView.swift */,
+				E986B3792D5C6DE8006BB213 /* SVGWebView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -740,6 +744,7 @@
 				E97D15AD2D1AD0C0005A9A3F /* GalleryView.swift in Sources */,
 				E9875F112D2929610017B4A7 /* UiImage+Extension.swift in Sources */,
 				E9868E522D16A8BF007ACB26 /* SettingView.swift in Sources */,
+				E986B37A2D5C6DE8006BB213 /* SVGWebView.swift in Sources */,
 				E9868E9E2D1701A7007ACB26 /* UserSessionManager.swift in Sources */,
 				E978BD882D35453900219A41 /* SubscriptionsView.swift in Sources */,
 				E9890E5D2D48AA5400FBE71C /* SearchCoinView.swift in Sources */,
@@ -768,6 +773,7 @@
 				E9868E4A2D16A535007ACB26 /* TabbarView.swift in Sources */,
 				E9868E362D168ED6007ACB26 /* StringConstants.swift in Sources */,
 				E91DEDCB2D1D5E210028FE6D /* SearchView.swift in Sources */,
+				E986B37B2D5C6DE8006BB213 /* SVGWebView.swift in Sources */,
 				E973C0E02D30ECD70076D1E6 /* ChatGPTResponse.swift in Sources */,
 				E9868E372D168ED6007ACB26 /* SignUpView.swift in Sources */,
 				E94F141C2D2FBBF100F41BBB /* SearchWebView.swift in Sources */,

@@ -46,9 +46,9 @@ struct SubscriptionsView: View {
                 .padding(.vertical, 15)
                 .onAppear {
                     Task {
+                        subscriptionsManager.returnPurchaseTitle()
                         await subscriptionsManager.loadProducts()
                         await subscriptionsManager.updatePurchasedProducts()
-                        subscriptionsManager.returnPurchaseTitle()
                         subscriptionsManager.fetchActiveProducts(originalTransactionId: "2000000821674742", isSandbox: true) { result in
                             switch result {
                             case .success(let activeProducts):
