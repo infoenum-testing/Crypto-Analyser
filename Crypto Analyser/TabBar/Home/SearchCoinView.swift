@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchCoinView: View {
     @EnvironmentObject var router: Router
     @StateObject var viewModel = SearchViewModel()
-    @State private var coins:[Coin]?
+//    @State private var coins:[Coin]?
     @State private var searchText = ""
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
@@ -27,7 +27,7 @@ struct SearchCoinView: View {
                     .padding(.leading,5)
             }
             .padding(.horizontal, 20)
-            if let coins , !coins.isEmpty{
+            if let coins = viewModel.coins?.data.coins , !coins.isEmpty {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(coins, id: \.symbol) { coin in
@@ -40,7 +40,7 @@ struct SearchCoinView: View {
                     .padding(.top,10)
                     .padding(.horizontal,20)
                 }
-            } else if let coins ,coins.isEmpty{
+            } else if let coins = viewModel.coins?.data.coins ,coins.isEmpty{
                 VStack {
                     Spacer()
                     Text(StringConstants.noDataAvailable)
@@ -61,13 +61,18 @@ struct SearchCoinView: View {
         .onAppear {
             searchText = ""
             refreshUI()
+            viewModel.startFetching()
+        }
+        .onDisappear {
+            viewModel.stopFetching()
         }
         .onChange(of: searchText) { value in
             if !value.isEmpty {
+                viewModel.stopFetching()
                 viewModel.fetchReferenceCurrencies(search: value) { result in
                     switch result {
                     case .success(let data):
-                        coins = data.data.coins
+                      print(data.data.coins)
                     case .failure(let error):
                         showAlert = true
                         alertMessage = "\(error.localizedDescription)"
@@ -76,6 +81,7 @@ struct SearchCoinView: View {
                 }
             } else {
                 refreshUI()
+                viewModel.startFetching()
             }
         }
         .alert(isPresented: $showAlert) {
@@ -86,7 +92,8 @@ struct SearchCoinView: View {
         viewModel.fetchCryptoData { result in
             switch result {
             case .success(let cryptoData):
-                coins = cryptoData.data.coins
+//                coins = cryptoData.data.coins
+                print(cryptoData)
             case .failure(let error):
                 showAlert = true
                 alertMessage = "\(error.localizedDescription)"

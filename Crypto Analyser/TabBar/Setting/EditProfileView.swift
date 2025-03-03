@@ -90,7 +90,9 @@ struct EditProfileView: View {
         }
         .background(Color.themecolor)
         .alert(isPresented: $showAlert) {
-            Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)))
+            Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)){
+                router.navigateBackInAuth()
+            })
         }
     }
     private func formField(title: String, text: Binding<String>, focusedField: FocusedField, placeholder: String = "Type here") -> some View {

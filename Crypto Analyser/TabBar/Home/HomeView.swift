@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct HomeView: View {
     enum AlertType {
@@ -56,6 +57,7 @@ struct HomeView: View {
                                 isCamera = true
                             } else {
                                 showAlert = true
+                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -68,6 +70,7 @@ struct HomeView: View {
                                 isGallery = true
                             } else {
                                 showAlert = true
+                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -80,6 +83,7 @@ struct HomeView: View {
                                 router.navigateToAuth(.searchCoin)
                             } else {
                                 showAlert = true
+                                alertType = .purchase
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -94,7 +98,7 @@ struct HomeView: View {
                     .padding(.horizontal,20)
                     .foregroundStyle(.white)
                 VStack {
-                    if let coins , !coins.isEmpty{
+                    if  let coins = searchViewModel.coins?.data.coins , !coins.isEmpty {
                         ScrollView(showsIndicators: false) {
                             ForEach(coins, id: \.symbol) { coin in
                                 CoinRowView(coin: coin)
@@ -109,7 +113,7 @@ struct HomeView: View {
                             .padding(.top,2)
                             .padding(.horizontal,20)
                         }
-                    } else if let coins ,coins.isEmpty{
+                    } else if let coins = searchViewModel.coins?.data.coins , coins.isEmpty{
                         VStack {
                             Spacer()
                             Text("No Data Availble")
@@ -164,14 +168,18 @@ struct HomeView: View {
 #endif
             }
             .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Free Trial Ended"),
-                    message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
-                    primaryButton: .default(Text("Buy Now")) {
-                        router.navigateToAuth(.subscription)
-                    },
-                    secondaryButton: .cancel(Text("Cancel"))
-                )
+                if alertType == .purchase {
+                    Alert(
+                        title: Text("Free Trial Ended"),
+                        message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
+                        primaryButton: .default(Text("Buy Now")) {
+                            router.navigateToAuth(.subscription)
+                        },
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )
+                } else {
+                    Alert(title: Text(StringConstants.validationErrorTitle), message: Text(alertMessage), dismissButton: .default(Text(StringConstants.oKText)))
+                }
             }
             
         }
@@ -180,6 +188,9 @@ struct HomeView: View {
         .onAppear {
             fetchCoins()
             getUserTrails()
+        }
+        .onDisappear {
+            searchViewModel.stopFetching()
         }
         .onChange(of: image) { value in
             if let value {
@@ -192,10 +203,12 @@ struct HomeView: View {
         searchViewModel.fetchCryptoData { result in
             switch result {
             case .success(let cryptoData):
-                coins = cryptoData.data.coins
+                print(cryptoData.data.coins)
+                searchViewModel.startFetching()
             case .failure(let error):
-//                showAlert = true
-//                alertMessage = "\(error.localizedDescription)"
+                alertType = .error
+                showAlert = true
+                alertMessage = "\(error.localizedDescription)"
                 print("Error fetching data: \(error.localizedDescription)")
             }
         }

@@ -11,6 +11,28 @@ import Keys
 
 @MainActor
 class SearchViewModel: ObservableObject {
+    @Published var coins: CryptoResponse?
+    private var timer: Timer?
+    
+    func startFetching() {
+        stopFetching()
+
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+                guard let self = self else { return }
+                Task {
+                    await self.fetchCryptoData { _ in }
+                    print("Update")
+                }
+            }
+        }
+    }
+    
+    func stopFetching() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     func fetchReferenceCurrencies(search: String, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
         let baseURL = "https://api.coinranking.com/v2/coins"
         let query = "?search=\(search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
@@ -38,6 +60,11 @@ class SearchViewModel: ObservableObject {
             do {
                 let decodedResponse = try JSONDecoder().decode(CryptoResponse.self, from: data)
                 print(decodedResponse)
+                Task {
+                    await MainActor.run {
+                        self.coins = decodedResponse
+                    }
+                }
                 completion(.success(decodedResponse))
             } catch {
                 completion(.failure(error))
@@ -64,6 +91,11 @@ class SearchViewModel: ObservableObject {
             
             do {
                 let decodedData = try JSONDecoder().decode(CryptoResponse.self, from: data)
+                Task {
+                    await MainActor.run {
+                        self.coins = decodedData
+                    }
+                }
                 completion(.success(decodedData))
             } catch {
                 completion(.failure(error))
