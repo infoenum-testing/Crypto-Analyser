@@ -56,8 +56,8 @@ struct HomeView: View {
                             if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 isCamera = true
                             } else {
-                                showAlert = true
                                 alertType = .purchase
+                                showAlert = true
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -69,8 +69,8 @@ struct HomeView: View {
                             if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 isGallery = true
                             } else {
-                                showAlert = true
                                 alertType = .purchase
+                                showAlert = true
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -82,8 +82,8 @@ struct HomeView: View {
                             if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
                                 router.navigateToAuth(.searchCoin)
                             } else {
-                                showAlert = true
                                 alertType = .purchase
+                                showAlert = true
                             }
                         })
                         .frame(maxWidth: .infinity)
@@ -103,9 +103,10 @@ struct HomeView: View {
                             ForEach(coins, id: \.symbol) { coin in
                                 CoinRowView(coin: coin)
                                     .onTapGesture {
-                                        if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail <= 3 || isActive {
-                                            router.navigateToAuth(.searchView(symbol: coin.symbol))
+                                        if let trail = trail, let isActive =  subscriptionsManager.isPlanActive, trail < 3 || isActive {
+                                            router.navigateToAuth(.searchView(symbol: coin.symbol,backTo: 2))
                                         } else {
+                                            alertType = .purchase
                                             showAlert = true
                                         }
                                     }
@@ -113,10 +114,10 @@ struct HomeView: View {
                             .padding(.top,2)
                             .padding(.horizontal,20)
                         }
-                    } else if let coins = searchViewModel.coins?.data.coins , coins.isEmpty{
+                    } else if let coins = searchViewModel.coins?.data.coins , coins.isEmpty {
                         VStack {
                             Spacer()
-                            Text("No Data Availble")
+                            Text(StringConstants.noDataAvailable)
                             Spacer()
                         }
                     } else {
@@ -194,7 +195,7 @@ struct HomeView: View {
         }
         .onChange(of: image) { value in
             if let value {
-                router.navigateToAuth(.imageAnalyser(image: value, fromSearch: false))
+                router.navigateToAuth(.imageAnalyser(image: value, backTo: 1))
             }
         }
     }

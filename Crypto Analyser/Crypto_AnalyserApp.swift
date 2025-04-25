@@ -58,12 +58,12 @@ struct Crypto_AnalyserApp: App {
                         EditProfileView()
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
-                    case .searchView(let symbol):
-                        SearchView(symbol: symbol)
+                    case .searchView(let symbol,let backTo):
+                        SearchView(symbol: symbol,backTo: backTo)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
-                    case .imageAnalyser(let image,let fromSearch):
-                        ImageAnalyserView(fromSearch: fromSearch, image: image)
+                    case .imageAnalyser(let image,let backTo):
+                        ImageAnalyserView(backTo: backTo, image: image)
                             .navigationBarBackButtonHidden()
                             .navigationBarHidden(true)
                     case .dataDescription(image:let image,afterAnalyse: let afterAnalyse,confidenceLevel: let confidenceLevel, message: let message):

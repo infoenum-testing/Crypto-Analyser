@@ -13,16 +13,15 @@ import Keys
 class SearchViewModel: ObservableObject {
     @Published var coins: CryptoResponse?
     private var timer: Timer?
-    
+    @Published var isLoading:Bool = false
     func startFetching() {
         stopFetching()
-
+        
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+            self.timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
                 guard let self = self else { return }
                 Task {
                     await self.fetchCryptoData { _ in }
-                    print("Update")
                 }
             }
         }
@@ -33,20 +32,8 @@ class SearchViewModel: ObservableObject {
         timer = nil
     }
     
-    func fetchReferenceCurrencies(search: String, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
-        let baseURL = "https://api.coinranking.com/v2/coins"
-        let query = "?search=\(search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
-        let urlString = baseURL + query
-        
-        guard let url = URL(string: urlString) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
+    private func fetchCrypto(from url: URL, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -58,18 +45,51 @@ class SearchViewModel: ObservableObject {
             }
             
             do {
-                let decodedResponse = try JSONDecoder().decode(CryptoResponse.self, from: data)
-                print(decodedResponse)
+                let errorResponse = try? JSONDecoder().decode(APIErrorResponse.self, from: data)
+                
+                if let errorResponse = errorResponse, errorResponse.status == "fail", errorResponse.code == "RATE_LIMIT_EXCEEDED" {
+                    let fallback = CryptoResponse(
+                        status: "success",
+                        data: CryptoData(
+                            stats: Stats(total: 0, totalCoins: 0, totalMarkets: 0, totalExchanges: 0, totalMarketCap: "0", total24hVolume: "0"),
+                            coins: []
+                        )
+                    )
+                    
+                    Task {
+                        await MainActor.run { self.coins = fallback
+                            self.isLoading = true
+                        }
+                    }
+                    completion(.success(fallback))
+                    return
+                }
+                
+                let decoded = try JSONDecoder().decode(CryptoResponse.self, from: data)
                 Task {
-                    await MainActor.run {
-                        self.coins = decodedResponse
+                    await MainActor.run { self.coins = decoded
+                        self.isLoading = false
                     }
                 }
-                completion(.success(decodedResponse))
+                completion(.success(decoded))
+                
             } catch {
                 completion(.failure(error))
             }
+            
         }.resume()
+    }
+    
+    func fetchReferenceCurrencies(search: String, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
+        let baseURL = "https://api.coinranking.com/v2/coins"
+        let query = "?search=\(search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+        
+        guard let url = URL(string: baseURL + query) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        
+        fetchCrypto(from: url, completion: completion)
     }
     
     func fetchCryptoData(completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
@@ -77,29 +97,7 @@ class SearchViewModel: ObservableObject {
             completion(.failure(NSError(domain: "Invalid URL", code: 400, userInfo: nil)))
             return
         }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(NSError(domain: "No data received", code: 500, userInfo: nil)))
-                return
-            }
-            
-            do {
-                let decodedData = try JSONDecoder().decode(CryptoResponse.self, from: data)
-                Task {
-                    await MainActor.run {
-                        self.coins = decodedData
-                    }
-                }
-                completion(.success(decodedData))
-            } catch {
-                completion(.failure(error))
-            }
-        }.resume()
+        fetchCrypto(from: url, completion: completion)
     }
+    
 }

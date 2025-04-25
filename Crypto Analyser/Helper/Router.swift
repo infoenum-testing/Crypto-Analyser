@@ -53,8 +53,8 @@ final class Router: ObservableObject {
         case accountInformation
         case editProfile
         case searchCoin
-        case searchView(symbol:String)
-        case imageAnalyser(image: UIImage,fromSearch: Bool)
+        case searchView(symbol:String,backTo:Int)
+        case imageAnalyser(image: UIImage,backTo: Int)
         case dataDescription(image: UIImage,afterAnalyse:Bool,confidenceLevel: String, message: String)
         case subscription
 
@@ -73,8 +73,9 @@ final class Router: ObservableObject {
                 hasher.combine("accountInformation")
             case .editProfile:
                 hasher.combine("editProfile")
-            case .searchView(let symbol):
+            case .searchView(let symbol,let backTo):
                 hasher.combine(symbol)
+                hasher.combine(backTo)
             case .imageAnalyser(let image,let fromSearch):
                 hasher.combine(image.pngData()?.hashValue ?? 0)
                 hasher.combine(fromSearch)

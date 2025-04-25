@@ -77,3 +77,9 @@ struct Stats: Codable {
     let total24hVolume: String
 
 }
+
+struct APIErrorResponse: Codable {
+    let status: String
+    let code: String?
+    let message: String?
+}

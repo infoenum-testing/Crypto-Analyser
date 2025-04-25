@@ -12,6 +12,7 @@ struct SearchView: View {
     @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
     let symbol:String
+    let backTo:Int
     @State private var showCancelButton: Bool = false
     @State private var screenshot: UIImage?
     @State private var capture: Bool = false
@@ -43,7 +44,7 @@ struct SearchView: View {
         .ignoresSafeArea(.keyboard)
         .onChange(of: screenshot, perform: { value in
             if let value {
-                router.navigateToAuth(.imageAnalyser(image: value.resized(to: 800), fromSearch: true))
+                router.navigateToAuth(.imageAnalyser(image: value.resized(to: 800), backTo: backTo))
             }
         })
         .onAppear {borderAnimationViewModel.startColorAnimation()}

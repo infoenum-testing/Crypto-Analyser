@@ -10,10 +10,12 @@ import SwiftUI
 struct SearchCoinView: View {
     @EnvironmentObject var router: Router
     @StateObject var viewModel = SearchViewModel()
-//    @State private var coins:[Coin]?
     @State private var searchText = ""
+    @State private var isLoading = false
+    @State private var isRefresh = false
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
+    @State private var fetchWorkItem: DispatchWorkItem?
     var body: some View {
         VStack {
             HStack {
@@ -33,14 +35,14 @@ struct SearchCoinView: View {
                         ForEach(coins, id: \.symbol) { coin in
                             CoinRowView(coin: coin)
                                 .onTapGesture {
-                                    router.navigateToAuth(.searchView(symbol: coin.symbol))
+                                    router.navigateToAuth(.searchView(symbol: coin.symbol, backTo: 3))
                                 }
                         }
                     }
                     .padding(.top,10)
                     .padding(.horizontal,20)
                 }
-            } else if let coins = viewModel.coins?.data.coins ,coins.isEmpty{
+            } else if let coins = viewModel.coins?.data.coins ,coins.isEmpty,!viewModel.isLoading{
                 VStack {
                     Spacer()
                     Text(StringConstants.noDataAvailable)
@@ -67,33 +69,51 @@ struct SearchCoinView: View {
             viewModel.stopFetching()
         }
         .onChange(of: searchText) { value in
-            if !value.isEmpty {
-                viewModel.stopFetching()
-                viewModel.fetchReferenceCurrencies(search: value) { result in
-                    switch result {
-                    case .success(let data):
-                      print(data.data.coins)
-                    case .failure(let error):
-                        showAlert = true
-                        alertMessage = "\(error.localizedDescription)"
-                        print("Error fetching currencies: \(error.localizedDescription)")
-                    }
-                }
-            } else {
-                refreshUI()
-                viewModel.startFetching()
-            }
+            fetch(value: value)
         }
         .alert(isPresented: $showAlert) {
             Alert(title: Text(StringConstants.validationErrorTitle), message: Text(alertMessage), dismissButton: .default(Text(StringConstants.oKText)))
         }
     }
+    
+    private func fetch(value: String) {
+        if !value.isEmpty {
+            viewModel.stopFetching()
+            // Cancel previous fetch if any
+            fetchWorkItem?.cancel()
+            fetchWorkItem = nil
+            // Create a new work item to fetch the data
+            isLoading = true
+            fetchWorkItem = DispatchWorkItem {
+                viewModel.fetchReferenceCurrencies(search: value) { result in
+                    isLoading = false
+                    switch result {
+                    case .success(let data):
+                        print(data.data.coins) // Handle success
+                    case .failure(let error):
+                        showAlert = true
+                        alertMessage = "\(error.localizedDescription)"
+                        print("Error fetching currencies: \(error.localizedDescription)") // Handle failure
+                    }
+                }
+            }
+            //  Schedule the new work item with a 2-second delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: fetchWorkItem!)
+        } else {
+            isLoading = false
+            fetchWorkItem?.cancel()
+            fetchWorkItem = nil
+            refreshUI()
+            viewModel.startFetching()
+        }
+    }
+    
+    
     private func refreshUI() {
         viewModel.fetchCryptoData { result in
             switch result {
             case .success(let cryptoData):
-//                coins = cryptoData.data.coins
-                print(cryptoData)
+                break
             case .failure(let error):
                 showAlert = true
                 alertMessage = "\(error.localizedDescription)"
@@ -101,6 +121,7 @@ struct SearchCoinView: View {
             }
         }
     }
+    
     private var searchBarView: some View {
         VStack {
             HStack {
@@ -117,15 +138,22 @@ struct SearchCoinView: View {
                         Text(StringConstants.search_)
                             .foregroundColor(.gray)
                     }
-                if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    Button {
-                        searchText = ""
-                    } label: {
-                        Image(systemName: "multiply.circle")
-                            .resizable()
-                            .foregroundColor(Color.white)
-                            .frame(width: 18, height: 18)
-                            .padding(.horizontal,5)
+                if isLoading {
+                    ProgressView()
+                        .foregroundColor(Color.white)
+                        .frame(width: 18, height: 18)
+                        .padding(.horizontal,5)
+                } else {
+                    if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        Button {
+                            searchText = ""
+                        } label: {
+                            Image(systemName: "multiply.circle")
+                                .resizable()
+                                .foregroundColor(Color.white)
+                                .frame(width: 18, height: 18)
+                                .padding(.horizontal,5)
+                        }
                     }
                 }
             }.padding(8)

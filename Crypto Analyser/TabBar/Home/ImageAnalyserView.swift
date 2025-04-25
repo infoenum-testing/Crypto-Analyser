@@ -9,7 +9,7 @@ import SwiftUI
 struct ImageAnalyserView: View {
     @StateObject private var borderAnimationViewModel = BorderAnimationViewModel()
     @EnvironmentObject var router: Router
-    let fromSearch:Bool
+    let backTo:Int
     let image: UIImage
     @StateObject var viewModel = ChatGPTData()
     @State private var isItFirst = true
@@ -27,11 +27,7 @@ struct ImageAnalyserView: View {
         VStack {
             HStack {
                 Button(action: {
-                    if fromSearch {
-                        router.navigateBackInAuth(count: 3)
-                    } else {
-                        router.navigateBackInAuth()
-                    }
+                        router.navigateBackInAuth(count: backTo)
                 }, label: {
                     Image(.back)
                         .foregroundColor(.white)
@@ -86,6 +82,8 @@ struct ImageAnalyserView: View {
                                 .multilineTextAlignment(.leading)
                                 .padding(.top, 20)
                                 .transition(.opacity)
+                            ConfidenceMeter(value: Double(confidenceLevel) ?? 50)
+                                   .padding(.leading,UIScreen.main.bounds.width * 0.1)
                         }
                     }
                 }
