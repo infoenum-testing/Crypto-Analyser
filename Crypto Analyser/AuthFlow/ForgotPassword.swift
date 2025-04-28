@@ -90,7 +90,7 @@ struct ForgotPassword: View {
                 .background(.black.opacity(0.2))
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(errorTitle),
@@ -133,7 +133,7 @@ struct ForgotPassword: View {
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.cellcolor)
+                .background(Color.cellcolortheme)
                 .cornerRadius(8)
                 .accentColor(.white)
                 .foregroundColor(.white)
@@ -169,7 +169,7 @@ struct ForgotPassword: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.buttonbackground)
+            .background(Color.buttonbackgroundtheme)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

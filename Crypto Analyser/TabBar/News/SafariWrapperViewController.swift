@@ -80,7 +80,7 @@ public struct NewsWebView: View {
             .edgesIgnoringSafeArea(.all)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.midnightblue)
+        .background(Color.midnightbluetheme)
     }
 }
 

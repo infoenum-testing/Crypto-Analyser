@@ -35,11 +35,21 @@ class SearchViewModel: ObservableObject {
     private func fetchCrypto(from url: URL, completion: @escaping (Result<CryptoResponse, Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
+                Task {
+                    await MainActor.run {
+                        self.isLoading = false
+                    }
+                }
                 completion(.failure(error))
                 return
             }
             
             guard let data = data else {
+                Task {
+                    await MainActor.run {
+                        self.isLoading = false
+                    }
+                }
                 completion(.failure(NSError(domain: "No data received", code: 0, userInfo: nil)))
                 return
             }
@@ -74,6 +84,11 @@ class SearchViewModel: ObservableObject {
                 completion(.success(decoded))
                 
             } catch {
+                Task {
+                    await MainActor.run {
+                        self.isLoading = false
+                    }
+                }
                 completion(.failure(error))
             }
             

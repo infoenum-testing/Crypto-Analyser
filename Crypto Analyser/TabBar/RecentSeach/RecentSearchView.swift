@@ -84,7 +84,7 @@ struct RecentSearchView: View {
                                     .padding(.horizontal,8)
                                 }
                                 .padding(.vertical,8)
-                                .background(Color.cellcolor)
+                                .background(Color.cellcolortheme)
                                 .cornerRadius(8)
                                 .accentColor(.black)
                                 .foregroundColor(.black)
@@ -101,7 +101,7 @@ struct RecentSearchView: View {
                 }
             }
         }
-        .background(.themecolor)
+        .background(.themecolorprimary)
         .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Delete?"),

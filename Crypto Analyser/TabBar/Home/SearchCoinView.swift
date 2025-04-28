@@ -59,7 +59,7 @@ struct SearchCoinView: View {
                 }
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .onAppear {
             searchText = ""
             refreshUI()
@@ -157,7 +157,7 @@ struct SearchCoinView: View {
                     }
                 }
             }.padding(8)
-        }.background(Color(.cellcolor))
+        }.background(Color.cellcolortheme)
             .cornerRadius(10)
     }
     

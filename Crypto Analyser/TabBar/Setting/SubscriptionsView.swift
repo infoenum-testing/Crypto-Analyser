@@ -64,7 +64,7 @@ struct SubscriptionsView: View {
         .alert(StringConstants.pleaseSelectProduct, isPresented: $emptyProductAlert) {
             Button(StringConstants.ok, role: .cancel) { }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
     }
     
     // MARK: - Views
@@ -325,7 +325,7 @@ struct SubscriptionsView: View {
         }) {
             HStack {
                 RoundedRectangle(cornerRadius: 12.5)
-                    .foregroundColor( subscriptionsManager.selectedProduct == nil ? .buttonbackground.opacity(0.4) : .buttonbackground)
+                    .foregroundColor( subscriptionsManager.selectedProduct == nil ? .buttonbackgroundtheme.opacity(0.4) : .buttonbackgroundtheme)
                     .overlay {
                         ZStack {
                             if subscriptionsManager.isLoading && isContinue {

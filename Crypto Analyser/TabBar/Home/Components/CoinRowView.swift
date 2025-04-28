@@ -87,7 +87,7 @@ struct CoinRowView: View {
             .padding(.vertical,5)
         }
         .frame(height: 60)
-        .background(.cellcolor)
+        .background(.cellcolortheme)
         .cornerRadius(16)
     }
 }

@@ -153,7 +153,7 @@ struct LoginView: View {
                 .background(.black.opacity(0.2))
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .toolbar {
             ToolbarItem(placement: .keyboard) {
                 HStack {
@@ -190,7 +190,7 @@ struct LoginView: View {
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.cellcolor)
+                .background(Color.cellcolortheme)
                 .cornerRadius(8)
                 .accentColor(.white)
                 .foregroundColor(.black)
@@ -245,7 +245,7 @@ struct LoginView: View {
             }
             .padding()
             .frame(height: 50)
-            .background(Color.cellcolor)
+            .background(Color.cellcolortheme)
             .cornerRadius(8)
         }
         .padding(.bottom)
@@ -281,7 +281,7 @@ struct LoginView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.buttonbackground)
+            .background(Color.buttonbackgroundtheme)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

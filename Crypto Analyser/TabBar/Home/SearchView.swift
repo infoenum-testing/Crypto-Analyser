@@ -40,7 +40,7 @@ struct SearchView: View {
             analyseButton
                 .padding(.horizontal, 20)
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .ignoresSafeArea(.keyboard)
         .onChange(of: screenshot, perform: { value in
             if let value {
@@ -62,7 +62,7 @@ struct SearchView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.buttonbackground)
+            .background(Color.buttonbackgroundtheme)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

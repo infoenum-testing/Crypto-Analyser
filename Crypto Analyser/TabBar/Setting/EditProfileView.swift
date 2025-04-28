@@ -88,7 +88,7 @@ struct EditProfileView: View {
                 .background(.black.opacity(0.4))
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .alert(isPresented: $showAlert) {
             Alert(title: Text(StringConstants.validationErrorTitle), message: Text(errorMessage), dismissButton: .default(Text(StringConstants.oKText)){
                 router.navigateBackInAuth()
@@ -109,7 +109,7 @@ struct EditProfileView: View {
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.cellcolor)
+                .background(Color.cellcolortheme)
                 .cornerRadius(8)
                 .accentColor(.blue)
                 .foregroundColor(.black)
@@ -150,7 +150,7 @@ struct EditProfileView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.buttonbackground)
+            .background(Color.buttonbackgroundtheme)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

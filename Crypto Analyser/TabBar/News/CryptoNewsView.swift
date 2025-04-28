@@ -64,7 +64,7 @@ struct CryptoNewsView: View {
                 }
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .fullScreenCover(isPresented: $showWebView, content: {
             NewsWebView(urlString:  viewModel.selectedNewsUrl)
                 .edgesIgnoringSafeArea(.all)

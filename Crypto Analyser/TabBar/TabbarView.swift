@@ -36,11 +36,11 @@ struct TabbarView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
-        .tint(Color.bordercolor)
+        .tint(Color.bordercolortheme)
         .onAppear(perform: {
             let appearance = UITabBarAppearance()
                         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-                        appearance.backgroundColor = UIColor(Color.cellcolor)
+                        appearance.backgroundColor = UIColor(Color.cellcolortheme)
                         
                         // Use this appearance when scrolling behind the TabView:
                         UITabBar.appearance().standardAppearance = appearance

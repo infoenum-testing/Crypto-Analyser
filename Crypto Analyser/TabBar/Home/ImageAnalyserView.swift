@@ -97,7 +97,7 @@ struct ImageAnalyserView: View {
             }
         }
         .padding(.horizontal, 20)
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .alert(isPresented: $showAlert) {
             Alert(
                 title: Text(StringConstants.message),

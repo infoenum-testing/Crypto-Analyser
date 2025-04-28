@@ -35,7 +35,7 @@ struct NewsCellView: View {
                 .foregroundStyle(.white)
         }
         .padding(8)
-        .background(Color.cellcolor)
+        .background(Color.cellcolortheme)
         .cornerRadius(8)
     }
 }

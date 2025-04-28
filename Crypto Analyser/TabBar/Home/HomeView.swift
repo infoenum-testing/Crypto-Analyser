@@ -46,7 +46,7 @@ struct HomeView: View {
                         Spacer()
                         if subscriptionsManager.isPlanActive == nil || trail == nil {
                             ProgressView()
-                                .tint(Color.themecolor)
+                                .tint(Color.themecolorprimary)
                         }
                     }
                     HStack {
@@ -113,7 +113,7 @@ struct HomeView: View {
                             .padding(.top,2)
                             .padding(.horizontal,20)
                         }
-                    } else if let coins = searchViewModel.coins?.data.coins , coins.isEmpty {
+                    } else if let coins = searchViewModel.coins?.data.coins , coins.isEmpty,!searchViewModel.isLoading {
                         VStack {
                             Spacer()
                             Text(StringConstants.noDataAvailable)
@@ -188,10 +188,11 @@ struct HomeView: View {
                 Text(alertMessage)
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
         .onAppear {
             fetchCoins()
             getUserTrails()
+            searchViewModel.isLoading = true
         }
         .onDisappear {
             searchViewModel.stopFetching()
@@ -235,7 +236,7 @@ struct HomeView: View {
             }
         })
         .frame(width: 90, height: 90)
-        .background(Color.buttonbackground)
+        .background(Color.buttonbackgroundtheme)
         .cornerRadius(45)
         .overlay(
             RoundedRectangle(cornerRadius: 45)

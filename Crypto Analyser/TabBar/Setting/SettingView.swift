@@ -52,7 +52,7 @@ struct SettingView: View {
                             Spacer()
                         }
                         .frame(height: 100)
-                        .background(Color.themecolor)
+                        .background(Color.themecolorprimary)
                         .cornerRadius(20)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
@@ -143,7 +143,7 @@ struct SettingView: View {
                     }
                 }
             }
-            .background(Color.themecolor)
+            .background(Color.themecolorprimary)
             .alert(alertTitle, isPresented: $alert) {
                 if alertType == .logout {
                     Button(StringConstants.cancel, role: .cancel) {}
@@ -196,7 +196,7 @@ struct SettingView: View {
                 }
             }
             .frame(height: 50)
-            .background(Color.cellcolor)
+            .background(Color.cellcolortheme)
             .cornerRadius(8)
             .accentColor(.black)
             .foregroundColor(.black)

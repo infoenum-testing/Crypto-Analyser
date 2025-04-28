@@ -122,7 +122,7 @@ struct SignUpView: View {
         }
         .toolbarBackground(Color.white, for: .navigationBar)
         .toolbarColorScheme(.light, for: .navigationBar)
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
     }
     
     private func formField(title: String, text: Binding<String>, focusedField: FocusedField, placeholder: String = "Type here") -> some View {
@@ -142,7 +142,7 @@ struct SignUpView: View {
                 .disableAutocorrection(true)
                 .padding()
                 .frame(height: 50)
-                .background(Color.cellcolor)
+                .background(Color.cellcolortheme)
                 .cornerRadius(8)
                 .accentColor(.white)
                 .foregroundColor(.white)
@@ -206,7 +206,7 @@ struct SignUpView: View {
             }
             .padding()
             .frame(height: 50)
-            .background(Color.cellcolor)
+            .background(Color.cellcolortheme)
             .cornerRadius(8)
         }
         .padding(.bottom)
@@ -238,7 +238,7 @@ struct SignUpView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 20)
             .padding()
-            .background(Color.buttonbackground)
+            .background(Color.buttonbackgroundtheme)
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)

@@ -80,9 +80,9 @@ struct Crypto_AnalyserApp: App {
                             .navigationBarHidden(true)
                     }
                 }
-                .background(Color.themecolor)
+                .background(Color.themecolorprimary)
             }
-            .background(Color.themecolor)
+            .background(Color.themecolorprimary)
             .navigationBarBackButtonHidden()
             .environmentObject(router)
             .environmentObject(entitlementManager)

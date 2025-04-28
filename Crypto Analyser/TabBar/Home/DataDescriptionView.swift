@@ -65,7 +65,7 @@ struct DataDescriptionView: View {
                 }
             }
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
     }
 }
 

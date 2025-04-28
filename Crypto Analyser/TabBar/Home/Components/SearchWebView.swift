@@ -62,7 +62,7 @@ struct SearchWebView: View {
                 captureScreenshot()
             })
         }
-        .background(Color.themecolor)
+        .background(Color.themecolorprimary)
     }
     
     private func captureScreenshot() {
