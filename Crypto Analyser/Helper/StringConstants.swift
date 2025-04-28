@@ -26,6 +26,7 @@ struct StringConstants {
     static let pleaseSelectProduct = "Please select a product before purchasing."
     static let purchaseAlert = "Purchase Alert"
     static let alreadyPurchasedDes = "This item has already been purchased by another user from this Apple ID"
+    static let buyNow = "Buy Now"
     
     // Sign Up
     static let signUpTitle = "Sign Up"

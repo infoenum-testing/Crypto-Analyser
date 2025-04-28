@@ -10,7 +10,6 @@ import Combine
 
 struct HomeView: View {
     enum AlertType {
-        case delete
         case purchase
         case error
     }
@@ -28,7 +27,7 @@ struct HomeView: View {
     @State private var resentSearches:[SearchDetails] = []
     @State private var showAlert = false
     @State private var itemToDelete: SearchDetails?
-    @State private var alertType: AlertType = .delete
+    @State private var alertType: AlertType = .error
     @State private var alertMessage = ""
     @State private var trail:Int?
     
@@ -133,7 +132,7 @@ struct HomeView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.top,10)
-                .overlay(
+                .overlay (
                     RoundedRectangle(cornerRadius: 40)
                         .stroke(LinearGradient(
                             gradient: Gradient(colors: borderAnimationViewModel.gradientColors),
@@ -168,23 +167,27 @@ struct HomeView: View {
                     .ignoresSafeArea(.all)
 #endif
             }
-            .alert(isPresented: $showAlert) {
-                if alertType == .purchase {
-                    Alert(
-                        title: Text("Free Trial Ended"),
-                        message: Text("You've used all 3 free trials. Unlock full access by purchasing the feature."),
-                        primaryButton: .default(Text("Buy Now")) {
-                            router.navigateToAuth(.subscription)
-                        },
-                        secondaryButton: .cancel(Text("Cancel"))
-                    )
-                } else {
-                    Alert(title: Text(StringConstants.validationErrorTitle), message: Text(alertMessage), dismissButton: .default(Text(StringConstants.oKText)))
-                }
-            }
-            
         }
         .disabled(subscriptionsManager.isPlanActive == nil || trail == nil)
+        .alert("Alert", isPresented: $showAlert) {
+            switch alertType {
+            case .purchase:
+                Button(StringConstants.buyNow) {
+                    router.navigateToAuth(.subscription)
+                }
+                Button(StringConstants.cancel, role: .cancel) {}
+                
+            case .error:
+                Button(StringConstants.ok, role: .cancel) {}
+            }
+        } message: {
+            switch alertType {
+            case .purchase:
+                Text(StringConstants.freeTrialEndedDes)
+            case .error:
+                Text(alertMessage)
+            }
+        }
         .background(Color.themecolor)
         .onAppear {
             fetchCoins()
@@ -198,6 +201,7 @@ struct HomeView: View {
                 router.navigateToAuth(.imageAnalyser(image: value, backTo: 1))
             }
         }
+        
     }
     
     private func fetchCoins() {
